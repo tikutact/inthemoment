@@ -1,0 +1,54 @@
+import Navigation from "@/components/Navigation";
+import FadeIn from "@/components/FadeIn";
+
+export default function AboutPage() {
+  return (
+    <>
+      <Navigation />
+
+      <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-4 md:px-6">
+        <FadeIn>
+          <div className="max-w-3xl mx-auto grid grid-cols-[2fr_3fr] gap-4 md:gap-24 items-start">
+            {/* 1列 */}
+            <div className="grid grid-cols-1 gap-1 md:gap-2">
+              <img src="/gallery/case-01/DSCF2803.jpg" alt="" className="w-full aspect-[3/4] object-cover" />
+              <img src="/gallery/case-02/20251124-rie-tomo5965.jpg" alt="" className="w-full aspect-[3/4] object-cover" />
+              <img src="/gallery/case-03/DSCF4512.jpg" alt="" className="w-full aspect-[3/4] object-cover" />
+              <img src="/gallery/case-04/DSCF3036.jpg" alt="" className="w-full aspect-[3/4] object-cover" />
+            </div>
+
+            {/* テキスト */}
+            <div className="pt-2">
+              <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-6 md:mb-10">ABOUT</p>
+
+              <p
+                className="text-sm md:text-lg font-light text-[#1e1c1a] leading-relaxed mb-6 md:mb-12"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                {"\"言葉になる前の感情を、"}<br /><span style={{whiteSpace:"nowrap"}}>{"光の粒のような記憶として。\""}</span>
+              </p>
+
+              <div className="space-y-5 md:space-y-8 text-[10px] md:text-sm leading-[2.2] md:leading-[2.6] tracking-wide text-[#6b6560] font-light">
+                <p>私たちが写したいのは、ただ美しい写真ではなく、ふたりが「その瞬間」に感じていた温度や、言葉にしないまなざし、胸の奥でふわりと揺れた気持ちです。</p>
+                <p>風が頬を撫でたこと、手をそっと重ねた感触、ふと見つめ合って笑った理由さえ、写真に残したい物語の一部です。</p>
+                <p>in the moment は、ポーズよりも余白を大切にします。飾らなくていいし、うまく笑わなくても大丈夫。ふたりがふたりであることを、そのまま。</p>
+                <p>言葉になる前の感情、光の粒のような記憶、「いま」という奇跡を、写真にします。</p>
+              </div>
+
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-8 px-6 border-t border-[#1e1c1a]/8">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs tracking-[0.25em] font-light">in the moment</p>
+          <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
+            © 2026 in the moment. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </>
+  );
+}
