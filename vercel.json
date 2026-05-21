@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "inthemoment.jp" }],
+      "destination": "https://www.inthemoment.jp/$1",
+      "permanent": true
+    }
+  ]
+}

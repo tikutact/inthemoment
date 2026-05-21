@@ -29,12 +29,12 @@ export const metadata: Metadata = {
   title: "in the moment | 前撮り・フォトウェディング",
   description:
     "ポーズよりも余白を大切に。ふたりの「いま」を写真と映像に残す、愛知を拠点とする前撮りチーム。言葉になる前の感情を、光の粒のような記憶として。出張撮影可。",
-  metadataBase: new URL("https://inthemoment.jp"),
+  metadataBase: new URL("https://www.inthemoment.jp"),
   openGraph: {
     title: "in the moment | 前撮り・フォトウェディング",
     description:
       "ポーズよりも余白を大切に。ふたりの「いま」を写真と映像に残す、愛知を拠点とする前撮りチーム。言葉になる前の感情を、光の粒のような記憶として。出張撮影可。",
-    url: "https://inthemoment.jp",
+    url: "https://www.inthemoment.jp",
     siteName: "in the moment",
     locale: "ja_JP",
     type: "website",
