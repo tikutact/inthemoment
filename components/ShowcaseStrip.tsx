@@ -11,7 +11,7 @@ export default function ShowcaseStrip({ photos, label }: { photos: string[]; lab
     const track = trackRef.current;
     if (!track) return;
 
-    const speed = window.innerWidth < 768 ? 0.065 : 0.15;
+    const speed = window.innerWidth < 768 ? 0.08 : 0.15;
     let half = 0;
 
     const start = () => {
