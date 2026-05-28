@@ -25,7 +25,7 @@ const photoMoviePlan = [
 ];
 
 const moviePlan = [
-  { duration: "4 h", price: "¥100,000", cuts: "100 cuts" },
+  { duration: "4 h", price: "¥100,000", cuts: "約2分" },
 ];
 
 export default function Home() {
