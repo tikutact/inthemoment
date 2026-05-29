@@ -1,9 +1,14 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -21,9 +26,9 @@ export default function HeroVideo() {
       muted
       loop
       playsInline
-      preload="auto"
+      preload={isMobile ? "none" : "metadata"}
       className="w-full h-full object-cover"
-      src="/hero.mp4"
+      src={isMobile ? "/hero-mobile.mp4" : "/hero.mp4"}
     />
   );
 }

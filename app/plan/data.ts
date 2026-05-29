@@ -14,6 +14,7 @@ export type PlanData = {
   heroImage?: string;
   tierImage?: string;
   midImage?: string;
+  youtubeUrl?: string;
   description: string;
   tiers: Tier[];
   flow: { time: string; label: string }[];
@@ -31,7 +32,7 @@ export const plans: Record<string, PlanData> = {
     tierImage: "/gallery/case-01/DSCF2631.jpg",
     midImage: "/gallery/case-03/DSCF4569.jpg",
     description:
-      "ふたりの「いま」を、静止した光として残す。\nポーズよりも余白を、作り込みよりも呼吸を大切にした撮影です。",
+      "ふたりの「いま」を、静止した光として残す。\nポーズよりも余白を、\n作り込みよりも呼吸を大切にした撮影です。",
     tiers: [
       {
         name: "Standard Plan",
@@ -73,8 +74,9 @@ export const plans: Record<string, PlanData> = {
     heroImage: "/plan/photo-movie-hero.jpg",
     tierImage: "/gallery/case-02/DSCF3957.jpg",
     midImage: "/gallery/case-02/20251124-rie-tomo6014.jpg",
+    youtubeUrl: "https://youtu.be/l10mqXdRwW0",
     description:
-      "写真と映像、両方でふたりの記憶を包む。\n式当日に流すオープニングムービーと、静止した一瞬としての写真を同日に撮影します。",
+      "写真と映像、両方でふたりの記憶を包む。\n式当日に流すオープニングムービーと、\n静止した一瞬としての写真を同日に撮影します。",
     tiers: [
       {
         name: "Standard Plan",
@@ -116,10 +118,11 @@ export const plans: Record<string, PlanData> = {
     cuts: "—",
     image: "/plan3.jpg",
     heroImage: "/plan/movie-hero.jpg",
-    tierImage: "/gallery/case-03/DSCF4276.jpg",
+    tierImage: "/gallery/case-01/DSCF2825.jpg",
     midImage: "/gallery/case-01/DSCF2727.jpg",
+    youtubeUrl: "https://youtu.be/l10mqXdRwW0",
     description:
-      "動く記憶として、ふたりの時間を編む。\n式当日に流すオープニングムービーを、前撮りの空気感ごと映像に残します。",
+      "動く記憶として、ふたりの時間を編む。\n式当日に流すオープニングムービーを、\n前撮りの空気感ごと映像に残します。",
     tiers: [
       {
         name: "Standard Plan",

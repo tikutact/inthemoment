@@ -26,7 +26,7 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
             </div>
           </section>
           <section className="py-10 md:py-16 px-6 text-center">
-            <p className="text-xs md:text-sm text-[#6b6560] leading-[2.4] tracking-wide max-w-md mx-auto">
+            <p className="text-xs md:text-sm text-[#6b6560] leading-[2.4] tracking-wide whitespace-pre-line max-w-md mx-auto">
               {plan.description}
             </p>
           </section>
@@ -41,6 +41,24 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
             <p className="text-sm text-[#6b6560] leading-[2.4] tracking-wide whitespace-pre-line max-w-md mx-auto mt-6">
               {plan.description}
             </p>
+          </FadeIn>
+        </section>
+      )}
+
+      {/* SAMPLE MOVIE */}
+      {plan.youtubeUrl && (
+        <section className="py-14 md:py-20 px-4 md:px-6 text-center">
+          <FadeIn>
+            <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-10">SAMPLE MOVIE</p>
+            <div className="max-w-2xl mx-auto aspect-video">
+              <iframe
+                src={`https://www.youtube.com/embed/${plan.youtubeUrl.split("/").pop()}`}
+                title="Sample Movie"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
           </FadeIn>
         </section>
       )}
