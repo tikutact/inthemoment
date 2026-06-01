@@ -8,9 +8,9 @@ export default function AboutPage() {
 
       <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-4 md:px-6">
         <FadeIn>
-          <div className="max-w-3xl mx-auto grid grid-cols-[2fr_3fr] gap-4 md:gap-24 items-start">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
             {/* 1列 */}
-            <div className="grid grid-cols-1 gap-1 md:gap-2">
+            <div className="grid grid-cols-2 gap-1 md:gap-2">
               <img src="/gallery/case-01/DSCF2803.jpg" alt="" className="w-full aspect-[3/4] object-cover" />
               <img src="/gallery/case-02/20251124-rie-tomo5965.jpg" alt="" className="w-full aspect-[3/4] object-cover" />
               <img src="/gallery/case-03/DSCF4512.jpg" alt="" className="w-full aspect-[3/4] object-cover" />
@@ -28,11 +28,23 @@ export default function AboutPage() {
                 {"\"言葉になる前の感情を、"}<br /><span style={{whiteSpace:"nowrap"}}>{"光の粒のような記憶として。\""}</span>
               </p>
 
-              <div className="space-y-5 md:space-y-8 text-[10px] md:text-sm leading-[2.2] md:leading-[2.6] tracking-wide text-[#6b6560] font-light">
-                <p>私たちが写したいのは、ただ美しい写真ではなく、ふたりが「その瞬間」に感じていた温度や、言葉にしないまなざし、胸の奥でふわりと揺れた気持ちです。</p>
-                <p>風が頬を撫でたこと、手をそっと重ねた感触、ふと見つめ合って笑った理由さえ、写真に残したい物語の一部です。</p>
-                <p>in the moment は、ポーズよりも余白を大切にします。飾らなくていいし、うまく笑わなくても大丈夫。ふたりがふたりであることを、そのまま。</p>
-                <p>言葉になる前の感情、光の粒のような記憶、「いま」という奇跡を、写真にします。</p>
+              <div className="space-y-5 md:space-y-8 text-xs md:text-sm leading-[2.2] md:leading-[2.6] tracking-wide text-[#6b6560] font-light">
+                <p>私たちが写したいのは、ただ美しい写真ではなく、<br className="block md:hidden" />ふたりが「その瞬間」に感じていた温度や、<br className="block md:hidden" />言葉にしないまなざし、<br className="hidden md:block" />胸の奥でふわりと揺れた気持ちです。</p>
+                <p>風が頬を撫でたこと、手をそっと重ねた感触、<br className="block md:hidden" />ふと見つめ合って笑った理由さえ、<br className="block md:hidden" />写真に残したい物語の一部です。</p>
+                <p>in the moment は、ポーズよりも余白を大切にします。<br className="block md:hidden" />飾らなくていいし、うまく笑わなくても大丈夫。<br className="block md:hidden" />ふたりがふたりであることを、そのまま。</p>
+                <p>言葉になる前の感情、光の粒のような記憶、<br />「いま」という奇跡を、写真にします。</p>
+              </div>
+
+              <div className="mt-8 md:mt-14 pt-6 md:pt-10 border-t border-[#1e1c1a]/10">
+                <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-4 md:mb-6">CONTACT</p>
+                <a
+                  href="https://lin.ee/OYalLp6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-[10px] md:text-xs tracking-[0.25em] text-[#6b6560] border border-[#6b6560]/30 px-5 py-3 hover:border-[#6b6560] transition-colors duration-300"
+                >
+                  LINE でお問い合わせ
+                </a>
               </div>
 
             </div>
