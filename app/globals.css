@@ -47,3 +47,45 @@ body {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+
+/* Journal article body */
+.prose-journal {
+  color: #6b6560;
+  font-size: 0.8125rem;
+  line-height: 2.4;
+  letter-spacing: 0.04em;
+  font-weight: 300;
+}
+.prose-journal p { margin-bottom: 1.8em; }
+.prose-journal h2 {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: #1e1c1a;
+  letter-spacing: 0.08em;
+  margin: 2.5em 0 1em;
+}
+.prose-journal h3 {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: #1e1c1a;
+  letter-spacing: 0.06em;
+  margin: 2em 0 0.8em;
+}
+.prose-journal img {
+  width: 100%;
+  margin: 2em 0;
+}
+.prose-journal ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.8em;
+}
+.prose-journal ul li::before {
+  content: "— ";
+  color: #9a9088;
+}
+.prose-journal a {
+  color: #6b6560;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

@@ -1,0 +1,75 @@
+import Navigation from "@/components/Navigation";
+import { getArticles } from "@/lib/notion";
+import Link from "next/link";
+
+export const revalidate = 60;
+
+export default async function JournalPage() {
+  const articles = await getArticles();
+
+  return (
+    <>
+      <Navigation />
+      <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-4 md:px-6">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-10 md:mb-16">JOURNAL</p>
+
+          {articles.length === 0 ? (
+            <p className="text-sm text-[#9a9088] tracking-wide">記事はまだありません。</p>
+          ) : (
+            <div className="divide-y divide-[#1e1c1a]/8">
+              {articles.map((article) => (
+                <Link
+                  key={article.id}
+                  href={`/journal/${article.slug}`}
+                  className="block py-8 md:py-10 group"
+                >
+                  <div className="flex items-start gap-6 md:gap-10">
+                    {article.cover && (
+                      <img
+                        src={article.cover}
+                        alt=""
+                        className="w-20 md:w-32 aspect-[3/2] object-cover flex-shrink-0"
+                      />
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-4 mb-2 md:mb-3">
+                        {article.category && (
+                          <span className="text-[9px] tracking-[0.4em] text-[#9a9088]">
+                            {article.category}
+                          </span>
+                        )}
+                        {article.date && (
+                          <span className="text-[9px] tracking-[0.2em] text-[#9a9088]">
+                            {article.date}
+                          </span>
+                        )}
+                      </div>
+                      <h2 className="text-sm md:text-base font-light text-[#1e1c1a] tracking-wide mb-2 md:mb-3 group-hover:text-[#6b6560] transition-colors">
+                        {article.title}
+                      </h2>
+                      {article.excerpt && (
+                        <p className="text-[10px] md:text-xs text-[#9a9088] leading-relaxed line-clamp-2">
+                          {article.excerpt}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      <footer className="py-8 px-6 border-t border-[#1e1c1a]/8">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs tracking-[0.25em] font-light">in the moment</p>
+          <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
+            © 2026 in the moment. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </>
+  );
+}
