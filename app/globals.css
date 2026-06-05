@@ -51,12 +51,21 @@ body {
 /* Journal article body */
 .prose-journal {
   color: #6b6560;
-  font-size: 0.8125rem;
-  line-height: 2.4;
-  letter-spacing: 0.04em;
+  font-size: 0.875rem;
+  line-height: 2.2;
+  letter-spacing: 0.03em;
   font-weight: 300;
+  line-break: strict;
+  overflow-wrap: break-word;
 }
-.prose-journal p { margin-bottom: 1.8em; }
+@media (min-width: 768px) {
+  .prose-journal {
+    font-size: 0.8125rem;
+    line-height: 2.4;
+    letter-spacing: 0.04em;
+  }
+}
+.prose-journal p { margin-bottom: 1.6em; }
 .prose-journal h2 {
   font-size: 0.9375rem;
   font-weight: 300;

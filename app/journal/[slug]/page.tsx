@@ -33,7 +33,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               )}
             </div>
             <h1
-              className="text-xl md:text-3xl font-light text-[#1e1c1a] leading-relaxed tracking-wide break-words"
+              className="text-xl md:text-3xl font-light text-[#1e1c1a] leading-relaxed tracking-normal md:tracking-wide break-words"
               style={{ fontFamily: "var(--font-serif)" }}
             >
               {article.title}
