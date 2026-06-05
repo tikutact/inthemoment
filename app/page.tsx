@@ -4,6 +4,9 @@ import FadeIn from "@/components/FadeIn";
 import SplashScreen from "@/components/SplashScreen";
 import HeroVideo from "@/components/HeroVideo";
 import { SiLine, SiInstagram } from "react-icons/si";
+import { getArticles } from "@/lib/notion";
+
+export const revalidate = 60;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -28,7 +31,8 @@ const moviePlan = [
   { duration: "4 h", price: "¥100,000", cuts: "約2分" },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const articles = await getArticles();
   return (
     <>
       <script
@@ -199,6 +203,50 @@ export default function Home() {
             </FadeIn>
           </div>
       </section>
+
+      {/* JOURNAL */}
+      {articles.length > 0 && (
+        <section className="py-20 md:py-60 px-6 bg-[#f3f0eb]">
+          <div className="max-w-3xl mx-auto">
+            <FadeIn>
+              <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-16 md:mb-20">JOURNAL</p>
+            </FadeIn>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 mb-14 md:mb-20">
+              {articles.slice(0, 2).map((article, i) => (
+                <FadeIn key={article.id} delay={i * 150}>
+                  <Link href={`/journal/${article.slug}`} className="block group">
+                    {article.cover && (
+                      <div className="w-full aspect-[4/3] overflow-hidden mb-5">
+                        <img
+                          src={article.cover}
+                          alt=""
+                          className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                        />
+                      </div>
+                    )}
+                    <div>
+                      {article.date && (
+                        <p className="text-[9px] tracking-[0.2em] text-[#9a9088] mb-2">{article.date}</p>
+                      )}
+                      <h2 className="text-sm font-light text-[#1e1c1a] tracking-wide leading-relaxed group-hover:text-[#6b6560] transition-colors">
+                        {article.title}
+                      </h2>
+                    </div>
+                  </Link>
+                </FadeIn>
+              ))}
+            </div>
+            <FadeIn>
+              <Link
+                href="/journal"
+                className="text-[9px] tracking-[0.4em] text-[#9a9088] hover:text-[#1e1c1a] transition-colors"
+              >
+                すべて見る →
+              </Link>
+            </FadeIn>
+          </div>
+        </section>
+      )}
 
       {/* INSTAGRAM */}
       <section className="py-20 md:py-60 px-6">
