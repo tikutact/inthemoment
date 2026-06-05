@@ -39,7 +39,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               {article.title}
             </h1>
             {article.cover && (
-              <img src={article.cover} alt="" className="w-full object-cover mt-8" />
+              <img src={article.cover} alt="" className="w-full max-h-[75vh] object-contain mt-8" />
             )}
           </div>
 
