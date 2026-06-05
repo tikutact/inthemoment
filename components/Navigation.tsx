@@ -115,8 +115,12 @@ export default function Navigation() {
               style={{ animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.1s"), opacity: 0 }}>
               GALLERY<NavUnderline />
             </Link>
-            <Link href="/qa" className={navLinkClass}
+            <Link href="/journal" className={navLinkClass}
               style={{ animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.15s"), opacity: 0 }}>
+              JOURNAL<NavUnderline />
+            </Link>
+            <Link href="/qa" className={navLinkClass}
+              style={{ animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.2s"), opacity: 0 }}>
               Q&amp;A<NavUnderline />
             </Link>
             <a href="https://www.instagram.com/in_the_moment_film/" target="_blank" rel="noopener noreferrer"
@@ -183,6 +187,11 @@ export default function Navigation() {
           <Link href="/gallery" onClick={() => setMenuOpen(false)}
             className="text-[11px] tracking-[0.5em] text-[#1e1c1a] font-light">
             GALLERY
+          </Link>
+
+          <Link href="/journal" onClick={() => setMenuOpen(false)}
+            className="text-[11px] tracking-[0.5em] text-[#1e1c1a] font-light">
+            JOURNAL
           </Link>
 
           <Link href="/qa" onClick={() => setMenuOpen(false)}
