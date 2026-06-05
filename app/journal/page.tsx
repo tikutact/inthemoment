@@ -10,7 +10,7 @@ export default async function JournalPage() {
   return (
     <>
       <Navigation />
-      <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-4 md:px-6">
+      <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-4 md:px-6 overflow-x-hidden">
         <div className="max-w-3xl mx-auto">
           <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-10 md:mb-16">JOURNAL</p>
 
@@ -45,7 +45,7 @@ export default async function JournalPage() {
                           </span>
                         )}
                       </div>
-                      <h2 className="text-sm md:text-base font-light text-[#1e1c1a] tracking-wide mb-2 md:mb-3 group-hover:text-[#6b6560] transition-colors">
+                      <h2 className="text-sm md:text-base font-light text-[#1e1c1a] tracking-normal md:tracking-wide mb-2 md:mb-3 group-hover:text-[#6b6560] transition-colors break-words">
                         {article.title}
                       </h2>
                       {article.excerpt && (

@@ -10,8 +10,9 @@ export async function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
 }
 
-export default async function ArticlePage({ params }: { params: { slug: string } }) {
-  const data = await getArticleBySlug(params.slug);
+export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const data = await getArticleBySlug(slug);
   if (!data) notFound();
 
   const { article, markdown } = data;
@@ -32,7 +33,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
               )}
             </div>
             <h1
-              className="text-xl md:text-3xl font-light text-[#1e1c1a] leading-relaxed tracking-wide mb-6"
+              className="text-xl md:text-3xl font-light text-[#1e1c1a] leading-relaxed tracking-wide mb-6 break-words"
               style={{ fontFamily: "var(--font-serif)" }}
             >
               {article.title}
