@@ -33,13 +33,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               )}
             </div>
             <h1
-              className="text-xl md:text-3xl font-light text-[#1e1c1a] leading-relaxed tracking-wide mb-6 break-words"
+              className="text-xl md:text-3xl font-light text-[#1e1c1a] leading-relaxed tracking-wide break-words"
               style={{ fontFamily: "var(--font-serif)" }}
             >
               {article.title}
             </h1>
             {article.cover && (
-              <img src={article.cover} alt="" className="w-full aspect-[16/9] object-cover mt-8" />
+              <img src={article.cover} alt="" className="w-full object-cover mt-8" />
             )}
           </div>
 

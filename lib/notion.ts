@@ -24,12 +24,16 @@ export async function getArticles(): Promise<Article[]> {
     (b) => b.type === "child_page" && !b.child_page.title.startsWith("📋")
   );
 
-  return pages.map((b) => ({
-    id: b.id,
-    title: b.child_page.title,
-    slug: b.id.replace(/-/g, ""),
-    date: b.created_time?.slice(0, 10) ?? "",
-    cover: b.cover?.external?.url ?? b.cover?.file?.url ?? null,
+  const fullPages = await Promise.all(
+    pages.map((b) => notion.pages.retrieve({ page_id: b.id }))
+  );
+
+  return fullPages.map((page: any, i) => ({
+    id: pages[i].id,
+    title: pages[i].child_page.title,
+    slug: pages[i].id.replace(/-/g, ""),
+    date: pages[i].created_time?.slice(0, 10) ?? "",
+    cover: page.cover?.external?.url ?? page.cover?.file?.url ?? null,
   }));
 }
 
