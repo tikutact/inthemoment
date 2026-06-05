@@ -17,43 +17,38 @@ export default async function JournalPage() {
           {articles.length === 0 ? (
             <p className="text-sm text-[#9a9088] tracking-wide">記事はまだありません。</p>
           ) : (
-            <div className="divide-y divide-[#1e1c1a]/8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
               {articles.map((article) => (
                 <Link
                   key={article.id}
                   href={`/journal/${article.slug}`}
-                  className="block py-8 md:py-10 group"
+                  className="block group"
                 >
-                  <div className="flex items-start gap-6 md:gap-10">
-                    {article.cover && (
+                  {article.cover && (
+                    <div className="w-full aspect-[4/3] overflow-hidden mb-5">
                       <img
                         src={article.cover}
                         alt=""
-                        className="w-20 md:w-32 aspect-[3/2] object-cover flex-shrink-0"
+                        className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
                       />
-                    )}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-4 mb-2 md:mb-3">
-                        {article.category && (
-                          <span className="text-[9px] tracking-[0.4em] text-[#9a9088]">
-                            {article.category}
-                          </span>
-                        )}
-                        {article.date && (
-                          <span className="text-[9px] tracking-[0.2em] text-[#9a9088]">
-                            {article.date}
-                          </span>
-                        )}
-                      </div>
-                      <h2 className="text-sm md:text-base font-light text-[#1e1c1a] tracking-normal md:tracking-wide mb-2 md:mb-3 group-hover:text-[#6b6560] transition-colors break-words">
-                        {article.title}
-                      </h2>
-                      {article.excerpt && (
-                        <p className="text-[10px] md:text-xs text-[#9a9088] leading-relaxed line-clamp-2">
-                          {article.excerpt}
-                        </p>
+                    </div>
+                  )}
+                  <div>
+                    <div className="flex items-center gap-4 mb-2">
+                      {article.category && (
+                        <span className="text-[9px] tracking-[0.4em] text-[#9a9088]">
+                          {article.category}
+                        </span>
+                      )}
+                      {article.date && (
+                        <span className="text-[9px] tracking-[0.2em] text-[#9a9088]">
+                          {article.date}
+                        </span>
                       )}
                     </div>
+                    <h2 className="text-sm md:text-base font-light text-[#1e1c1a] tracking-wide leading-relaxed group-hover:text-[#6b6560] transition-colors break-words">
+                      {article.title}
+                    </h2>
                   </div>
                 </Link>
               ))}
