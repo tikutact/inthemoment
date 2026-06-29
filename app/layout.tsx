@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { DM_Sans, Zen_Kaku_Gothic_New, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import SoundProvider from "@/components/SoundProvider";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
+const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
 const dmSans = DM_Sans({
   variable: "--font-dm",
@@ -58,6 +61,7 @@ export default function RootLayout({
         <SoundProvider />
         {children}
       </body>
+      {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
     </html>
   );
 }
