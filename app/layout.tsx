@@ -4,7 +4,8 @@ import "./globals.css";
 import SoundProvider from "@/components/SoundProvider";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-const gaId = process.env.NEXT_PUBLIC_GA_ID;
+// GA4 測定ID。ブラウザに露出する公開値のため直接埋め込む（Vercel環境変数に依存しない）。
+const gaId = process.env.NEXT_PUBLIC_GA_ID ?? "G-44P81CCZYP";
 
 const dmSans = DM_Sans({
   variable: "--font-dm",
