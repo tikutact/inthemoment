@@ -16,6 +16,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   if (!data) notFound();
 
   const { article, markdown } = data;
+  const html = (marked.parse(markdown) as string).replace(/、/g, '、<br class="comma-br">');
 
   return (
     <>
@@ -46,7 +47,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           {/* 本文 */}
           <div
             className="prose-journal"
-            dangerouslySetInnerHTML={{ __html: marked.parse(markdown) as string }}
+            dangerouslySetInnerHTML={{ __html: html }}
           />
 
           {/* in the moment について */}

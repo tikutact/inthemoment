@@ -11,14 +11,18 @@ export default function HeroVideo() {
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const video = videoRef.current;
-      if (!video) return;
-      video.currentTime = 0;
-      video.play();
-    }, 3400);
-    return () => clearTimeout(timer);
-  }, []);
+    const video = videoRef.current;
+    if (!video) return;
+
+    // ポジションを強制リセットしてロード開始
+    video.load();
+
+    const playTimer = setTimeout(() => {
+      video.play().catch(() => {});
+    }, 4000);
+
+    return () => clearTimeout(playTimer);
+  }, [isMobile]);
 
   return (
     <video
@@ -26,9 +30,9 @@ export default function HeroVideo() {
       muted
       loop
       playsInline
-      preload={isMobile ? "none" : "metadata"}
+      preload="auto"
       className="w-full h-full object-cover"
-      src={isMobile ? "/hero-mobile.mp4" : "/hero.mp4"}
+      src={isMobile ? "/hero-mobile.mp4" : "/hero2.mp4"}
     />
   );
 }

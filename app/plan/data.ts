@@ -74,7 +74,7 @@ export const plans: Record<string, PlanData> = {
     heroImage: "/plan/photo-movie-hero.jpg",
     tierImage: "/gallery/case-02/DSCF3957.jpg",
     midImage: "/gallery/case-02/20251124-rie-tomo6014.jpg",
-    youtubeUrl: "https://youtu.be/l10mqXdRwW0",
+    youtubeUrl: "https://youtu.be/q1lzqqLZfPc",
     description:
       "写真と映像、両方でふたりの記憶を包む。\n式当日に流すオープニングムービーと、\n静止した一瞬としての写真を同日に撮影します。",
     tiers: [
@@ -120,7 +120,7 @@ export const plans: Record<string, PlanData> = {
     heroImage: "/plan/movie-hero.jpg",
     tierImage: "/gallery/case-01/DSCF2825.jpg",
     midImage: "/gallery/case-01/DSCF2727.jpg",
-    youtubeUrl: "https://youtu.be/l10mqXdRwW0",
+    youtubeUrl: "https://youtu.be/q1lzqqLZfPc",
     description:
       "動く記憶として、ふたりの時間を編む。\n式当日に流すオープニングムービーを、\n前撮りの空気感ごと映像に残します。",
     tiers: [

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import FadeIn from "@/components/FadeIn";
 import SplashScreen from "@/components/SplashScreen";
-import HeroVideo from "@/components/HeroVideo";
+import HeroWrapper from "@/components/HeroWrapper";
 import { SiLine, SiInstagram } from "react-icons/si";
 import { getArticles } from "@/lib/notion";
 
@@ -43,13 +43,11 @@ export default async function Home() {
       <Navigation />
 
       {/* HERO */}
-      <section className="w-full flex flex-col items-center bg-[#faf7f2] pt-32 md:pt-24 pb-10 md:pb-16 px-4 md:px-5">
-        <div className="w-full max-w-3xl"
+      <section className="w-full flex flex-col items-center bg-[#faf7f2] pt-0 px-3 pb-10 md:px-0 md:pb-16">
+        <div className="w-full"
           style={{ animation: "heroFadeIn 1.2s ease forwards", animationDelay: "3.4s", opacity: 0 }}
         >
-          <div className="w-full bg-[#e8e3dc]" style={{ aspectRatio: "4/3" }}>
-            <HeroVideo />
-          </div>
+          <HeroWrapper />
         </div>
       </section>
 
@@ -207,13 +205,13 @@ export default async function Home() {
       {/* JOURNAL */}
       {articles.length > 0 && (
         <section className="py-20 md:py-60 px-6 bg-[#f3f0eb]">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <FadeIn>
               <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-16 md:mb-20">JOURNAL</p>
             </FadeIn>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 mb-14 md:mb-20">
-              {articles.slice(0, 2).map((article, i) => (
-                <FadeIn key={article.id} delay={i * 150}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14 mb-14 md:mb-20">
+              {[...articles].reverse().slice(0, 3).map((article, i) => (
+                <FadeIn key={article.id} delay={i * 150} className={i === 2 ? "hidden md:block" : ""}>
                   <Link href={`/journal/${article.slug}`} className="block group">
                     {article.cover && (
                       <div className="w-full aspect-[4/3] overflow-hidden mb-5">

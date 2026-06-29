@@ -11,14 +11,14 @@ export default async function JournalPage() {
     <>
       <Navigation />
       <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-4 md:px-6 overflow-x-hidden">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-10 md:mb-16">JOURNAL</p>
 
           {articles.length === 0 ? (
             <p className="text-sm text-[#9a9088] tracking-wide">記事はまだありません。</p>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
-              {articles.map((article) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14">
+              {[...articles].reverse().map((article) => (
                 <Link
                   key={article.id}
                   href={`/journal/${article.slug}`}

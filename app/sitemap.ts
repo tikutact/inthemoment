@@ -1,7 +1,17 @@
 import { MetadataRoute } from "next";
+import { getArticles } from "@/lib/notion";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = "https://www.inthemoment.jp";
+  const articles = await getArticles();
+
+  const articleUrls: MetadataRoute.Sitemap = articles.map((a) => ({
+    url: `${base}/journal/${a.slug}`,
+    lastModified: a.date ? new Date(a.date) : new Date(),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
   return [
     { url: base, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
     { url: `${base}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
@@ -10,5 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/plan/movie`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/gallery`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/qa`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/journal`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+    ...articleUrls,
   ];
 }

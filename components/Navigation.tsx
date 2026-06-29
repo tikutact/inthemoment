@@ -13,9 +13,9 @@ const planDropdown = [
 const navLinkClass =
   "relative group text-[9px] tracking-[0.4em] text-[#1e1c1a] font-light";
 
-function NavUnderline() {
+function NavUnderline({ white = false }: { white?: boolean }) {
   return (
-    <span className="absolute -bottom-0.5 left-0 w-full h-px bg-[#1e1c1a] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+    <span className={`absolute -bottom-0.5 left-0 w-full h-px origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ${white ? "bg-white" : "bg-[#1e1c1a]"}`} />
   );
 }
 
@@ -53,6 +53,9 @@ export default function Navigation() {
   };
 
   const delay = (d: string) => isHome ? d : "0s";
+  const mobileHero = isHome && !scrolled && !menuOpen;
+  const desktopHero = isHome && !scrolled;
+  const navColor = desktopHero ? "white" : "#1e1c1a";
 
   return (
     <>
@@ -68,18 +71,18 @@ export default function Navigation() {
           {/* 左 */}
           <nav className="flex items-center gap-8">
             <Link href="/about" className={navLinkClass}
-              style={{ animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.0s"), opacity: 0 }}>
+              style={{ animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.0s"), opacity: 0, color: navColor }}>
               ABOUT
-              <NavUnderline />
+              <NavUnderline white={desktopHero} />
             </Link>
 
             <div className="relative flex items-center"
               onMouseEnter={() => setPlanOpen(true)}
               onMouseLeave={() => setPlanOpen(false)}
               style={{ animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.15s"), opacity: 0 }}>
-              <button type="button" onClick={() => handleNav("#plan")} className={navLinkClass} style={{ cursor: "pointer" }}>
+              <button type="button" onClick={() => handleNav("#plan")} className={navLinkClass} style={{ cursor: "pointer", color: navColor }}>
                 PLAN
-                <NavUnderline />
+                <NavUnderline white={desktopHero} />
               </button>
               <div className="absolute top-full left-0 pt-4 transition-all duration-200"
                 style={{ opacity: planOpen ? 1 : 0, pointerEvents: planOpen ? "auto" : "none", transform: planOpen ? "translateY(0)" : "translateY(-4px)" }}>
@@ -97,45 +100,46 @@ export default function Navigation() {
             </div>
 
             <button type="button" onClick={() => handleNav("#reservation")} className={navLinkClass}
-              style={{ cursor: "pointer", animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.3s"), opacity: 0 }}>
+              style={{ cursor: "pointer", animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.3s"), opacity: 0, color: navColor }}>
               RESERVATION
-              <NavUnderline />
+              <NavUnderline white={desktopHero} />
             </button>
           </nav>
 
           {/* 中央：ロゴ */}
           <Link href="/" className="flex justify-center"
             style={{ animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.1s"), opacity: 0 }}>
-            <img src="/logo.svg" alt="in the moment" className="h-16 w-auto" />
+            <img src="/logo.svg" alt="in the moment" className="h-16 w-auto transition-all duration-500"
+              style={{ filter: desktopHero ? "invert(1)" : "none" }} />
           </Link>
 
           {/* 右 */}
           <div className="flex items-center justify-end gap-8">
             <Link href="/gallery" className={navLinkClass}
-              style={{ animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.1s"), opacity: 0 }}>
-              GALLERY<NavUnderline />
+              style={{ animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.1s"), opacity: 0, color: navColor }}>
+              GALLERY<NavUnderline white={desktopHero} />
             </Link>
             <Link href="/journal" className={navLinkClass}
-              style={{ animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.15s"), opacity: 0 }}>
-              JOURNAL<NavUnderline />
+              style={{ animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.15s"), opacity: 0, color: navColor }}>
+              JOURNAL<NavUnderline white={desktopHero} />
             </Link>
             <Link href="/qa" className={navLinkClass}
-              style={{ animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.2s"), opacity: 0 }}>
-              Q&amp;A<NavUnderline />
+              style={{ animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.2s"), opacity: 0, color: navColor }}>
+              Q&amp;A<NavUnderline white={desktopHero} />
             </Link>
             <a href="https://www.instagram.com/in_the_moment_film/" target="_blank" rel="noopener noreferrer"
               className={navLinkClass}
-              style={{ animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.3s"), opacity: 0 }}>
-              INSTAGRAM<NavUnderline />
+              style={{ animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.3s"), opacity: 0, color: navColor }}>
+              INSTAGRAM<NavUnderline white={desktopHero} />
             </a>
           </div>
         </div>
 
         {/* モバイル */}
         <div className="flex md:hidden items-center justify-between px-5 h-16">
-          <div className="w-8" />
           <Link href="/" onClick={() => setMenuOpen(false)}>
-            <img src="/logo.svg" alt="in the moment" className="h-12 w-auto" />
+            <img src="/logo.svg" alt="in the moment" className="h-12 w-auto transition-all duration-500"
+              style={{ filter: mobileHero ? "invert(1)" : "none" }} />
           </Link>
           <button
             type="button"
@@ -143,12 +147,12 @@ export default function Navigation() {
             className="w-8 h-8 flex flex-col items-center justify-center gap-[5px]"
             aria-label="メニュー"
           >
-            <span className="block w-5 h-px bg-[#1e1c1a] transition-all duration-300"
-              style={{ transform: menuOpen ? "translateY(6px) rotate(45deg)" : "none" }} />
-            <span className="block w-5 h-px bg-[#1e1c1a] transition-all duration-300"
-              style={{ opacity: menuOpen ? 0 : 1 }} />
-            <span className="block w-5 h-px bg-[#1e1c1a] transition-all duration-300"
-              style={{ transform: menuOpen ? "translateY(-6px) rotate(-45deg)" : "none" }} />
+            <span className="block w-5 h-px transition-all duration-300"
+              style={{ backgroundColor: mobileHero ? "white" : "#1e1c1a", transform: menuOpen ? "translateY(6px) rotate(45deg)" : "none" }} />
+            <span className="block w-5 h-px transition-all duration-300"
+              style={{ backgroundColor: mobileHero ? "white" : "#1e1c1a", opacity: menuOpen ? 0 : 1 }} />
+            <span className="block w-5 h-px transition-all duration-300"
+              style={{ backgroundColor: mobileHero ? "white" : "#1e1c1a", transform: menuOpen ? "translateY(-6px) rotate(-45deg)" : "none" }} />
           </button>
         </div>
       </header>

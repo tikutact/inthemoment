@@ -48,6 +48,10 @@ body {
   to   { opacity: 1; }
 }
 
+/* 句読点改行（モバイルのみ） */
+.prose-journal .comma-br { display: none; }
+@media (max-width: 767px) { .prose-journal .comma-br { display: inline; } }
+
 /* Journal article body */
 .prose-journal {
   color: #6b6560;

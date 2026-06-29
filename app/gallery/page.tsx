@@ -27,7 +27,7 @@ export default function ShowcasePage() {
           </p>
         ) : (
           <div className="space-y-0">
-            {cases.map((c) => (
+            {[...cases].reverse().map((c) => (
               <div key={c.id}>
                 <Link href={`/gallery/${c.id}`} className="group block py-6 border-t border-[#1e1c1a]/8">
                   <div

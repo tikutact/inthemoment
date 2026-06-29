@@ -45,7 +45,8 @@ export async function getArticleBySlug(
   if (!article) return null;
 
   const mdBlocks = await n2m.pageToMarkdown(article.id);
-  const markdown = n2m.toMarkdownString(mdBlocks).parent;
+  const filtered = mdBlocks.filter((b) => !b.parent.includes("← 戻る"));
+  const markdown = n2m.toMarkdownString(filtered).parent;
 
   return { article, markdown };
 }
