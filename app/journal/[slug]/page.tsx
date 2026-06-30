@@ -18,14 +18,17 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const { article, markdown } = data;
   const html = (marked.parse(markdown) as string).replace(/、/g, '、<br class="comma-br">');
 
+  // case-06（豊田市美術館 / 東岡崎）だけ中央寄せ・少し大きめ・見出し強調を試す
+  const isV2 = slug === "38f00e997dfa81379752dd7b58e15ae5";
+
   return (
     <>
       <Navigation />
       <article className="pt-24 md:pt-44 pb-16 md:pb-32 px-4 md:px-6">
-        <div className="max-w-2xl mx-auto">
+        <div className={`max-w-2xl mx-auto${isV2 ? " journal-v2" : ""}`}>
           {/* ヘッダー */}
           <div className="mb-10 md:mb-16">
-            <div className="flex items-center gap-4 mb-4">
+            <div className={`flex items-center gap-4 mb-4${isV2 ? " justify-center" : ""}`}>
               {article.category && (
                 <span className="text-[9px] tracking-[0.4em] text-[#9a9088]">{article.category}</span>
               )}
@@ -34,7 +37,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               )}
             </div>
             <h1
-              className="text-xl md:text-3xl font-light text-[#1e1c1a] leading-relaxed tracking-normal md:tracking-wide break-words"
+              className={`text-xl md:text-3xl font-light text-[#1e1c1a] leading-relaxed tracking-normal md:tracking-wide break-words${isV2 ? " text-center" : ""}`}
               style={{ fontFamily: "var(--font-serif)" }}
             >
               {article.title}
