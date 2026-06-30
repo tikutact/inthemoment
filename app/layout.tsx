@@ -30,12 +30,12 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "in the moment | 前撮り・フォトウェディング",
+  title: "名古屋・愛知の前撮り／フォトウェディング | in the moment",
   description:
     "ポーズよりも余白を大切に。ふたりの「いま」を写真と映像に残す、愛知を拠点とする前撮りチーム。言葉になる前の感情を、光の粒のような記憶として。出張撮影可。",
   metadataBase: new URL("https://www.inthemoment.jp"),
   openGraph: {
-    title: "in the moment | 前撮り・フォトウェディング",
+    title: "名古屋・愛知の前撮り／フォトウェディング | in the moment",
     description:
       "ポーズよりも余白を大切に。ふたりの「いま」を写真と映像に残す、愛知を拠点とする前撮りチーム。言葉になる前の感情を、光の粒のような記憶として。出張撮影可。",
     url: "https://www.inthemoment.jp",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "in the moment | 前撮り・フォトウェディング",
+    title: "名古屋・愛知の前撮り／フォトウェディング | in the moment",
     description:
       "ポーズよりも余白を大切に。ふたりの「いま」を写真と映像に残す、愛知を拠点とする前撮りチーム。言葉になる前の感情を、光の粒のような記憶として。出張撮影可。",
     images: ["/ogp.jpg"],
