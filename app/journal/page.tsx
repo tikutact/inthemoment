@@ -25,7 +25,7 @@ export default async function JournalPage() {
                   className="block group"
                 >
                   {article.cover && (
-                    <div className="w-full aspect-[4/3] overflow-hidden mb-5">
+                    <div className="w-full aspect-[4/3] overflow-hidden mb-3">
                       <img
                         src={article.cover}
                         alt=""
@@ -34,22 +34,10 @@ export default async function JournalPage() {
                     </div>
                   )}
                   <div>
-                    <div className="flex items-center gap-4 mb-2">
-                      {article.category && (
-                        <span className="text-[9px] tracking-[0.4em] text-[#9a9088]">
-                          {article.category}
-                        </span>
-                      )}
-                      {article.date && (
-                        <span className="text-[9px] tracking-[0.2em] text-[#9a9088]">
-                          {article.date}
-                        </span>
-                      )}
-                    </div>
-                    <h2 className="text-sm md:text-base font-light text-[#1e1c1a] tracking-wide leading-relaxed group-hover:text-[#6b6560] transition-colors break-words">
+                    <h2 className="text-xs md:text-sm font-light text-[#1e1c1a] tracking-wide leading-relaxed group-hover:text-[#6b6560] transition-colors break-words">
                       {article.title}
                     </h2>
-                    <p className="mt-4 text-[9px] tracking-[0.3em] text-[#9a9088] group-hover:text-[#6b6560] transition-colors">
+                    <p className="mt-2.5 text-[8px] tracking-[0.3em] text-[#9a9088] group-hover:text-[#6b6560] transition-colors">
                       READ&nbsp;&nbsp;→
                     </p>
                   </div>

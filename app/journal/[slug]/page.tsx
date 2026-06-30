@@ -25,14 +25,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <div className="max-w-2xl mx-auto">
           {/* ヘッダー */}
           <div className="mb-10 md:mb-16">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              {article.category && (
-                <span className="text-[9px] tracking-[0.4em] text-[#9a9088]">{article.category}</span>
-              )}
-              {article.date && (
-                <span className="text-[9px] tracking-[0.2em] text-[#9a9088]">{article.date}</span>
-              )}
-            </div>
             <h1
               className="text-xl md:text-3xl font-light text-[#1e1c1a] leading-relaxed tracking-normal md:tracking-wide break-words text-center"
               style={{ fontFamily: "var(--font-serif)" }}
