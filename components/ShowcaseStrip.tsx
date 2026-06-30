@@ -3,29 +3,46 @@
 import { useEffect, useRef } from "react";
 
 export default function ShowcaseStrip({ photos, label }: { photos: string[]; label: string }) {
-  const trackRef = useRef<HTMLDivElement>(null);
+  const scrollerRef = useRef<HTMLDivElement>(null);
   const posRef = useRef(0);
   const rafRef = useRef<number>(0);
+  const pausedRef = useRef(false);
+  const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
 
-    const speed = window.innerWidth < 768 ? 0.08 : 0.15;
+    const speed = window.innerWidth < 768 ? 0.4 : 0.6;
     let half = 0;
 
+    // 指やマウスで触ったら自動を一時停止し、操作が落ち着いたら現在位置から再開
+    const pause = () => {
+      pausedRef.current = true;
+      if (resumeTimer.current) clearTimeout(resumeTimer.current);
+      resumeTimer.current = setTimeout(() => {
+        posRef.current = half > 0 ? scroller.scrollLeft % half : scroller.scrollLeft;
+        pausedRef.current = false;
+      }, 1800);
+    };
+    scroller.addEventListener("pointerdown", pause);
+    scroller.addEventListener("touchstart", pause, { passive: true });
+    scroller.addEventListener("wheel", pause, { passive: true });
+
     const start = () => {
-      half = track.scrollWidth / 2;
+      half = scroller.scrollWidth / 2;
       const tick = () => {
-        posRef.current += speed;
-        if (posRef.current >= half) posRef.current = 0;
-        track.style.transform = `translateX(-${posRef.current}px)`;
+        if (!pausedRef.current) {
+          posRef.current += speed;
+          if (half > 0 && posRef.current >= half) posRef.current -= half;
+          scroller.scrollLeft = posRef.current;
+        }
         rafRef.current = requestAnimationFrame(tick);
       };
       rafRef.current = requestAnimationFrame(tick);
     };
 
-    const imgs = track.querySelectorAll("img");
+    const imgs = scroller.querySelectorAll("img");
     const total = imgs.length;
     if (total === 0) { start(); return; }
 
@@ -44,16 +61,22 @@ export default function ShowcaseStrip({ photos, label }: { photos: string[]; lab
     });
     if (loaded === total) start();
 
-    return () => cancelAnimationFrame(rafRef.current);
+    return () => {
+      cancelAnimationFrame(rafRef.current);
+      if (resumeTimer.current) clearTimeout(resumeTimer.current);
+      scroller.removeEventListener("pointerdown", pause);
+      scroller.removeEventListener("touchstart", pause);
+      scroller.removeEventListener("wheel", pause);
+    };
   }, []);
 
   const doubled = [...photos, ...photos];
 
   return (
-    <div className="overflow-hidden">
-      <div ref={trackRef} className="flex gap-[3px]" style={{ width: "max-content" }}>
+    <div ref={scrollerRef} className="overflow-x-auto overflow-y-hidden no-scrollbar">
+      <div className="flex gap-[3px]" style={{ width: "max-content" }}>
         {doubled.map((src, j) => (
-          <div key={j} className="relative shrink-0 h-24 md:h-36 overflow-hidden group/photo">
+          <div key={j} className="relative shrink-0 h-40 md:h-44 overflow-hidden group/photo">
             <img
               src={src}
               alt={`${label} ${j + 1}`}

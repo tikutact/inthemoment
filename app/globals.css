@@ -48,6 +48,10 @@ body {
   to   { opacity: 1; }
 }
 
+/* 横スクロールのスクロールバーを隠す（ギャラリー一覧ストリップ） */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
 /* 句読点改行（モバイルのみ） */
 .prose-journal .comma-br { display: none; }
 @media (max-width: 767px) { .prose-journal .comma-br { display: inline; } }
