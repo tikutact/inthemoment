@@ -17,7 +17,7 @@ export default async function JournalPage() {
           {articles.length === 0 ? (
             <p className="text-sm text-[#9a9088] tracking-wide">記事はまだありません。</p>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-12 md:gap-14">
               {[...articles].reverse().map((article) => (
                 <Link
                   key={article.id}
@@ -49,6 +49,9 @@ export default async function JournalPage() {
                     <h2 className="text-sm md:text-base font-light text-[#1e1c1a] tracking-wide leading-relaxed group-hover:text-[#6b6560] transition-colors break-words">
                       {article.title}
                     </h2>
+                    <p className="mt-4 text-[9px] tracking-[0.3em] text-[#9a9088] group-hover:text-[#6b6560] transition-colors">
+                      READ&nbsp;&nbsp;→
+                    </p>
                   </div>
                 </Link>
               ))}
