@@ -16,7 +16,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   if (!data) notFound();
 
   const { article, markdown } = data;
-  const html = (marked.parse(markdown) as string).replace(/、/g, '、<br class="comma-br">');
+  const html = (marked.parse(markdown) as string)
+    .replace(/、/g, '、<br class="comma-br">')
+    // 見出し「英語ラベル｜日本語タイトル」を英語オーバーライン付きに変換
+    .replace(
+      /<h2([^>]*)>([^｜<]+)｜([\s\S]*?)<\/h2>/g,
+      '<h2$1><span class="h2-en">$2</span>$3</h2>'
+    );
 
   // case-06（豊田市美術館 / 東岡崎）だけ中央寄せ・少し大きめ・見出し強調を試す
   const isV2 = slug === "38f00e997dfa81379752dd7b58e15ae5";

@@ -100,7 +100,7 @@ body {
   text-underline-offset: 3px;
 }
 
-/* case-06 限定の試し（中央寄せ・少し大きめ・見出し強調） */
+/* case-06 限定の試し（中央寄せ・少し大きめ・英語オーバーライン見出し） */
 .journal-v2 .prose-journal {
   text-align: center;
   font-size: 0.875rem;
@@ -109,6 +109,22 @@ body {
   text-align: center;
   font-size: 1.125rem;
   letter-spacing: 0.12em;
-  margin: 3.2em 0 1.4em;
+  border-top: 1px solid rgba(30, 28, 26, 0.1);
+  padding-top: 2.8em;
+  margin: 3.4em 0 1.5em;
 }
-.journal-v2 .prose-journal h2:first-child { margin-top: 0; }
+.journal-v2 .prose-journal h2:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+.journal-v2 .prose-journal h2 .h2-en {
+  display: block;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.5625rem;
+  font-weight: 400;
+  letter-spacing: 0.45em;
+  text-indent: 0.45em;
+  color: #9a9088;
+  margin-bottom: 1.2em;
+}
