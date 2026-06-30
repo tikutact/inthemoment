@@ -20,11 +20,11 @@ const jsonLd = {
 };
 
 const photoPlan = [
-  { duration: "4 h", price: "¥100,000", cuts: "100 cuts" },
+  { duration: "4 h", price: "¥100,000", cuts: "80 cuts" },
 ];
 
 const photoMoviePlan = [
-  { duration: "4 h", price: "¥150,000", cuts: "100 cuts" },
+  { duration: "4 h", price: "¥150,000", cuts: "80 cuts" },
 ];
 
 const moviePlan = [
