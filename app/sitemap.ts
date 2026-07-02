@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { getArticles } from "@/lib/notion";
+import { cases } from "@/app/gallery/data";
 
 // sitemap.ts はデフォルトでビルド時にキャッシュされるため、
 // Notionの新記事を反映するには revalidate が必要
@@ -16,6 +17,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  // ギャラリーケース（data.ts に追加すれば自動で載る）
+  const caseUrls: MetadataRoute.Sitemap = cases.map((c) => ({
+    url: `${base}/gallery/${c.id}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
   return [
     { url: base, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
     { url: `${base}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
@@ -25,6 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/gallery`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/qa`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/journal`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+    ...caseUrls,
     ...articleUrls,
   ];
 }
