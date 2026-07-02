@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import FadeIn from "@/components/FadeIn";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumb } from "@/lib/structured-data";
 import { cases } from "../data";
 
 export function generateStaticParams() {
@@ -15,6 +17,13 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
 
   return (
     <>
+      <JsonLd
+        data={breadcrumb([
+          { name: "ホーム", path: "/" },
+          { name: "GALLERY", path: "/gallery" },
+          { name: c.label, path: `/gallery/${c.id}` },
+        ])}
+      />
       <Navigation />
 
       <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-3 md:px-6">

@@ -1,4 +1,6 @@
 import Navigation from "@/components/Navigation";
+import JsonLd from "@/components/JsonLd";
+import { articleLd, breadcrumb } from "@/lib/structured-data";
 import { getArticleBySlug, getArticles } from "@/lib/notion";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
@@ -20,6 +22,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   return (
     <>
+      <JsonLd data={articleLd(article)} />
+      <JsonLd
+        data={breadcrumb([
+          { name: "ホーム", path: "/" },
+          { name: "JOURNAL", path: "/journal" },
+          { name: article.title, path: `/journal/${slug}` },
+        ])}
+      />
       <Navigation />
       <article className="pt-24 md:pt-44 pb-16 md:pb-32 px-4 md:px-6">
         <div className="max-w-2xl mx-auto">

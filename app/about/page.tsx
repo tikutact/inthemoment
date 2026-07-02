@@ -1,9 +1,17 @@
 import Navigation from "@/components/Navigation";
 import FadeIn from "@/components/FadeIn";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumb } from "@/lib/structured-data";
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumb([
+          { name: "ホーム", path: "/" },
+          { name: "ABOUT", path: "/about" },
+        ])}
+      />
       <Navigation />
 
       <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-4 md:px-6">

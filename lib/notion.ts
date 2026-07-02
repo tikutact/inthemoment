@@ -10,6 +10,7 @@ export type Article = {
   title: string;
   slug: string;
   date: string;
+  dateModified?: string;
   cover: string | null;
   category?: string;
   excerpt?: string;
@@ -33,6 +34,7 @@ export async function getArticles(): Promise<Article[]> {
     title: pages[i].child_page.title,
     slug: pages[i].id.replace(/-/g, ""),
     date: pages[i].created_time?.slice(0, 10) ?? "",
+    dateModified: page.last_edited_time?.slice(0, 10) ?? undefined,
     cover: page.cover?.external?.url ?? page.cover?.file?.url ?? null,
   }));
 }

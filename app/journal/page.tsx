@@ -1,4 +1,6 @@
 import Navigation from "@/components/Navigation";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumb } from "@/lib/structured-data";
 import { getArticles } from "@/lib/notion";
 import Link from "next/link";
 
@@ -9,6 +11,12 @@ export default async function JournalPage() {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumb([
+          { name: "ホーム", path: "/" },
+          { name: "JOURNAL", path: "/journal" },
+        ])}
+      />
       <Navigation />
       <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-4 md:px-6 overflow-x-hidden">
         <div className="max-w-5xl mx-auto">

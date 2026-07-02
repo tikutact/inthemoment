@@ -1,12 +1,20 @@
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import ShowcaseStrip from "@/components/ShowcaseStrip";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumb } from "@/lib/structured-data";
 import { cases } from "./data";
 
 export default function ShowcasePage() {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumb([
+          { name: "ホーム", path: "/" },
+          { name: "GALLERY", path: "/gallery" },
+        ])}
+      />
       <Navigation />
 
       <section className="pt-24 md:pt-44 pb-16 md:pb-32">

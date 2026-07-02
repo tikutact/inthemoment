@@ -5,19 +5,10 @@ import SplashScreen from "@/components/SplashScreen";
 import HeroWrapper from "@/components/HeroWrapper";
 import { SiLine, SiInstagram } from "react-icons/si";
 import { getArticles } from "@/lib/notion";
+import JsonLd from "@/components/JsonLd";
+import { localBusinessLd } from "@/lib/structured-data";
 
 export const revalidate = 60;
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://inthemoment.jp",
-  name: "in the moment",
-  url: "https://inthemoment.jp",
-  description: "愛知・東海三県を拠点とするウェディング前撮りフォトグラファー。",
-  areaServed: { "@type": "State", name: "愛知県" },
-  sameAs: ["https://www.instagram.com/in_the_moment_film/"],
-};
 
 const photoPlan = [
   { duration: "4 h", price: "¥100,000", cuts: "80 cuts" },
@@ -35,10 +26,7 @@ export default async function Home() {
   const articles = await getArticles();
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={localBusinessLd()} />
       <SplashScreen />
       <Navigation />
 

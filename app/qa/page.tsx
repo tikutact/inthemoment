@@ -1,10 +1,18 @@
 import Navigation from "@/components/Navigation";
 import FadeIn from "@/components/FadeIn";
 import QaAccordion from "@/components/QaAccordion";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumb } from "@/lib/structured-data";
 
 export default function QaPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumb([
+          { name: "ホーム", path: "/" },
+          { name: "Q&A", path: "/qa" },
+        ])}
+      />
       <Navigation />
 
       <section className="pt-24 md:pt-44 pb-16 md:pb-24 px-4 md:px-6">
