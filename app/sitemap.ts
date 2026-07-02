@@ -1,6 +1,10 @@
 import { MetadataRoute } from "next";
 import { getArticles } from "@/lib/notion";
 
+// sitemap.ts はデフォルトでビルド時にキャッシュされるため、
+// Notionの新記事を反映するには revalidate が必要
+export const revalidate = 3600;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = "https://www.inthemoment.jp";
   const articles = await getArticles();

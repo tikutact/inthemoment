@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import FadeIn from "@/components/FadeIn";
@@ -9,6 +10,10 @@ import JsonLd from "@/components/JsonLd";
 import { localBusinessLd } from "@/lib/structured-data";
 
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const photoPlan = [
   { duration: "4 h", price: "¥100,000", cuts: "80 cuts" },
@@ -45,7 +50,7 @@ export default async function Home() {
             {/* 左：写真 */}
             <FadeIn direction="left">
               <div className="w-full aspect-[3/4] bg-[#e8e3dc] overflow-hidden">
-                <img src="/concept.jpg" alt="" className="w-full h-full object-cover" />
+                <img src="/concept-1200.jpg" alt="" className="w-full h-full object-cover" />
               </div>
             </FadeIn>
 
@@ -91,7 +96,7 @@ export default async function Home() {
               <FadeIn delay={0}>
               <Link href="/plan/photo" className="block md:pr-12 mb-20 md:mb-0 group">
                 <div className="w-full aspect-[3/4] overflow-hidden mb-10">
-                  <img src="/plan1.jpg" alt="PHOTO" className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-80" />
+                  <img src="/plan1-1200.jpg" alt="PHOTO" className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-80" />
                 </div>
                 <p className="text-[9px] tracking-[0.5em] text-[#1e1c1a] mb-10">
                   PHOTO
@@ -117,7 +122,7 @@ export default async function Home() {
               <FadeIn delay={150}>
               <Link href="/plan/photo-movie" className="block md:px-6 md:border-x border-[#1e1c1a]/8 mb-20 md:mb-0 group">
                 <div className="w-full aspect-[3/4] overflow-hidden mb-10">
-                  <img src="/plan2.jpg" alt="PHOTO + MOVIE" className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-80" />
+                  <img src="/plan2-1200.jpg" alt="PHOTO + MOVIE" className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-80" />
                 </div>
                 <p className="text-[9px] tracking-[0.5em] text-[#1e1c1a] mb-10">
                   PHOTO + MOVIE
@@ -146,7 +151,7 @@ export default async function Home() {
               <FadeIn delay={300}>
               <Link href="/plan/movie" className="block md:pl-12 group">
                 <div className="w-full aspect-[3/4] overflow-hidden mb-10">
-                  <img src="/plan3.jpg" alt="MOVIE" className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-80" />
+                  <img src="/plan3-1200.jpg" alt="MOVIE" className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-80" />
                 </div>
                 <p className="text-[9px] tracking-[0.5em] text-[#1e1c1a] mb-10">
                   MOVIE

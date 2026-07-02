@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import FadeIn from "@/components/FadeIn";
 import QaAccordion from "@/components/QaAccordion";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/structured-data";
+
+export const metadata: Metadata = {
+  title: "Q&A - 前撮り・フォトウェディングのよくあるご質問",
+  description:
+    "in the momentの前撮り・フォトウェディングに関するよくあるご質問。料金・支払い、ロケーションや衣装、雨天時の延期、データの納品方法などにお答えします。",
+  alternates: { canonical: "/qa" },
+};
 
 export default function QaPage() {
   return (

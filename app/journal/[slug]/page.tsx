@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import JsonLd from "@/components/JsonLd";
 import { articleLd, breadcrumb } from "@/lib/structured-data";
@@ -10,6 +11,44 @@ export const revalidate = 60;
 export async function generateStaticParams() {
   const articles = await getArticles();
   return articles.map((a) => ({ slug: a.slug }));
+}
+
+// markdown から meta description 用のプレーンテキストを作る
+function extractDescription(markdown: string): string {
+  const text = markdown
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "") // 画像
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1") // リンク→テキスト
+    .replace(/[#*_`>]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return text.length > 110 ? `${text.slice(0, 110)}…` : text;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const data = await getArticleBySlug(slug);
+  if (!data) return {};
+
+  const { article, markdown } = data;
+  const description = extractDescription(markdown);
+  return {
+    title: article.title,
+    description,
+    alternates: { canonical: `/journal/${slug}` },
+    openGraph: {
+      title: article.title,
+      description,
+      url: `/journal/${slug}`,
+      siteName: "in the moment",
+      locale: "ja_JP",
+      type: "article",
+      ...(article.cover ? { images: [{ url: article.cover }] } : {}),
+    },
+  };
 }
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/structured-data";
@@ -5,6 +6,13 @@ import { getArticles } from "@/lib/notion";
 import Link from "next/link";
 
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+  title: "JOURNAL - 前撮りのロケーション紹介・お役立ちコラム",
+  description:
+    "名古屋・愛知の前撮りに役立つ情報をお届けするジャーナル。おすすめのロケーション紹介、費用や準備のこと、撮影の記録などを綴っています。",
+  alternates: { canonical: "/journal" },
+};
 
 export default async function JournalPage() {
   const articles = await getArticles();

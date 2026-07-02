@@ -10,6 +10,22 @@ export function generateStaticParams() {
   return cases.map((c) => ({ id: c.id }));
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const c = cases.find((c) => c.id === id);
+  if (!c) return {};
+  const where = c.location ? `${c.location}での` : "";
+  return {
+    title: `${c.label} - ${c.location ?? ""} 前撮りギャラリー`,
+    description: `${where}前撮り・フォトウェディング撮影事例「${c.label}」。in the momentが撮影した実際の写真をご覧いただけます。`,
+    alternates: { canonical: `/gallery/${c.id}` },
+  };
+}
+
 export default async function CasePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const c = cases.find((c) => c.id === id);

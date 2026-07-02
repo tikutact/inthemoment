@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 export type Tier = {
   name: string;
   price: string;
@@ -20,6 +22,14 @@ export type PlanData = {
   flow: { time: string; label: string }[];
 };
 
+export function planMetadata(plan: PlanData): Metadata {
+  return {
+    title: `${plan.name} プラン（${plan.subtitle}）- 名古屋・愛知の前撮り料金`,
+    description: `${plan.description.replace(/\n/g, "")}料金は${plan.tiers[0].price}〜（税込）。プラン内容と当日の流れをご案内します。`,
+    alternates: { canonical: `/plan/${plan.slug}` },
+  };
+}
+
 export const plans: Record<string, PlanData> = {
   photo: {
     slug: "photo",
@@ -27,7 +37,7 @@ export const plans: Record<string, PlanData> = {
     subtitle: "写真のみ",
     duration: "4 h",
     cuts: "80 cuts",
-    image: "/plan1.jpg",
+    image: "/plan1-1200.jpg",
     heroImage: "/plan/photo-hero.jpg",
     tierImage: "/gallery/case-01/DSCF2631.jpg",
     midImage: "/gallery/case-03/DSCF4569.jpg",
@@ -70,7 +80,7 @@ export const plans: Record<string, PlanData> = {
     subtitle: "写真＋映像",
     duration: "4 h",
     cuts: "80 cuts",
-    image: "/plan2.jpg",
+    image: "/plan2-1200.jpg",
     heroImage: "/plan/photo-movie-hero.jpg",
     tierImage: "/gallery/case-02/DSCF3957.jpg",
     midImage: "/gallery/case-02/20251124-rie-tomo6014.jpg",
@@ -116,7 +126,7 @@ export const plans: Record<string, PlanData> = {
     subtitle: "映像のみ",
     duration: "4 h",
     cuts: "—",
-    image: "/plan3.jpg",
+    image: "/plan3-1200.jpg",
     heroImage: "/plan/movie-hero.jpg",
     tierImage: "/gallery/case-01/DSCF2825.jpg",
     midImage: "/gallery/case-01/DSCF2727.jpg",

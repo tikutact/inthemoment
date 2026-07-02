@@ -1,9 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import ShowcaseStrip from "@/components/ShowcaseStrip";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/structured-data";
 import { cases } from "./data";
+
+export const metadata: Metadata = {
+  title: "GALLERY - 名古屋・愛知の前撮りギャラリー",
+  description:
+    "in the momentの前撮り・フォトウェディング撮影事例。愛知・名古屋を中心に、海辺や湿原、街中など、ふたりらしいロケーションで撮影した実際の写真をご覧いただけます。",
+  alternates: { canonical: "/gallery" },
+};
 
 export default function ShowcasePage() {
 

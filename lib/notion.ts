@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { Client } from "@notionhq/client";
 import { NotionToMarkdown } from "notion-to-md";
 
@@ -16,7 +17,8 @@ export type Article = {
   excerpt?: string;
 };
 
-export async function getArticles(): Promise<Article[]> {
+// cache() で同一リクエスト内の重複フェッチを防ぐ（page と generateMetadata の両方から呼ばれる）
+export const getArticles = cache(async (): Promise<Article[]> => {
   const response = await notion.blocks.children.list({
     block_id: JOURNAL_PAGE_ID,
   });
@@ -37,11 +39,11 @@ export async function getArticles(): Promise<Article[]> {
     dateModified: page.last_edited_time?.slice(0, 10) ?? undefined,
     cover: page.cover?.external?.url ?? page.cover?.file?.url ?? null,
   }));
-}
+});
 
-export async function getArticleBySlug(
+export const getArticleBySlug = cache(async (
   slug: string
-): Promise<{ article: Article; markdown: string } | null> {
+): Promise<{ article: Article; markdown: string } | null> => {
   const articles = await getArticles();
   const article = articles.find((a) => a.slug === slug);
   if (!article) return null;
@@ -51,4 +53,4 @@ export async function getArticleBySlug(
   const markdown = n2m.toMarkdownString(filtered).parent;
 
   return { article, markdown };
-}
+});
