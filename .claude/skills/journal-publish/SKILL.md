@@ -26,6 +26,13 @@ description: in the momentジャーナル記事の下書き作成〜本番公開
 5. 保存後、`mcp__notion__API-get-block-children` で文字化け・誤字チェック
 6. ユーザーにNotionでのレビューを依頼して**ここで止まる**
 
+## Phase 1.5: レビュー後の修正（指摘が入ったら）
+
+- `API-get-block-children` で対象ブロックのIDを特定 → **Nodeスクリプト（日本語リテラル）でPATCH/DELETE**する（`blocks/<id>` にPATCH、削除はDELETE。fix系スクリプトの例はscratchpadでなくその都度書いてよい）
+- MCPの `API-update-a-block` は日本語で文字化けリスクがあるため使わない（LIGHTLEAKでの実績に準拠）
+- 修正後は必ず `retrieve-page-markdown` で読み戻して、修正箇所と文字化けを確認する
+- **指摘された箇所と同種の問題が記事内の他の場所にないかを読み戻しついでに探す**（「手紙の実例なし」指摘の際、冒頭の「これまでの撮影で〜」にも同じ問題が見つかった実例・2026-07-07）
+
 ## Phase 2: 公開（ユーザーが承認したら）
 
 7. `mcp__notion__API-move-page` で記事を「✅ 公開中」ページへ移動
