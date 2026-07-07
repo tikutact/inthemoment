@@ -13,7 +13,9 @@ description: in the momentジャーナル記事の下書き作成〜本番公開
    - 下書きページID: `37300e99-7dfa-8115-a982-c0721e0b3938`
    - 本番「✅ 公開中」ページ（`37300e99-7dfa-818f-b4b3-f6a10726d5bf`）には**絶対に直接作らない**。サイトの `getJournalArticles()` は公開中の直下だけを読み込むが、誤って直下に作るとレビュー前に公開されてしまう
    - 記事先頭に「← 戻る」リンク（下書きページへ）を付ける。Notionナビ用で、サイト側には表示されない
-   - **作成はこのスキルフォルダの `create-draft.mjs` を使う**（`articles` 配列を書き換えて `node create-draft.mjs`）。見出し（heading_2）・画像ブロック・カバーを一括作成できる。**Notion MCPの `API-post-page` / `API-patch-block-children` はparagraphとbulleted_list_itemしか作れない**ため、見出し・画像入り記事の作成には使えない（2026-07-07判明）
+   - **作成はこのスキルフォルダの `create-draft.mjs` を使う**。原本は書き換えず、**scratchpadにコピーして** `articles` 配列を差し替えて実行する（原本を書き換えるとgitが汚れる）。見出し（heading_2）・画像ブロック・カバーを一括作成できる
+   - **Notion MCPの `API-post-page` / `API-patch-block-children` はparagraphとbulleted_list_itemしか作れない**ため、見出し・画像入り記事の作成には使えない（2026-07-07判明）
+   - **JSONペイロードの手組み・curl直叩きでの作成は禁止**。`\uXXXX`エンコードが混入しやすい（ブラインドテストで実際に発生。結果的に文字化けしなかったが、過去に文字化け実績のある経路）。必ずcreate-draft.mjsのようにJSソース内に日本語リテラルで書いて `JSON.stringify` させる
 2. **文体・内容**: `journal-writing` スキル準拠。固定キーワード「愛知/名古屋/前撮り/フォトウェディング」を自然に含める
 3. **画像を先行デプロイする（毎回必須）** — Notionプレビューを効かせるため:
    - ロケーション記事: 対応する `app/gallery/case-XX/` が既にpush済みか確認する。未pushなら先に `gallery-case-add` スキルでケースを公開してから記事を書く
