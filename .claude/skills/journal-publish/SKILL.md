@@ -39,6 +39,7 @@ description: in the momentジャーナル記事の下書き作成〜本番公開
 8. 数分後（`revalidate: 60`）に本番URL `https://www.inthemoment.jp/journal/<slug>` を確認する（slug＝NotionページIDのハイフン除去）
 9. **Search Console登録**: URL検査 → `/journal/<slug>` のインデックス登録リクエスト（sitemapは自動収録なので送信は任意）
 10. **メモリの公開記事リストを更新する**: `project_inthemoment.md` のJournal欄に記事名を追記（メモリとNotionの実態がズレて記録漏れになった実績あり。2026-07-07に11本中3本が漏れていた）
+11. **growth-deskに記録する**: `cd ~/Desktop/claude/growth-desk && node growth.mjs articles && node growth.mjs sync` を実行し、`data/articles.json` の当該記事に `scRequested`（登録日）を書き込む。growth-deskのreportが登録漏れの検出に使う（詳細はメモリ `project_growth_desk`）
 
 ## 参照
 
