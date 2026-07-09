@@ -1,6 +1,7 @@
 ---
 title: "GOSPEL / 宝が池公園"
 slug: 37800e997dfa815aba54d4440ae8307d
+category: location
 order: 4
 date: 2026-06-07
 dateModified: 2026-06-30

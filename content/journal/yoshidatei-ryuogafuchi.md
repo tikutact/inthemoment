@@ -1,6 +1,7 @@
 ---
 title: "吉田邸 / 龍王ヶ渕"
 slug: 37600e997dfa81db9e51c06cf2bfb352
+category: location
 order: 1
 date: 2026-06-05
 dateModified: 2026-06-30

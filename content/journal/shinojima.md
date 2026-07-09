@@ -1,6 +1,7 @@
 ---
 title: "篠島"
 slug: 37800e997dfa814e99c5de99a2e2f75c
+category: location
 order: 2
 date: 2026-06-07
 dateModified: 2026-06-30

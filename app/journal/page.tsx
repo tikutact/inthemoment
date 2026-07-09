@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Navigation from "@/components/Navigation";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/structured-data";
 import { getArticles } from "@/lib/notion";
+import JournalTabs from "@/components/JournalTabs";
 import Link from "next/link";
 
 export const revalidate = 60;
@@ -33,33 +35,43 @@ export default async function JournalPage() {
           {articles.length === 0 ? (
             <p className="text-sm text-[#9a9088] tracking-wide">記事はまだありません。</p>
           ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-12 md:gap-14">
-              {[...articles].reverse().map((article) => (
-                <Link
-                  key={article.id}
-                  href={`/journal/${article.slug}`}
-                  className="block group"
-                >
-                  {article.cover && (
-                    <div className="w-full aspect-[4/3] overflow-hidden mb-3">
-                      <img
-                        src={article.cover}
-                        alt=""
-                        className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                      />
+            <>
+              <Suspense fallback={<div className="mb-10 md:mb-16 h-5" />}>
+                <JournalTabs />
+              </Suspense>
+              <div
+                id="journal-grid"
+                data-filter="all"
+                className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-12 md:gap-14"
+              >
+                {[...articles].reverse().map((article) => (
+                  <Link
+                    key={article.id}
+                    href={`/journal/${article.slug}`}
+                    data-category={article.category ?? ""}
+                    className="block group"
+                  >
+                    {article.cover && (
+                      <div className="w-full aspect-[4/3] overflow-hidden mb-3">
+                        <img
+                          src={article.cover}
+                          alt=""
+                          className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                        />
+                      </div>
+                    )}
+                    <div>
+                      <h2 className="text-xs md:text-sm font-light text-[#1e1c1a] tracking-wide leading-relaxed group-hover:text-[#6b6560] transition-colors break-words">
+                        {article.title}
+                      </h2>
+                      <p className="mt-2.5 text-[8px] tracking-[0.3em] text-[#9a9088] group-hover:text-[#6b6560] transition-colors">
+                        READ&nbsp;&nbsp;→
+                      </p>
                     </div>
-                  )}
-                  <div>
-                    <h2 className="text-xs md:text-sm font-light text-[#1e1c1a] tracking-wide leading-relaxed group-hover:text-[#6b6560] transition-colors break-words">
-                      {article.title}
-                    </h2>
-                    <p className="mt-2.5 text-[8px] tracking-[0.3em] text-[#9a9088] group-hover:text-[#6b6560] transition-colors">
-                      READ&nbsp;&nbsp;→
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
+                  </Link>
+                ))}
+              </div>
+            </>
           )}
         </div>
       </section>

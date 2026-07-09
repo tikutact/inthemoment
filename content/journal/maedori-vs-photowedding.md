@@ -1,6 +1,7 @@
 ---
 title: "前撮りとフォトウェディングの違い"
 slug: 37900e997dfa81319560c0ee78781743
+category: knowledge
 order: 5
 date: 2026-06-08
 dateModified: 2026-06-30

@@ -1,6 +1,7 @@
 ---
 title: "前撮り、準備すること"
 slug: 37700e997dfa810d9d36ea000937db77
+category: prep
 order: 6
 date: 2026-06-06
 dateModified: 2026-06-30

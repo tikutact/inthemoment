@@ -1,6 +1,7 @@
 ---
 title: "豊田市美術館 / 東岡崎"
 slug: 38f00e997dfa81379752dd7b58e15ae5
+category: location
 order: 8
 date: 2026-06-30
 dateModified: 2026-06-30

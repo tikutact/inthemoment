@@ -1,6 +1,7 @@
 ---
 title: "前撮りの費用と相場"
 slug: 38b00e997dfa81d89ecac94e73775fdb
+category: knowledge
 order: 7
 date: 2026-06-26
 dateModified: 2026-06-30

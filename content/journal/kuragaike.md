@@ -1,6 +1,7 @@
 ---
 title: "鞍ヶ池公園"
 slug: 37800e997dfa81488699ffb864824fcc
+category: location
 order: 3
 date: 2026-06-07
 dateModified: 2026-06-30

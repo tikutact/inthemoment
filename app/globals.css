@@ -113,3 +113,11 @@ body {
   text-underline-offset: 3px;
 }
 
+
+/* JOURNAL カテゴリ絞り込み: JournalTabs が #journal-grid の data-filter を切り替え、
+   非該当カテゴリの記事を隠す。data-filter="all" は全表示（ルールなし）。 */
+#journal-grid[data-filter="location"] > :not([data-category="location"]),
+#journal-grid[data-filter="knowledge"] > :not([data-category="knowledge"]),
+#journal-grid[data-filter="prep"] > :not([data-category="prep"]) {
+  display: none;
+}

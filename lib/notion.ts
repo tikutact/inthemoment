@@ -17,7 +17,11 @@ export type Article = {
   cover: string | null;
   category?: string;
   excerpt?: string;
+  draft?: boolean;
 };
+
+// draft: true の記事は本番では隠す。ローカル（npm run dev）では表示してプレビューできる。
+const SHOW_DRAFTS = process.env.NODE_ENV !== "production";
 
 type Parsed = { article: Article; markdown: string; order: number };
 
@@ -46,6 +50,7 @@ function parseFile(raw: string): Parsed {
       cover: meta.cover ? meta.cover : null,
       category: meta.category || undefined,
       excerpt: meta.excerpt || undefined,
+      draft: meta.draft === "true",
     },
   };
 }
@@ -58,13 +63,16 @@ function readAll(): Parsed[] {
 }
 
 export const getArticles = cache(async (): Promise<Article[]> => {
-  return readAll().map((p) => p.article);
+  return readAll()
+    .filter((p) => SHOW_DRAFTS || !p.article.draft)
+    .map((p) => p.article);
 });
 
 export const getArticleBySlug = cache(
   async (slug: string): Promise<{ article: Article; markdown: string } | null> => {
     const found = readAll().find((p) => p.article.slug === slug);
     if (!found) return null;
+    if (!SHOW_DRAFTS && found.article.draft) return null;
     return { article: found.article, markdown: found.markdown };
   }
 );

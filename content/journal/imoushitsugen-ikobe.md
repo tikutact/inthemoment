@@ -1,6 +1,7 @@
 ---
 title: "葦毛湿原 / 伊古部海岸"
 slug: 37600e997dfa81a3b16ad7a16160d1e9
+category: location
 order: 0
 date: 2026-06-05
 dateModified: 2026-06-30
