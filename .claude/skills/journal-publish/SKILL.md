@@ -3,6 +3,14 @@ name: journal-publish
 description: in the momentジャーナル記事の下書き作成〜本番公開までの定常フロー。新規記事を書く時・記事を公開する時に必ずこの手順に従う
 ---
 
+> ⚠️ **2026-07-09 更新：NotionをCMSから外し、記事は `content/journal/*.md`（リポジトリmarkdown）になった。**
+> 以下のNotion手順（📝下書きページに作る／✅公開中へmove／dump-articles.mjs等）は**無効**。新フロー：
+> 1. 記事mdを `content/journal/<slug>.md` に作成（frontmatter: `title/slug/order/date/dateModified/cover`、本文=標準markdown・1文＝1段落・`##`見出し）。Obsidian `~/journal-drafts` vault（symlink `inthemoment-published/`）で編集可。新記事のslugはクリーンでよい（旧記事のみpageId保全）
+> 2. 画像を `public/`（既存のcaseギャラリー等）に置き、相対パスで参照（スペースは`%20`）
+> 3. 承認前はrepoにcommitしない（＝公開されない）。承認後 git commit → push（main）→ Vercel自動デプロイ＝公開
+> 4. Search Console登録は下記のまま有効
+> ※旧`.mjs`のNotion系スクリプトは使わない。⚠Notion下書き5本＋case-07下書きは未移行（Notion残置）＝公開時にこのフローでmd化。移行経緯: `~/journal-drafts/_migration/PLAN.md`
+
 # ジャーナル記事の作成・公開フロー
 
 記事のライフサイクルは2段階。**「書く」と「公開する」は別ステップ**で、公開はユーザーの承認後のみ。
