@@ -23,7 +23,6 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [planOpen, setPlanOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [mobilePlanOpen, setMobilePlanOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
   const isPlanPage = pathname.startsWith("/plan");
@@ -168,26 +167,10 @@ export default function Navigation() {
             ABOUT
           </Link>
 
-          <div className="flex flex-col items-center gap-4">
-            <div className="flex items-center gap-2 text-[11px] tracking-[0.5em] text-[#1e1c1a] font-light">
-              <span className="w-3 shrink-0" />
-              <Link href="/plan" onClick={() => setMenuOpen(false)}>PLAN</Link>
-              <button type="button" onClick={() => setMobilePlanOpen(!mobilePlanOpen)}
-                aria-label="プラン一覧を開く"
-                className="text-[#9a9088] text-[8px] transition-transform duration-300 w-3 shrink-0"
-                style={{ transform: mobilePlanOpen ? "rotate(180deg)" : "none" }}>▾</button>
-            </div>
-            {mobilePlanOpen && (
-              <div className="flex flex-col items-center gap-4">
-                {planDropdown.map((p) => (
-                  <Link key={p.href} href={p.href} onClick={() => setMenuOpen(false)}
-                    className="text-[10px] tracking-[0.4em] text-[#6b6560] font-light">
-                    {p.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+          <Link href="/plan" onClick={() => setMenuOpen(false)}
+            className="text-[11px] tracking-[0.5em] text-[#1e1c1a] font-light">
+            PLAN
+          </Link>
 
           <Link href="/gallery" onClick={() => setMenuOpen(false)}
             className="text-[11px] tracking-[0.5em] text-[#1e1c1a] font-light">

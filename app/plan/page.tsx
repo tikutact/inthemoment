@@ -35,7 +35,7 @@ export default function PlanIndexPage() {
       />
       <Navigation />
 
-      <section className="pt-24 md:pt-44 pb-16 md:pb-24 px-6">
+      <section className="pt-28 md:pt-44 pb-20 md:pb-24 px-6">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-6 text-center">
@@ -61,7 +61,7 @@ export default function PlanIndexPage() {
                         : "md:pl-12"
                   }`}
                 >
-                  <div className="w-full aspect-[3/4] overflow-hidden mb-5 md:mb-10">
+                  <div className="w-full aspect-[3/4] overflow-hidden mb-6 md:mb-10">
                     <img
                       src={plan.image}
                       alt={plan.name}
@@ -71,11 +71,11 @@ export default function PlanIndexPage() {
                   <p className="text-[8px] md:text-[9px] tracking-[0.2em] md:tracking-[0.5em] text-[#1e1c1a] mb-1 md:mb-2">
                     {plan.name}
                   </p>
-                  <p className="text-[9px] md:text-[10px] text-[#9a9088] tracking-wide mb-4 md:mb-8">
+                  <p className="text-[9px] md:text-[10px] text-[#9a9088] tracking-wide mb-5 md:mb-8">
                     {plan.subtitle}
                   </p>
                   {plan.tiers.map((tier) => (
-                    <div key={tier.name} className="py-3 md:py-5 border-b border-[#1e1c1a]/8">
+                    <div key={tier.name} className="py-4 md:py-5 border-b border-[#1e1c1a]/8">
                       <div className="flex flex-col md:flex-row md:justify-between md:items-baseline gap-0.5">
                         <span className="text-[8px] md:text-[10px] text-[#9a9088] tracking-wide">
                           {tier.name}
@@ -86,7 +86,7 @@ export default function PlanIndexPage() {
                       </div>
                     </div>
                   ))}
-                  <div className="flex justify-between text-[8px] md:text-[10px] text-[#9a9088] tracking-wide mt-3 md:mt-5">
+                  <div className="flex justify-between text-[8px] md:text-[10px] text-[#9a9088] tracking-wide mt-4 md:mt-5">
                     <span>{plan.duration}</span>
                     <span>{plan.cuts !== "—" ? plan.cuts : ""}</span>
                   </div>
@@ -95,7 +95,7 @@ export default function PlanIndexPage() {
                       ※ オープニングムービー含む（約2分）
                     </p>
                   )}
-                  <p className="mt-4 md:mt-8 text-[8px] md:text-[9px] tracking-[0.2em] md:tracking-[0.3em] text-[#9a9088] group-hover:text-[#1e1c1a] transition-colors">
+                  <p className="mt-5 md:mt-8 text-[8px] md:text-[9px] tracking-[0.2em] md:tracking-[0.3em] text-[#9a9088] group-hover:text-[#1e1c1a] transition-colors">
                     詳細を見る →
                   </p>
                 </Link>
