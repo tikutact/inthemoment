@@ -191,7 +191,7 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
       {/* BACK */}
       <div className="pb-16 text-center">
         <Link
-          href="/#plan"
+          href="/plan"
           className="text-[9px] tracking-[0.4em] text-[#9a9088] hover:text-[#1e1c1a] transition-colors"
         >
           ← BACK TO PLAN

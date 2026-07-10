@@ -26,7 +26,7 @@ export default function Navigation() {
   const [mobilePlanOpen, setMobilePlanOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const isPlanPage = pathname.startsWith("/plan/");
+  const isPlanPage = pathname.startsWith("/plan");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -80,10 +80,10 @@ export default function Navigation() {
               onMouseEnter={() => setPlanOpen(true)}
               onMouseLeave={() => setPlanOpen(false)}
               style={{ animation: "navFadeIn 0.8s ease forwards", animationDelay: delay("3.15s"), opacity: 0 }}>
-              <button type="button" onClick={() => handleNav("#plan")} className={navLinkClass} style={{ cursor: "pointer", color: navColor }}>
+              <Link href="/plan" className={navLinkClass} style={{ color: navColor }}>
                 PLAN
                 <NavUnderline white={desktopHero} />
-              </button>
+              </Link>
               <div className="absolute top-full left-0 pt-4 transition-all duration-200"
                 style={{ opacity: planOpen ? 1 : 0, pointerEvents: planOpen ? "auto" : "none", transform: planOpen ? "translateY(0)" : "translateY(-4px)" }}>
                 <div className="py-3 px-0 min-w-[160px]"
@@ -169,13 +169,14 @@ export default function Navigation() {
           </Link>
 
           <div className="flex flex-col items-center gap-4">
-            <button type="button" onClick={() => setMobilePlanOpen(!mobilePlanOpen)}
-              className="flex items-center gap-2 text-[11px] tracking-[0.5em] text-[#1e1c1a] font-light">
+            <div className="flex items-center gap-2 text-[11px] tracking-[0.5em] text-[#1e1c1a] font-light">
               <span className="w-3 shrink-0" />
-              PLAN
-              <span className="text-[#9a9088] text-[8px] transition-transform duration-300 w-3 shrink-0"
-                style={{ transform: mobilePlanOpen ? "rotate(180deg)" : "none" }}>▾</span>
-            </button>
+              <Link href="/plan" onClick={() => setMenuOpen(false)}>PLAN</Link>
+              <button type="button" onClick={() => setMobilePlanOpen(!mobilePlanOpen)}
+                aria-label="プラン一覧を開く"
+                className="text-[#9a9088] text-[8px] transition-transform duration-300 w-3 shrink-0"
+                style={{ transform: mobilePlanOpen ? "rotate(180deg)" : "none" }}>▾</button>
+            </div>
             {mobilePlanOpen && (
               <div className="flex flex-col items-center gap-4">
                 {planDropdown.map((p) => (
