@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Zen_Kaku_Gothic_New, Cormorant_Garamond } from "next/font/google";
+import { DM_Sans, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import SoundProvider from "@/components/SoundProvider";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -11,13 +11,6 @@ const dmSans = DM_Sans({
   variable: "--font-dm",
   subsets: ["latin"],
   weight: ["300", "400", "500"],
-  display: "swap",
-});
-
-const zenKaku = Zen_Kaku_Gothic_New({
-  variable: "--font-zen",
-  subsets: ["latin"],
-  weight: ["300", "400"],
   display: "swap",
 });
 
@@ -60,7 +53,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ja" className={`${dmSans.variable} ${zenKaku.variable} ${cormorant.variable}`}>
+    <html lang="ja" className={`${dmSans.variable} ${cormorant.variable}`}>
       <body className="antialiased">
         <SoundProvider />
         {children}
