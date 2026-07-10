@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import SoundProvider from "@/components/SoundProvider";
+import ConversionTracker from "@/components/ConversionTracker";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 // GA4 測定ID。ブラウザに露出する公開値のため直接埋め込む（Vercel環境変数に依存しない）。
@@ -56,6 +57,7 @@ export default function RootLayout({
     <html lang="ja" className={`${dmSans.variable} ${cormorant.variable}`}>
       <body className="antialiased">
         <SoundProvider />
+        <ConversionTracker />
         {children}
       </body>
       {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
