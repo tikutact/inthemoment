@@ -19,6 +19,7 @@ description: in the momentジャーナル記事の下書き作成〜本番公開
    - **Obsidianプレビュー**: 画像は vault の `gallery` フォルダsymlinkで解決済み。リーディングビュー（Cmd+E）で画像込みの仕上がりを確認できる
 3. **表現の重複チェック**: `node .claude/skills/journal-publish/dump-articles.mjs > /tmp/articles.txt` で全記事本文を出し、自分が書いた特徴フレーズ（比喩・情景の締め）をgrep照合する
 4. 下書きmdを読み返して誤字・変換ミスを確認 → **ユーザーにObsidianでのレビューを依頼してここで止まる**（repoにcommitしない）
+   - **下書きの置き場は必ず `~/journal-drafts/inthemoment-drafts/`（vault）**。ユーザーのチェックはObsidianで行う運用（2026-07-11ルール化）。repoの`content/journal/`に`draft: true`でステージしてlocalhostプレビューを案内する形は取らない — 書き終えたらvaultへ、が既定
 
 ## Phase 1.5: レビュー後の修正（指摘が入ったら）
 

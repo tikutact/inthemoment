@@ -13,3 +13,10 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - 作業を始める前に `git status` がクリーンか／`origin/main` と本番が一致しているかを確認する。
 
 **理由:** 2026年6月、過去セッションが `vercel --prod` でローカルから本番デプロイしたのに git へコミットせず、本番だけが進んで git が取り残される「ねじれ」が発生した（hero動画圧縮・gallery case-05追加・sitemap/next.config 等）。git が本番の正しい姿を表さなくなると、知らずに本番を上書き・巻き戻す危険がある。二度と起こさないこと。
+
+# ジャーナル下書きのルール（2026-07-11）
+
+**下書きを書いたら、必ず `~/journal-drafts/inthemoment-drafts/`（Obsidian vault）に置くこと。**
+
+- ユーザーのチェックは毎回Obsidian（リーディングビュー）で行う。localhostプレビューのURL案内は不要
+- repoの `content/journal/` に置いてよいのは公開が承認された記事のみ（詳細は `.claude/skills/journal-publish/SKILL.md`）
