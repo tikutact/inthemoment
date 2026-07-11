@@ -15,6 +15,11 @@ description: in the momentジャーナル記事の下書き作成〜本番公開
    - 本文: 標準markdown・**1文＝1段落・段落間は空行・見出しは `##`**（`journal-writing` 参照）
 2. **画像**: 既存ケースの画像を **root相対 `/gallery/case-XX/....jpg`** で参照（スペースは `%20`）。新規画像が要る場合は `sips -Z 1200` でリサイズして `public/gallery/...` に置く
    - カバーは frontmatter `cover: /gallery/...`（ヒーロー画像）。カバーに使った画像は本文には入れない（重複禁止）
+   - **下書きにはObsidianプレビュー用ヘッダーを必ず入れる（2026-07-11ルール化）**: Obsidianはfrontmatterの`cover`を画像描画しないため、本文の先頭に次の2行を置く（このヘッダーだけはカバー画像の本文使用OK＝公開時に削除するため）:
+     ```
+     <!-- ↓Obsidianプレビュー用ヘッダー（公開時はこのコメントと画像行を削除。本番はfrontmatterのcoverが自動でヘッダー表示される） -->
+     ![](/gallery/case-XX/....jpg)   ← coverと同じパス
+     ```
    - 使用済み画像の重複回避: `node .claude/skills/journal-publish/list-used-images.mjs`（公開＋下書き＋プランの使用済みパスを一覧）→ 出ていない画像から選ぶ
    - **Obsidianプレビュー**: 画像は vault の `gallery` フォルダsymlinkで解決済み。リーディングビュー（Cmd+E）で画像込みの仕上がりを確認できる
 3. **表現の重複チェック**: `node .claude/skills/journal-publish/dump-articles.mjs > /tmp/articles.txt` で全記事本文を出し、自分が書いた特徴フレーズ（比喩・情景の締め）をgrep照合する
@@ -29,6 +34,7 @@ description: in the momentジャーナル記事の下書き作成〜本番公開
 ## Phase 2: 公開（ユーザーが承認したら）
 
 5. 下書きmdを **`content/journal/<slug>.md` へ移動**（vaultの symlink `inthemoment-published/` 経由でも可）
+   - **移動時に冒頭のObsidianプレビュー用ヘッダー（コメント行＋cover画像行）を削除する**。残すと本番でカバーが二重表示になる。commit前に `head` で本文が導入文から始まることを確認
 6. `git add content/journal/<slug>.md` ＋新規画像 → `git commit` → `git push origin main`（Vercel自動デプロイ・約40秒）。**ローカル単独デプロイ禁止**（AGENTS.md）。※記事を repo に置いたまま隠したい場合は frontmatter `draft: true`（本番非表示・`npm run dev` では表示）も使える
 7. 本番URL `https://www.inthemoment.jp/journal/<slug>` が200になるのを確認（slug＝frontmatterの `slug`）
 8. **Search Console登録**: URL検査 → `/journal/<slug>` のインデックス登録リクエスト（sitemapは自動収録なので送信は任意）
