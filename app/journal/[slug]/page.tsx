@@ -57,7 +57,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   if (!data) notFound();
 
   const { article, markdown } = data;
-  const html = (marked.parse(markdown) as string).replace(/、/g, '、<br class="comma-br">');
+  // 読点改行はテキストノードのみ対象（タグ内の「、」を置換するとalt属性等が壊れる）
+  const html = (marked.parse(markdown) as string).replace(/、(?![^<]*>)/g, '、<br class="comma-br">');
 
   return (
     <>
