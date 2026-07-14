@@ -7,6 +7,8 @@ description: in the momentジャーナル記事の下書き作成〜本番公開
 
 記事は `content/journal/*.md`（リポジトリmarkdown。2026-07-09にNotion CMSを廃止）。**「書く」と「公開する」は別ステップ**で、公開はユーザー承認後のみ。承認前はvaultの下書きに留め、repoにcommitしない（＝サイトに出ない）。文体・内容・画像選定は `journal-writing` スキル準拠。
 
+> **クラウド/iPhoneセッション（claude.ai/code）の場合**: 本文の下書き作成が主。既存ギャラリー画像を流用するテキスト記事なら content/journal に書いてpush→公開まで届くが、新規画像の`sips`・`~/journal-drafts`への配置・Search Console登録・growth-desk記録はMacローカルの自動化依存で実行不可。原則 iPhone=下書き生成／仕上げ・公開はMac。詳細は memory `project_iphone_claude_code`。
+
 ## Phase 1: 下書き作成（記事を書く時）
 
 1. **下書きmdをvaultに作成**: `~/journal-drafts/inthemoment-drafts/<slug>.md`（Obsidianで編集）
