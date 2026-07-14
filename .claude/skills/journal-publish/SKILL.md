@@ -37,7 +37,14 @@ description: in the momentジャーナル記事の下書き作成〜本番公開
    - **移動時に冒頭のObsidianプレビュー用ヘッダー（コメント行＋cover画像行）を削除する**。残すと本番でカバーが二重表示になる。commit前に `head` で本文が導入文から始まることを確認
 6. `git add content/journal/<slug>.md` ＋新規画像 → `git commit` → `git push origin main`（Vercel自動デプロイ・約40秒）。**ローカル単独デプロイ禁止**（AGENTS.md）。※記事を repo に置いたまま隠したい場合は frontmatter `draft: true`（本番非表示・`npm run dev` では表示）も使える
 7. 本番URL `https://www.inthemoment.jp/journal/<slug>` が200になるのを確認（slug＝frontmatterの `slug`）
-8. **Search Console登録**: URL検査 → `/journal/<slug>` のインデックス登録リクエスト（sitemapは自動収録なので送信は任意）
+8. **Search Console登録**: URL検査 → `/journal/<slug>` のインデックス登録リクエスト（sitemapは自動収録なので送信は任意）。**ブラウザ操作の確定手順（2026-07-14に実績あり・判断不要でなぞるだけにしてある）**:
+   1. **必ずclaude-in-chrome拡張（ユーザーの実Chrome）で行う**。Playwright等の自動化ブラウザはGoogleログインがbot検知で詰むので不可（過去に何度も失敗した原因はこれ）
+   2. `tabs_context_mcp`（createIfEmpty:true）→ そのタブで `https://search.google.com/search-console?resource_id=https%3A%2F%2Fwww.inthemoment.jp%2F` に navigate（プロパティのサマリーが開く）。※`/inspect?...&id=<URL>` の直リンクは404になる形式なので使わない
+   3. 上部の検索バーは**座標クリックせず、`find`で「上部のURL検査の検索入力欄」を探して ref 指定でクリック**（座標クリックだとフォーカスが入らないことがある）→ 記事のフルURLを type → Return → 8秒 wait
+   4. 検査結果画面で「インデックス登録をリクエスト」リンクをクリック → 20秒ほど wait → screenshot
+   5. **成功判定＝「URL を優先クロールキューに追加しました」の緑トースト**（またはリンクが「✓ インデックス登録をリクエスト済み」表示に変わる）。これが出るまで完了と言わない
+   6. **落とし穴**: 検索バーへの入力が入らないままReturnすると「公開 URL がインデックスに登録可能かどうかをテストする」モーダル（1〜2分かかる公開URLテスト）が誤発火する。その場合はモーダルの「キャンセル」を押し、手順3のfind→refクリックからやり直す
+   7. 複数記事あるときは手順3〜5を記事ごとに繰り返す（1日数十件までは問題なく通る）
 9. **メモリの公開記事リストを更新する**: `project_inthemoment.md` のJournal欄に記事名を追記（記録漏れの実績あり）
 10. **growth-deskに記録する**: `cd ~/Desktop/claude/growth-desk && node growth.mjs articles && node growth.mjs sync` を実行し、`data/articles.json` の当該記事に `scRequested`（登録日）を書き込む（詳細はメモリ `project_growth_desk`）
 
