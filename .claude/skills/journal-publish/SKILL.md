@@ -20,7 +20,7 @@ description: in the momentジャーナル記事の下書き作成〜本番公開
      <!-- ↓Obsidianプレビュー用ヘッダー（公開時はこのコメントと画像行を削除。本番はfrontmatterのcoverが自動でヘッダー表示される） -->
      ![](/gallery/case-XX/....jpg)   ← coverと同じパス
      ```
-   - 使用済み画像の重複回避: `node .claude/skills/journal-publish/list-used-images.mjs`（公開＋下書き＋プランの使用済みパスを一覧）→ 出ていない画像から選ぶ
+   - **画像選びは「記事に一番合うか」を最優先。他記事との被りは許容**（いい記事になるなら重複は問題ない・2026-07-14ユーザー判断で緩和）。`node .claude/skills/journal-publish/list-used-images.mjs`（公開＋下書き＋プランの使用済みパスを一覧）は参考情報として実行し、同等の候補が並んだら未使用を優先する程度でよい。※同一記事内でのカバー画像の本文再掲だけは引き続き禁止（上記のとおりページ上で二重表示になる）
    - **Obsidianプレビュー**: 画像は vault の `gallery` フォルダsymlinkで解決済み。リーディングビュー（Cmd+E）で画像込みの仕上がりを確認できる
 3. **表現の重複チェック**: `node .claude/skills/journal-publish/dump-articles.mjs > /tmp/articles.txt` で全記事本文を出し、自分が書いた特徴フレーズ（比喩・情景の締め）をgrep照合する
 4. 下書きmdを読み返して誤字・変換ミスを確認 → **ユーザーにObsidianでのレビューを依頼してここで止まる**（repoにcommitしない）
