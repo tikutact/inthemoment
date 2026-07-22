@@ -203,7 +203,7 @@ export default async function Home() {
               <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-16 md:mb-20">JOURNAL</p>
             </FadeIn>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14 mb-14 md:mb-20">
-              {[...articles].reverse().slice(0, 3).map((article, i) => (
+              {articles.slice(0, 3).map((article, i) => (
                 <FadeIn key={article.id} delay={i * 150} className={i === 2 ? "hidden md:block" : ""}>
                   <Link href={`/journal/${article.slug}`} className="block group">
                     {article.cover && (

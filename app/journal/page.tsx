@@ -44,7 +44,7 @@ export default async function JournalPage() {
                 data-filter="all"
                 className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-12 md:gap-14"
               >
-                {[...articles].reverse().map((article) => (
+                {articles.map((article) => (
                   <Link
                     key={article.id}
                     href={`/journal/${article.slug}`}

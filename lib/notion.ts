@@ -55,11 +55,13 @@ function parseFile(raw: string): Parsed {
   };
 }
 
+// 並びは公開日（frontmatter date）の新しい順。同日は order の大きい順。
+// date は「サイトに追加した日」を入れる運用（journal-publish スキル参照）。
 function readAll(): Parsed[] {
   return readdirSync(CONTENT_DIR)
     .filter((f) => f.endsWith(".md"))
     .map((f) => parseFile(readFileSync(join(CONTENT_DIR, f), "utf8")))
-    .sort((a, b) => a.order - b.order);
+    .sort((a, b) => b.article.date.localeCompare(a.article.date) || b.order - a.order);
 }
 
 export const getArticles = cache(async (): Promise<Article[]> => {

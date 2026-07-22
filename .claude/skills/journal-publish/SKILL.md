@@ -37,10 +37,12 @@ description: in the momentジャーナル記事の下書き作成〜本番公開
 
 5. 下書きmdを **`content/journal/<slug>.md` へ移動**（vaultの symlink `inthemoment-published/` 経由でも可）
    - **移動時に冒頭のObsidianプレビュー用ヘッダー（コメント行＋cover画像行）を削除する**。残すと本番でカバーが二重表示になる。commit前に `head` で本文が導入文から始まることを確認
+   - **frontmatter `date` を公開日（サイトに追加した日）に更新する**。一覧・ホームの並びは `date` の新しい順（同日は `order` の大きい順）＝2026-07-23に order 順から変更。draft を外すのもこのタイミング
 6. `git add content/journal/<slug>.md` ＋新規画像 → `git commit` → `git push origin main`（Vercel自動デプロイ・約40秒）。**ローカル単独デプロイ禁止**（AGENTS.md）。※記事を repo に置いたまま隠したい場合は frontmatter `draft: true`（本番非表示・`npm run dev` では表示）も使える
 7. 本番URL `https://www.inthemoment.jp/journal/<slug>` が200になるのを確認（slug＝frontmatterの `slug`）
 8. **Search Console登録**: URL検査 → `/journal/<slug>` のインデックス登録リクエスト（sitemapは自動収録なので送信は任意）
-   - **最優先ルート＝コマンド1本（2026-07-08作成・9本一括の実績あり）**: BraveをCDP(9222)で起動した状態で `cd ~/sb-auto && node sc-inspect.mjs <記事フルURL>`（検査→リクエストまで一気通貫。SCプロパティはURLのoriginから自動導出＝3サイト共通で使える）。まれに`net::ERR_ABORTED`で落ちる→その1本だけ再実行。詳細はメモリ `feedback_searchconsole_workflow`
+   - **最優先ルート＝コマンド1本（2026-07-08作成・9本一括の実績あり）**: `cd ~/sb-auto && node sc-inspect.mjs <記事フルURL>`（検査→リクエストまで一気通貫。SCプロパティはURLのoriginから自動導出＝3サイト共通で使える）。まれに`net::ERR_ABORTED`で落ちる→その1本だけ再実行。詳細はメモリ `feedback_searchconsole_workflow`
+   - **CDPブラウザは`~/sb-auto/brave-profile`専用プロフィールのBrave（9222）が標準（2026-07-23〜）**。同プロフィールはGoogleログイン済み＝前準備なしで通る。メインブラウザをCDP起動し直す旧方式は使わない。未ログインに戻っているとSCのaboutページに飛ばされて`TimeoutError`になる→その時はユーザーに専用Braveでの再ログインを依頼
    - sc-inspect.mjsが使えない時のみ、以下のclaude-in-chromeブラウザ操作にフォールバック（2026-07-14に実績あり・判断不要でなぞるだけにしてある）:
    1. **必ずユーザーの実ブラウザセッションで行う**（claude-in-chrome拡張＝実Chrome、またはBrave CDP）。素のPlaywright等のクリーンな自動化ブラウザはGoogleログインがbot検知で詰むので不可
    2. `tabs_context_mcp`（createIfEmpty:true）→ そのタブで `https://search.google.com/search-console?resource_id=https%3A%2F%2Fwww.inthemoment.jp%2F` に navigate（プロパティのサマリーが開く）。※`/inspect?...&id=<URL>` の直リンクは404になる形式なので使わない
