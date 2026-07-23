@@ -30,26 +30,38 @@ export default async function JournalPage() {
       <Navigation />
       <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-4 md:px-6 overflow-x-hidden">
         <div className="max-w-5xl mx-auto">
-          <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-10 md:mb-16">JOURNAL</p>
+          <p
+            className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-10 md:mb-16"
+            style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards" }}
+          >
+            JOURNAL
+          </p>
 
           {articles.length === 0 ? (
             <p className="text-sm text-[#9a9088] tracking-wide">記事はまだありません。</p>
           ) : (
             <>
-              <Suspense fallback={<div className="mb-10 md:mb-16 h-5" />}>
-                <JournalTabs />
-              </Suspense>
+              <div style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards", animationDelay: "100ms" }}>
+                <Suspense fallback={<div className="mb-10 md:mb-16 h-5" />}>
+                  <JournalTabs />
+                </Suspense>
+              </div>
               <div
                 id="journal-grid"
                 data-filter="all"
                 className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-12 md:gap-14"
               >
-                {articles.map((article) => (
+                {articles.map((article, i) => (
                   <Link
                     key={article.id}
                     href={`/journal/${article.slug}`}
                     data-category={article.category ?? ""}
                     className="block group"
+                    style={{
+                      opacity: 0,
+                      animation: "caseFadeIn 0.8s ease forwards",
+                      animationDelay: `${150 + Math.min(i, 8) * 60}ms`,
+                    }}
                   >
                     {article.cover && (
                       <div className="w-full aspect-[4/3] overflow-hidden mb-3">
