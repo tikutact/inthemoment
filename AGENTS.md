@@ -20,3 +20,11 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 - ユーザーのチェックは毎回Obsidian（リーディングビュー）で行う。localhostプレビューのURL案内は不要
 - repoの `content/journal/` に置いてよいのは公開が承認された記事のみ（詳細は `.claude/skills/journal-publish/SKILL.md`）
+
+# ジャーナルページの演出ルール（2026-07-23）
+
+**記事ページはページ表示時のフェードインを標準とする。**
+
+- 現行実装: `app/journal/[slug]/page.tsx` — タイトル→カバー→本文の順に `caseFadeIn 0.8s ease forwards`・`animationDelay` 150ms刻みで段階表示
+- 新規のジャーナル関連ページ・改修時もこの演出を維持する（外さない）
+- アニメーションは新しいkeyframesを増やさず、`globals.css` の既存語彙（`caseFadeIn` / `navFadeIn` / `heroFadeIn`）を流用する。透明度中心の穏やかな動きがサイトのトーン。スライドイン等の主張が強い動きは提案しない
