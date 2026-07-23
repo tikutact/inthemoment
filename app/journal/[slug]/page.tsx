@@ -77,18 +77,24 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <div className="mb-10 md:mb-16">
             <h1
               className="text-xl md:text-3xl font-light text-[#1e1c1a] leading-relaxed tracking-normal md:tracking-wide break-words text-center"
-              style={{ fontFamily: "var(--font-serif)" }}
+              style={{ fontFamily: "var(--font-serif)", opacity: 0, animation: "caseFadeIn 0.8s ease forwards" }}
             >
               {article.title}
             </h1>
             {article.cover && (
-              <img src={article.cover} alt="" className="w-full max-h-[75vh] object-contain mt-8" />
+              <img
+                src={article.cover}
+                alt=""
+                className="w-full max-h-[75vh] object-contain mt-8"
+                style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards", animationDelay: "150ms" }}
+              />
             )}
           </div>
 
           {/* 本文 */}
           <div
             className="prose-journal"
+            style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards", animationDelay: "300ms" }}
             dangerouslySetInnerHTML={{ __html: html }}
           />
 
