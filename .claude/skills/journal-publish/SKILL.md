@@ -36,6 +36,7 @@ description: in the momentジャーナル記事の下書き作成〜本番公開
 ## Phase 2: 公開（ユーザーが承認したら）
 
 5. 下書きmdを **`content/journal/<slug>.md` へ移動**（vaultの symlink `inthemoment-published/` 経由でも可）
+   - **公開反映したら、vaultの下書き `~/journal-drafts/inthemoment-drafts/<slug>.md` を必ず削除する（2026-07-24ルール化）**。`cp`で反映した場合や既公開記事のリライトでも同じ。削除前に `diff -q` でrepo側と同一内容であることを確認してから消す。下書きフォルダは「公開待ちの記事だけが並ぶ」状態を常に保つ
    - **移動時に冒頭のObsidianプレビュー用ヘッダー（コメント行＋cover画像行）を削除する**。残すと本番でカバーが二重表示になる。commit前に `head` で本文が導入文から始まることを確認
    - **frontmatter `date` を公開日（サイトに追加した日）に更新する**。一覧・ホームの並びは `date` の新しい順（同日は `order` の大きい順）＝2026-07-23に order 順から変更。draft を外すのもこのタイミング
 6. `git add content/journal/<slug>.md` ＋新規画像 → `git commit` → `git push origin main`（Vercel自動デプロイ・約40秒）。**ローカル単独デプロイ禁止**（AGENTS.md）。※記事を repo に置いたまま隠したい場合は frontmatter `draft: true`（本番非表示・`npm run dev` では表示）も使える
