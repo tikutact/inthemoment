@@ -4,6 +4,7 @@ slug: maedori-shifuku
 category: knowledge
 order: 16
 date: 2026-07-14
+dateModified: 2026-07-24
 cover: /gallery/case-08/case-08-39.jpg
 ---
 
@@ -80,7 +81,16 @@ cover: /gallery/case-08/case-08-39.jpg
 [名古屋陶磁器会館での撮影](https://www.inthemoment.jp/journal/toujiki-kaikan-heiwa)は、午前は洋館でベールとブーケを、午後の平和公園ではラフな装いで、というふたつの時間を残しました。
 
 
+![洋館でブーケを手にしたふたり（名古屋陶磁器会館）](/gallery/case-08/case-08-05.jpg)
+
+
+![午後はラフな装いで（平和公園）](/gallery/case-08/case-08-43.jpg)
+
+
 クローゼットの中の服で迷ったら、打ち合わせのときに一緒に決めましょう。
+
+
+当日までの準備の全体像は「[前撮りの準備と必要なもの](https://www.inthemoment.jp/journal/37700e997dfa810d9d36ea000937db77)」にまとめています。
 
 
 名古屋・愛知を中心に前撮り・フォトウェディングのご相談はLINEからどうぞ。→ https://lin.ee/OYalLp6
