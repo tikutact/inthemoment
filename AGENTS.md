@@ -25,7 +25,16 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 **記事ページはページ表示時のフェードインを標準とする。**
 
-- 現行実装: `app/journal/[slug]/page.tsx` — タイトル→カバー→本文の順に `caseFadeIn 0.8s ease forwards`・`animationDelay` 150ms刻みで段階表示
+- 現行実装: `app/journal/[slug]/page.tsx` — タイトル→カバー→目次→本文の順に `caseFadeIn 0.8s ease forwards`・`animationDelay` 150ms刻みで段階表示
 - 一覧 `app/journal/page.tsx` も同様 — ラベル→タブ→カード（60msずらし・`Math.min(i, 8)` で9枚目以降は同時）
 - 新規のジャーナル関連ページ・改修時もこの演出を維持する（外さない）
 - アニメーションは新しいkeyframesを増やさず、`globals.css` の既存語彙（`caseFadeIn` / `navFadeIn` / `heroFadeIn`）を流用する。透明度中心の穏やかな動きがサイトのトーン。スライドイン等の主張が強い動きは提案しない
+
+# ジャーナル記事の目次（2026-07-28）
+
+**目次は記事mdに手書きしない。本文の `## 見出し` から自動生成する。**
+
+- 実装: `lib/toc.ts`（`extractToc` で見出しを拾い、`addHeadingIds` で `<h2>` に `id="section-N"` を振る）→ `app/journal/[slug]/page.tsx` がカバーと本文の間に描画
+- `##` が2つ以上ある記事にだけ出す。見出しを足す・消す・並べ替えれば目次も自動で追随する
+- アンカーidは日本語見出しをそのまま使わず連番（日本語idはURLで%エンコードされ読めなくなるため）。固定ナビ対策に `.prose-journal h2 { scroll-margin-top }` を入れてある
+- 記事本文に目次のmarkdownを書き足さないこと（二重表示になる）

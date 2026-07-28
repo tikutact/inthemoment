@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import JsonLd from "@/components/JsonLd";
 import { articleLd, breadcrumb } from "@/lib/structured-data";
 import { getArticleBySlug, getArticles } from "@/lib/notion";
+import { extractToc, addHeadingIds } from "@/lib/toc";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
 
@@ -57,8 +58,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   if (!data) notFound();
 
   const { article, markdown } = data;
+  const toc = extractToc(markdown);
   // 読点改行はテキストノードのみ対象（タグ内の「、」を置換するとalt属性等が壊れる）
-  const html = (marked.parse(markdown) as string).replace(/、(?![^<]*>)/g, '、<br class="comma-br">');
+  const html = addHeadingIds(marked.parse(markdown) as string, toc).replace(
+    /、(?![^<]*>)/g,
+    '、<br class="comma-br">'
+  );
 
   return (
     <>
@@ -91,10 +96,28 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             )}
           </div>
 
+          {/* 目次（本文の ## 見出しから自動生成） */}
+          {toc.length >= 2 && (
+            <nav
+              aria-label="目次"
+              className="journal-toc"
+              style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards", animationDelay: "300ms" }}
+            >
+              <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-5">CONTENTS</p>
+              <ul>
+                {toc.map((item) => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`}>{item.text}</a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
+
           {/* 本文 */}
           <div
             className="prose-journal"
-            style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards", animationDelay: "300ms" }}
+            style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards", animationDelay: "450ms" }}
             dangerouslySetInnerHTML={{ __html: html }}
           />
 

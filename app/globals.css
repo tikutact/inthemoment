@@ -112,6 +112,41 @@ body {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+/* 目次からのアンカー移動で、固定ナビの下に見出しが隠れないように */
+.prose-journal h2 { scroll-margin-top: 6rem; }
+@media (min-width: 768px) { .prose-journal h2 { scroll-margin-top: 8rem; } }
+
+/* Journal 目次（本文の h2 から自動生成・記事ページのカバーと本文の間） */
+.journal-toc {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  padding: 1.8rem 0;
+  border-top: 1px solid rgba(30, 28, 26, 0.1);
+  border-bottom: 1px solid rgba(30, 28, 26, 0.1);
+}
+.journal-toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.journal-toc li {
+  font-size: 0.8125rem;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  font-weight: 300;
+  margin-bottom: 0.9em;
+}
+.journal-toc li:last-child { margin-bottom: 0; }
+.journal-toc li::before {
+  content: "— ";
+  color: #9a9088;
+}
+.journal-toc a {
+  color: #6b6560;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.journal-toc a:hover { color: #1e1c1a; }
 
 
 /* JOURNAL カテゴリ絞り込み: JournalTabs が #journal-grid の data-filter を切り替え、
