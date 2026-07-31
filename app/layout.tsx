@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
-import SoundProvider from "@/components/SoundProvider";
 import ConversionTracker from "@/components/ConversionTracker";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
@@ -56,7 +55,6 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${dmSans.variable} ${cormorant.variable}`}>
       <body className="antialiased">
-        <SoundProvider />
         <ConversionTracker />
         {children}
       </body>
