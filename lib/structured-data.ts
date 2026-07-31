@@ -2,7 +2,6 @@
 // URL は既存 metadataBase に合わせて www 付き絶対URLで統一する。
 
 import type { PlanData } from "@/app/plan/data";
-import type { QaGroup } from "@/app/qa/data";
 import type { Article } from "@/lib/notion";
 
 export const SITE_URL = "https://www.inthemoment.jp";
@@ -58,18 +57,16 @@ export function articleLd(article: Article): Record<string, unknown> {
   };
 }
 
-// Q&A データ（app/qa/data.ts）から FAQPage を自動生成する（設問の追加・修正に自動で追随）
-export function faqLd(groups: QaGroup[]): Record<string, unknown> {
+// q/a の配列から FAQPage を自動生成する（/qa ページと記事 frontmatter faq: の両方で使う）
+export function faqLd(items: { q: string; a: string }[]): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: groups.flatMap((group) =>
-      group.items.map((item) => ({
-        "@type": "Question",
-        name: item.q,
-        acceptedAnswer: { "@type": "Answer", text: item.a },
-      }))
-    ),
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
   };
 }
 

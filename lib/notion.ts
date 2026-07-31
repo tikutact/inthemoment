@@ -8,6 +8,8 @@ import { join } from "node:path";
 
 const CONTENT_DIR = join(process.cwd(), "content", "journal");
 
+export type FaqItem = { q: string; a: string };
+
 export type Article = {
   id: string;
   title: string;
@@ -18,6 +20,7 @@ export type Article = {
   category?: string;
   excerpt?: string;
   draft?: boolean;
+  faq?: FaqItem[];
 };
 
 // draft: true の記事は本番では隠す。ローカル（npm run dev）では表示してプレビューできる。
@@ -29,8 +32,22 @@ function parseFile(raw: string): Parsed {
   const m = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
   if (!m) throw new Error("frontmatter がありません");
   const meta: Record<string, string> = {};
-  for (const line of m[1].split("\n")) {
+  const faq: FaqItem[] = [];
+  const lines = m[1].split("\n");
+  for (let idx = 0; idx < lines.length; idx++) {
+    const line = lines[idx];
     if (!line.trim()) continue;
+    // faq: の入れ子（インデントされた - q: / a: の行）だけ専用に読む
+    if (line.trim() === "faq:") {
+      while (idx + 1 < lines.length && /^\s/.test(lines[idx + 1])) {
+        const item = lines[++idx].trim().match(/^(?:-\s*)?([qa]):\s*(.+)$/);
+        if (!item) continue;
+        const val = item[2].startsWith('"') ? JSON.parse(item[2]) : item[2];
+        if (item[1] === "q") faq.push({ q: val, a: "" });
+        else if (faq.length) faq[faq.length - 1].a = val;
+      }
+      continue;
+    }
     const i = line.indexOf(":");
     if (i === -1) continue;
     const key = line.slice(0, i).trim();
@@ -51,6 +68,7 @@ function parseFile(raw: string): Parsed {
       category: meta.category || undefined,
       excerpt: meta.excerpt || undefined,
       draft: meta.draft === "true",
+      faq: faq.length ? faq : undefined,
     },
   };
 }

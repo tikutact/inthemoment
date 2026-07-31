@@ -22,7 +22,7 @@ export default function QaPage() {
           { name: "Q&A", path: "/qa" },
         ])}
       />
-      <JsonLd data={faqLd(qaData)} />
+      <JsonLd data={faqLd(qaData.flatMap((g) => g.items))} />
       <Navigation />
 
       <section className="pt-24 md:pt-44 pb-16 md:pb-24 px-4 md:px-6">

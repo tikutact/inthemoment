@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import JsonLd from "@/components/JsonLd";
-import { articleLd, breadcrumb } from "@/lib/structured-data";
+import { articleLd, breadcrumb, faqLd } from "@/lib/structured-data";
 import { getArticleBySlug, getArticles } from "@/lib/notion";
 import { extractToc, addHeadingIds } from "@/lib/toc";
 import { notFound } from "next/navigation";
@@ -68,6 +68,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   return (
     <>
       <JsonLd data={articleLd(article)} />
+      {article.faq && <JsonLd data={faqLd(article.faq)} />}
       <JsonLd
         data={breadcrumb([
           { name: "ホーム", path: "/" },
@@ -120,6 +121,29 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards", animationDelay: "450ms" }}
             dangerouslySetInnerHTML={{ __html: html }}
           />
+
+          {/* よくある質問（frontmatter faq: がある記事のみ） */}
+          {article.faq && (
+            <section
+              className="mt-16 md:mt-24"
+              style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards", animationDelay: "600ms" }}
+            >
+              <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-8">Q &amp; A</p>
+              <div>
+                {article.faq.map((item) => (
+                  <div key={item.q} className="border-t border-[#1e1c1a]/8 py-6">
+                    <p className="text-[13px] font-light tracking-wide text-[#1e1c1a] mb-3">
+                      {item.q}
+                    </p>
+                    <p className="text-[12px] leading-[2.6] tracking-wide text-[#6b6560] font-light">
+                      {item.a}
+                    </p>
+                  </div>
+                ))}
+                <div className="border-t border-[#1e1c1a]/8" />
+              </div>
+            </section>
+          )}
 
           {/* in the moment について */}
           <div className="mt-16 md:mt-24 pt-10 border-t border-[#1e1c1a]/10">
