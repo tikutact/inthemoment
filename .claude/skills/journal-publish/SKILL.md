@@ -61,8 +61,9 @@ description: in the momentジャーナル記事の下書き作成〜本番公開
    5. **成功判定＝「URL を優先クロールキューに追加しました」の緑トースト**（またはリンクが「✓ インデックス登録をリクエスト済み」表示に変わる）。これが出るまで完了と言わない
    6. **落とし穴**: 検索バーへの入力が入らないままReturnすると「公開 URL がインデックスに登録可能かどうかをテストする」モーダル（1〜2分かかる公開URLテスト）が誤発火する。その場合はモーダルの「キャンセル」を押し、手順3のfind→refクリックからやり直す
    7. 複数記事あるときは手順3〜5を記事ごとに繰り返す（1日数十件までは問題なく通る）
-9. **メモリの公開記事リストを更新する**: `project_inthemoment.md` のJournal欄に記事名を追記（記録漏れの実績あり）
-10. **growth-deskに記録する**: `cd ~/Desktop/claude/growth-desk && node growth.mjs articles && node growth.mjs sync` を実行し、`data/articles.json` の当該記事に `scRequested`（登録日）を書き込む（詳細はメモリ `project_growth_desk`）
+9. **GBP（Googleビジネスプロフィール）にも投稿する（2026-07-31〜）**: `cd ~/sb-auto && node post-gbp.mjs <slug> inthemoment`（記事md→タイトル+冒頭300字+カバー画像+「詳細」ボタンリンク（utm付）を自動充填。**最終「投稿」ボタンはユーザー**）。lightleakと同じスクリプトの2サイト版＝`site`引数で切り替え。見出し・太字・リンクのmarkdown記号はプレーンテキスト化される。コンポーザーは`google.com/local/business/<listing>/promote/updates/add`をトップレベルで直接開く方式が安定（`/n/<listing>/posts`経由リダイレクトは別ビジネスに化けることがある）。inthemomentのlisting=`7092928639124333140`
+10. **メモリの公開記事リストを更新する**: `project_inthemoment.md` のJournal欄に記事名を追記（記録漏れの実績あり）
+11. **growth-deskに記録する**: `cd ~/Desktop/claude/growth-desk && node growth.mjs articles && node growth.mjs sync` を実行し、`data/articles.json` の当該記事に `scRequested`（登録日）を書き込む（詳細はメモリ `project_growth_desk`）
 
 ## 参照
 
