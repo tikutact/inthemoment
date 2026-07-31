@@ -12,7 +12,7 @@ description: in the momentジャーナル記事の下書き作成〜本番公開
 ## Phase 1: 下書き作成（記事を書く時）
 
 1. **下書きmdをvaultに作成**: `~/journal-drafts/inthemoment-drafts/<slug>.md`（Obsidianで編集）
-   - frontmatter: `title` / `slug` / `order` / `date` / `dateModified`（任意）/ `cover`（root相対パス）/ `category`（`location`|`knowledge`|`prep`）
+   - frontmatter: `title` / `slug` / `order` / `date` / `dateModified`（任意）/ `cover`（root相対パス）/ `category`（`location`|`knowledge`|`prep`）/ `faq:`（任意・知識・質問型記事のみ。書式と方針は `journal-writing` スキルの「FAQ」セクション参照。閉じ `---` を落とさないこと）
    - slug: 新記事はクリーンなslug（英字ハイフン）でよい。旧Notion記事のみ pageId 由来slugを保全（URL維持）
    - 本文: 標準markdown・**1文＝1段落・段落間は空行・見出しは `##`**（`journal-writing` 参照）
 2. **画像**: 既存ケースの画像を **root相対 `/gallery/case-XX/....jpg`** で参照（スペースは `%20`）。新規画像が要る場合は `sips -Z 1200` でリサイズして `public/gallery/...` に置く
