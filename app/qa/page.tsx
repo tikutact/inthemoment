@@ -3,7 +3,8 @@ import Navigation from "@/components/Navigation";
 import FadeIn from "@/components/FadeIn";
 import QaAccordion from "@/components/QaAccordion";
 import JsonLd from "@/components/JsonLd";
-import { breadcrumb } from "@/lib/structured-data";
+import { breadcrumb, faqLd } from "@/lib/structured-data";
+import { qaData } from "@/app/qa/data";
 
 export const metadata: Metadata = {
   title: "Q&A - 前撮り・フォトウェディングのよくあるご質問",
@@ -21,6 +22,7 @@ export default function QaPage() {
           { name: "Q&A", path: "/qa" },
         ])}
       />
+      <JsonLd data={faqLd(qaData)} />
       <Navigation />
 
       <section className="pt-24 md:pt-44 pb-16 md:pb-24 px-4 md:px-6">
