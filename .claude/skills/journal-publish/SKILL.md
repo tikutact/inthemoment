@@ -22,6 +22,15 @@ description: in the momentジャーナル記事の下書き作成〜本番公開
      <!-- ↓Obsidianプレビュー用ヘッダー（公開時はこのコメントと画像行を削除。本番はfrontmatterのcoverが自動でヘッダー表示される） -->
      ![](/gallery/case-XX/....jpg)   ← coverと同じパス
      ```
+   - **プレビュー用ヘッダーの直後にObsidianプレビュー用の目次も必ず入れる（2026-07-31ルール化）**: 本番は `lib/toc.ts` が `##` 見出しから目次を自動生成するが、Obsidianでは見えないため下書きに再現しておく（ヘッダーと同じく公開時に削除する前提）:
+     ```
+     <!-- ↓Obsidianプレビュー用の目次（公開時はこのコメントごと削除。本番は##見出しから自動生成される・md手書きは二重表示になる） -->
+     **CONTENTS**
+
+     - 見出しA   ← 本文の ## 見出しをそのまま並べる
+     - 見出しB
+     ```
+     見出しを増減・改題したらこの目次も手で追随させる（下書き内だけの話・本番は自動）
    - **画像選びは「記事に一番合うか」を最優先。他記事との被りは許容**（いい記事になるなら重複は問題ない・2026-07-14ユーザー判断で緩和）。`node .claude/skills/journal-publish/list-used-images.mjs`（公開＋下書き＋プランの使用済みパスを一覧）は参考情報として実行し、同等の候補が並んだら未使用を優先する程度でよい。※同一記事内でのカバー画像の本文再掲だけは引き続き禁止（上記のとおりページ上で二重表示になる）
    - **Obsidianプレビュー**: 画像は vault の `gallery` フォルダsymlinkで解決済み。リーディングビュー（Cmd+E）で画像込みの仕上がりを確認できる
 3. **表現の重複チェック**: `node .claude/skills/journal-publish/dump-articles.mjs > /tmp/articles.txt` で全記事本文を出し、自分が書いた特徴フレーズ（比喩・情景の締め）をgrep照合する
@@ -37,7 +46,7 @@ description: in the momentジャーナル記事の下書き作成〜本番公開
 
 5. 下書きmdを **`content/journal/<slug>.md` へ移動**（vaultの symlink `inthemoment-published/` 経由でも可）
    - **公開反映したら、vaultの下書き `~/journal-drafts/inthemoment-drafts/<slug>.md` を必ず削除する（2026-07-24ルール化）**。`cp`で反映した場合や既公開記事のリライトでも同じ。削除前に `diff -q` でrepo側と同一内容であることを確認してから消す。下書きフォルダは「公開待ちの記事だけが並ぶ」状態を常に保つ
-   - **移動時に冒頭のObsidianプレビュー用ヘッダー（コメント行＋cover画像行）を削除する**。残すと本番でカバーが二重表示になる。commit前に `head` で本文が導入文から始まることを確認
+   - **移動時に冒頭のObsidianプレビュー用ヘッダー（コメント行＋cover画像行）とプレビュー用の目次（コメント行＋CONTENTSブロック）を削除する**。残すと本番でカバー・目次が二重表示になる。commit前に `head` で本文が導入文から始まることを確認
    - **frontmatter `date` を公開日（サイトに追加した日）に更新する**。一覧・ホームの並びは `date` の新しい順（同日は `order` の大きい順）＝2026-07-23に order 順から変更。draft を外すのもこのタイミング
 6. `git add content/journal/<slug>.md` ＋新規画像 → `git commit` → `git push origin main`（Vercel自動デプロイ・約40秒）。**ローカル単独デプロイ禁止**（AGENTS.md）。※記事を repo に置いたまま隠したい場合は frontmatter `draft: true`（本番非表示・`npm run dev` では表示）も使える
 7. 本番URL `https://www.inthemoment.jp/journal/<slug>` が200になるのを確認（slug＝frontmatterの `slug`）
