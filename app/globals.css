@@ -107,6 +107,73 @@ body {
   content: "— ";
   color: #9a9088;
 }
+/* チェックリスト（markdown の `- [ ] 項目`）— 中央寄せの本文のなかで、項目だけ左揃えに */
+.prose-journal ul.checklist {
+  display: inline-block;
+  text-align: left;
+  margin: 1.6em 0;
+}
+.prose-journal ul.checklist li::before { content: none; }
+.prose-journal .checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9em;
+  padding: 0.5em 0;
+  cursor: pointer;
+}
+.prose-journal .checklist-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 0.95em;
+  height: 0.95em;
+  margin: 0.62em 0 0;
+  flex-shrink: 0;
+  border: 1px solid rgba(30, 28, 26, 0.25);
+  background-color: transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.prose-journal .checklist-item input[type="checkbox"]:checked {
+  background-color: #9a9088;
+  border-color: #9a9088;
+}
+.prose-journal .checklist-item input[type="checkbox"]:checked + span {
+  color: rgba(107, 101, 96, 0.45);
+  text-decoration: line-through;
+  text-decoration-color: rgba(107, 101, 96, 0.3);
+}
+.prose-journal .checklist-item span { transition: color 0.3s ease; }
+
+/* 表（持ち物チェックリストなど）— 区分の列＋項目の列 */
+.prose-journal table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  margin: 1.6em 0 1.8em;
+}
+.prose-journal th {
+  font-size: 0.625rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  color: #9a9088;
+  text-align: left;
+  padding-bottom: 0.7em;
+}
+.prose-journal td {
+  border-top: 1px solid rgba(30, 28, 26, 0.1);
+  padding: 0.9em 0;
+  vertical-align: top;
+}
+.prose-journal tr:last-child td { border-bottom: 1px solid rgba(30, 28, 26, 0.1); }
+.prose-journal td:first-child {
+  width: 1%;
+  white-space: nowrap;
+  padding-right: 1.6em;
+  padding-top: 1.35em;
+  color: #9a9088;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+}
+
 .prose-journal a {
   color: #6b6560;
   text-decoration: underline;

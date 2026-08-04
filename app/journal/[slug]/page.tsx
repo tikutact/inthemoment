@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import JsonLd from "@/components/JsonLd";
 import { articleLd, breadcrumb, faqLd } from "@/lib/structured-data";
+import JournalChecklist from "@/components/JournalChecklist";
 import { getArticleBySlug, getArticles } from "@/lib/notion";
 import { extractToc, addHeadingIds } from "@/lib/toc";
+import { markChecklists } from "@/lib/checklist";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
 
@@ -19,6 +21,7 @@ function extractDescription(markdown: string): string {
   const text = markdown
     .replace(/!\[[^\]]*\]\([^)]*\)/g, "") // 画像
     .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1") // リンク→テキスト
+    .replace(/^[-*]\s*\[[ xX]\]\s*/gm, "") // チェックリストの「[ ]」記法
     .replace(/[#*_`>]/g, "")
     .replace(/\s+/g, " ")
     .trim();
@@ -60,10 +63,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const { article, markdown } = data;
   const toc = extractToc(markdown);
   // 読点改行はテキストノードのみ対象（タグ内の「、」を置換するとalt属性等が壊れる）
-  const html = addHeadingIds(marked.parse(markdown) as string, toc).replace(
-    /、(?![^<]*>)/g,
-    '、<br class="comma-br">'
-  );
+  const html = markChecklists(
+    addHeadingIds(marked.parse(markdown) as string, toc)
+  ).replace(/、(?![^<]*>)/g, '、<br class="comma-br">');
 
   return (
     <>
@@ -121,6 +123,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards", animationDelay: "450ms" }}
             dangerouslySetInnerHTML={{ __html: html }}
           />
+
+          {/* チェックリストがある記事だけ、進捗表示とリセット */}
+          <JournalChecklist slug={slug} />
 
           {/* よくある質問（frontmatter faq: がある記事のみ） */}
           {article.faq && (
