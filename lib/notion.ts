@@ -21,6 +21,8 @@ export type Article = {
   excerpt?: string;
   draft?: boolean;
   faq?: FaqItem[];
+  // その日の撮影ムービー（YouTube URL）。ロケ地記事に埋め込む。
+  movie?: string;
 };
 
 // draft: true の記事は本番では隠す。ローカル（npm run dev）では表示してプレビューできる。
@@ -69,6 +71,7 @@ function parseFile(raw: string): Parsed {
       excerpt: meta.excerpt || undefined,
       draft: meta.draft === "true",
       faq: faq.length ? faq : undefined,
+      movie: meta.movie || undefined,
     },
   };
 }

@@ -85,7 +85,7 @@ cover: /gallery/case-02/20251124-rie-tomo6021.jpg
 **伊古部海岸（豊橋市）**
 
 
-太平洋に面した広い砂浜と、砂丘のような地形。海と空だけを背景に、ふたりで歩けます。
+太平洋に面した広い砂浜と、砂丘のような地形。海と空だけを背景に、ふたりで歩けます。駐車場から浜までの近さや風のことは「[伊古部海岸の前撮りガイド](https://www.inthemoment.jp/journal/ikobe-kaigan-maedori)」に。
 
 
 ![伊古部海岸での前撮り](/gallery/case-01/DSCF2783.jpg)
@@ -94,7 +94,7 @@ cover: /gallery/case-02/20251124-rie-tomo6021.jpg
 **葦毛湿原（豊橋市）**
 
 
-木々に囲まれた小道を、ゆっくり歩きながら。[湿原と海をめぐる一日](https://www.inthemoment.jp/journal/37600e997dfa81a3b16ad7a16160d1e9)もおすすめです。
+木々に囲まれた小道を、ゆっくり歩きながら。木道でのルールや季節ごとの表情は「[葦毛湿原の前撮りガイド](https://www.inthemoment.jp/journal/37600e997dfa81a3b16ad7a16160d1e9)」に。
 
 
 ![葦毛湿原での前撮り](/gallery/case-01/DSCF2631.jpg)
