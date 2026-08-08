@@ -72,9 +72,14 @@ export default function AboutPage() {
       <footer className="py-8 px-6 border-t border-[#1e1c1a]/8">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs tracking-[0.25em] font-light">in the moment</p>
-          <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
-            © 2026 in the moment. All rights reserved.
-          </p>
+          <div className="flex items-center gap-6">
+            <a href="/terms" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+              利用規約
+            </a>
+            <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
+              © 2026 in the moment. All rights reserved.
+            </p>
+          </div>
         </div>
       </footer>
     </>
