@@ -314,6 +314,9 @@ export default async function Home() {
             <a href="/terms" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               利用規約
             </a>
+            <a href="/tokushoho" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+              特定商取引法に基づく表記
+            </a>
             <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
               © 2026 in the moment. All rights reserved.
             </p>
