@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
-import FadeIn from "@/components/FadeIn";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/structured-data";
 
@@ -69,7 +68,7 @@ export default function TokushohoPage() {
       <Navigation />
 
       <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-4 md:px-6">
-        <FadeIn>
+        <div style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards" }}>
           <div className="max-w-2xl mx-auto">
             <div className="mb-10 md:mb-16 text-center">
               <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-6">LEGAL</p>
@@ -97,13 +96,13 @@ export default function TokushohoPage() {
               <p className="text-[10px] text-[#9a9088] tracking-[0.15em] font-light">in the moment　|　www.inthemoment.jp</p>
             </div>
           </div>
-        </FadeIn>
+        </div>
       </section>
 
       <footer className="py-8 px-6 border-t border-[#1e1c1a]/8">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs tracking-[0.25em] font-light">in the moment</p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             <a href="/terms" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               利用規約
             </a>

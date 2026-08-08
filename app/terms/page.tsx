@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
-import FadeIn from "@/components/FadeIn";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/structured-data";
 
@@ -46,7 +45,7 @@ export default function TermsPage() {
       <Navigation />
 
       <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-4 md:px-6">
-        <FadeIn>
+        <div style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards" }}>
           <div className="max-w-2xl mx-auto">
             <div className="mb-10 md:mb-16 text-center">
               <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-6">TERMS</p>
@@ -65,7 +64,22 @@ export default function TermsPage() {
 
             <h2 className={h2Class}>第1条　サービス内容</h2>
             <p className={pClass}>当方は、以下のプランに基づく前撮り・フォトウェディング撮影サービスを提供します。</p>
-            <div className="mt-4 overflow-x-auto">
+            {/* モバイル：カード表示 */}
+            <div className="mt-4 md:hidden">
+              {planRows.map((row) => (
+                <div key={row.plan} className="py-4 border-t border-[#1e1c1a]/10 first:border-t-0">
+                  <p className="text-xs text-[#1e1c1a] font-light mb-1.5">{row.plan}</p>
+                  <p className="text-xs text-[#6b6560] font-light leading-[1.8] mb-2">{row.content}</p>
+                  <div className="flex items-baseline justify-between text-xs text-[#6b6560] font-light">
+                    <span>{row.price}</span>
+                    <span>{row.delivery}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* PC：表テーブル */}
+            <div className="mt-4 hidden md:block overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr>
@@ -187,15 +201,23 @@ export default function TermsPage() {
               <p className="text-[10px] text-[#9a9088] tracking-[0.15em] font-light">in the moment　|　www.inthemoment.jp</p>
             </div>
           </div>
-        </FadeIn>
+        </div>
       </section>
 
       <footer className="py-8 px-6 border-t border-[#1e1c1a]/8">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs tracking-[0.25em] font-light">in the moment</p>
-          <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
-            © 2026 in the moment. All rights reserved.
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            <a href="/terms" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+              利用規約
+            </a>
+            <a href="/tokushoho" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+              特定商取引法に基づく表記
+            </a>
+            <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
+              © 2026 in the moment. All rights reserved.
+            </p>
+          </div>
         </div>
       </footer>
     </>
