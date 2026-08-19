@@ -1,5 +1,5 @@
 ---
-title: "伊古部海岸の前撮りガイド（愛知県豊橋市）"
+title: "伊古部海岸の前撮り（愛知県豊橋市）"
 slug: ikobe-kaigan-maedori
 category: location
 order: 17
@@ -95,7 +95,7 @@ in the moment で撮ったのも、日が傾きはじめる時間でした。時
 
 木道の続く湿原の緑と、水平線しかない砂浜。同じ豊橋市のなかで、まったく違う2枚が残せます。
 
-昼に湿原を歩いて、夕方に海へ。順番は逆でもかまいません。葦毛湿原そのものについては「[葦毛湿原の前撮りガイド](https://www.inthemoment.jp/journal/37600e997dfa81a3b16ad7a16160d1e9)」にまとめています。
+昼に湿原を歩いて、夕方に海へ。順番は逆でもかまいません。葦毛湿原そのものについては「[葦毛湿原の前撮り](https://www.inthemoment.jp/journal/37600e997dfa81a3b16ad7a16160d1e9)」にまとめています。
 
 ![葦毛湿原の小道を歩くふたり](/gallery/case-01/DSCF2631.jpg)
 

@@ -1,5 +1,5 @@
 ---
-title: "笠松みなと公園の前撮りガイド（岐阜県羽島郡笠松町）"
+title: "笠松みなと公園の前撮り（岐阜県羽島郡笠松町）"
 slug: kasamatsu-minato-park
 category: location
 order: 20

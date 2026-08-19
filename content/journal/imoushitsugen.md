@@ -1,5 +1,5 @@
 ---
-title: "葦毛湿原の前撮りガイド（愛知県豊橋市）"
+title: "葦毛湿原の前撮り（愛知県豊橋市）"
 slug: 37600e997dfa81a3b16ad7a16160d1e9
 category: location
 order: 0
@@ -84,7 +84,7 @@ faq:
 
 湿原の緑と、太平洋に面した砂浜。同じ豊橋市のなかで、まったく違う2枚が残せます。
 
-海側の詳しい条件は「[伊古部海岸の前撮りガイド](https://www.inthemoment.jp/journal/ikobe-kaigan-maedori)」にまとめました。
+海側の詳しい条件は「[伊古部海岸の前撮り](https://www.inthemoment.jp/journal/ikobe-kaigan-maedori)」にまとめました。
 
 ![伊古部海岸へ移動して](/gallery/case-01/DSCF2778.jpg)
 
