@@ -8,6 +8,7 @@ import { extractToc, addHeadingIds } from "@/lib/toc";
 import { markChecklists } from "@/lib/checklist";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
+import { insertPhraseBreaks, phraseHtml } from "@/lib/wrap";
 
 export const revalidate = 60;
 
@@ -62,10 +63,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   const { article, markdown } = data;
   const toc = extractToc(markdown);
-  // 読点改行はテキストノードのみ対象（タグ内の「、」を置換するとalt属性等が壊れる）
-  const html = markChecklists(
-    addHeadingIds(marked.parse(markdown) as string, toc)
-  ).replace(/、(?![^<]*>)/g, '、<br class="comma-br">');
+  // 折り返しは文節単位（lib/wrap.ts）。テキストノードのみ対象＝タグの中には入れない
+  const html = insertPhraseBreaks(
+    markChecklists(addHeadingIds(marked.parse(markdown) as string, toc))
+  );
 
   return (
     <>
@@ -84,11 +85,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           {/* ヘッダー */}
           <div className="mb-10 md:mb-16">
             <h1
-              className="text-xl md:text-3xl font-light text-[#1e1c1a] leading-relaxed tracking-normal md:tracking-wide break-words text-center"
+              className="jp-wrap text-xl md:text-3xl font-light text-[#1e1c1a] leading-relaxed tracking-normal md:tracking-wide text-center"
               style={{ fontFamily: "var(--font-serif)", opacity: 0, animation: "caseFadeIn 0.8s ease forwards" }}
-            >
-              {article.title}
-            </h1>
+              dangerouslySetInnerHTML={{ __html: phraseHtml(article.title) }}
+            />
             {article.cover && (
               <img
                 src={article.cover}
@@ -156,12 +156,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               <div>
                 {article.faq.map((item) => (
                   <div key={item.q} className="border-t border-[#1e1c1a]/8 py-6">
-                    <p className="text-[13px] font-light tracking-wide text-[#1e1c1a] mb-3">
-                      {item.q}
-                    </p>
-                    <p className="text-[12px] leading-[2.6] tracking-wide text-[#6b6560] font-light">
-                      {item.a}
-                    </p>
+                    <p
+                      className="jp-wrap text-[13px] font-light tracking-wide text-[#1e1c1a] mb-3"
+                      dangerouslySetInnerHTML={{ __html: phraseHtml(item.q) }}
+                    />
+                    <p
+                      className="jp-wrap text-[12px] leading-[2.6] tracking-wide text-[#6b6560] font-light"
+                      dangerouslySetInnerHTML={{ __html: phraseHtml(item.a) }}
+                    />
                   </div>
                 ))}
                 <div className="border-t border-[#1e1c1a]/8" />
@@ -178,10 +180,15 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             >
               in the moment
             </p>
-            <p className="text-[10px] md:text-xs text-[#6b6560] leading-[2.2] tracking-wide font-light mb-6">
-              愛知を拠点に、前撮り・フォトウェディングを行うフォトグラファー。<br />
-              ポーズよりも余白を、ふたりの「いま」をそのままに残します。
-            </p>
+            <p
+              className="jp-wrap text-[10px] md:text-xs text-[#6b6560] leading-[2.2] tracking-wide font-light mb-6"
+              dangerouslySetInnerHTML={{
+                __html:
+                  phraseHtml("愛知を拠点に、前撮り・フォトウェディングを行うフォトグラファー。") +
+                  "<br />" +
+                  phraseHtml("ポーズよりも余白を、ふたりの「いま」をそのままに残します。"),
+              }}
+            />
             <div className="flex flex-wrap gap-4">
               <a
                 href="/"

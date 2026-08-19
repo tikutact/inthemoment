@@ -52,9 +52,14 @@ body {
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 
-/* 句読点改行（モバイルのみ） */
-.prose-journal .comma-br { display: none; }
-@media (max-width: 767px) { .prose-journal .comma-br { display: inline; } }
+/* 日本語の折り返しを文節単位にする（2026-08-19。旧: 読点ごとの強制改行 comma-br）
+   lib/wrap.ts が文節の切れ目に <wbr> を入れ、keep-all でそれ以外では折らない。
+   一文節が行幅を超えたときだけ overflow-wrap が働いてはみ出しを防ぐ。 */
+.jp-wrap,
+.prose-journal {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
 
 /* Journal article body */
 .prose-journal {
@@ -64,7 +69,6 @@ body {
   letter-spacing: 0.04em;
   font-weight: 300;
   line-break: strict;
-  overflow-wrap: break-word;
   text-align: center;
 }
 .prose-journal p { margin-bottom: 1.8em; }
