@@ -355,6 +355,7 @@ export const cases: ShowcaseCase[] = [
       "/gallery/case-07/case-07-25.jpg",
       "/gallery/case-07/case-07-26.jpg",
       "/gallery/case-07/case-07-27.jpg",
+      "/gallery/case-07/case-07-58.jpg",
       "/gallery/case-07/case-07-28.jpg",
       "/gallery/case-07/case-07-29.jpg",
       "/gallery/case-07/case-07-30.jpg",
