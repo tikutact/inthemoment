@@ -13,7 +13,13 @@ description: inthemomentのギャラリーに新ケース（case-XX）を追加�
      ```
    - **同シーンの連写・近似カットは1枚に絞る**。残す基準: 表情が一番良いもの／同シーンでワイドと寄りは構図が違えば両方可。カメラ2台体制だと**別ファイル名で同シーンの重複**があるので機材をまたいで判定する
    - **ゲスト・ご家族の顔が写るカットは除外**（掲載同意が不明のため。ユーザーがOKを出したら戻す）
-   - 並び順: ユーザー指定の推しカットを先頭に、残りは撮影時刻順。**EXIFは `sips -g creation` が効かないことがあるので `mdls -raw -name kMDItemContentCreationDate` を使う**（再書き出しファイルは日付がズレて末尾に落ちるが実害は小さい）
+   - 並び順: ユーザー指定の推しカットを先頭に、残りは撮影時刻順。**撮影時刻はEXIFの `DateTimeOriginal` を読む**（2026-08-21訂正）。`sips -g creation` も `mdls -raw -name kMDItemContentCreationDate` も**書き出し日を返すので使わない**——これまで後者を推奨していたが誤りだった:
+     ```python
+     from PIL import Image, ExifTags
+     ex = Image.open(f).getexif().get_ifd(0x8769)
+     {ExifTags.TAGS.get(k,k):v for k,v in ex.items()}.get("DateTimeOriginal")
+     ```
+     書き出し日も1時間ぶんくらいに散らばって順序が撮影順と相関するため、「バラけている＝撮影時刻」と早合点しない（日付を見れば分かる）。**EXIFごと落ちているカメラもある**（2026-05-10の案件では同じ日の110枚のうちα7C IIの50枚が消え、GFX100Sの60枚は残っていた）。詳細はメモリ `reference_exif_shoot_time`
    - 選定結果は「残した数・除外理由の内訳」をユーザーに報告して確認を取る
 1. **写真を配置**: `public/gallery/case-XX/` にコピー（XXは連番の次）
 2. **`case-XX-NN.jpg` 形式にリネームする**（お客様の名前をURLに露出させないため。2026-07-07追加）:
