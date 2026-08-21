@@ -139,13 +139,13 @@ cover: /gallery/case-02/20251124-rie-tomo6021.jpg
 **宝が池公園（京都・左京区）**
 
 
-森と池のある広い公園。雪の日には木立が白く染まって、いつもと違う静けさのなかで撮れます。
+山ひとつぶんが公園になっている場所。園路をひとつ入ると市街地の音が消えます。アクセスや撮影に要る手続きは「[宝が池公園の前撮り](https://www.inthemoment.jp/journal/takaragaike-koen)」に。
 
 
 ![雪の宝が池公園](/gallery/case-05/DSCF5492.jpg)
 
 
-京都の一日の様子は「[GOSPEL / 宝が池公園](https://www.inthemoment.jp/journal/37800e997dfa815aba54d4440ae8307d)」に。
+京都の一日の様子は「[GOSPEL（京都市左京区）](https://www.inthemoment.jp/journal/37800e997dfa815aba54d4440ae8307d)」に。
 
 
 ## ロケ地の、選び方
