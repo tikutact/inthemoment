@@ -41,16 +41,16 @@ cover: /gallery/case-08/case-08-44.jpg
 「POTTERY-CLUB」と記された古い扉の前で、そっとおじぎをするように身を寄せていきました。
 
 
-![case-08-45](/gallery/case-08/case-08-45.jpg)
+![レースのカーテン越しの窓辺に立つふたり](/gallery/case-08/case-08-45.jpg)
 
 
-![case-08-46](/gallery/case-08/case-08-46.jpg)
+![アーチ窓の前でブーケを手に向かい合うふたり](/gallery/case-08/case-08-46.jpg)
 
 
-![case-08-47](/gallery/case-08/case-08-47.jpg)
+![白い窓枠の続く回廊を歩くふたり](/gallery/case-08/case-08-47.jpg)
 
 
-![case-08-48](/gallery/case-08/case-08-48.jpg)
+![「POTTERY-CLUB」と記された扉の前のふたり](/gallery/case-08/case-08-48.jpg)
 
 
 ## 平和公園 — 初夏の芝生を歩いて
@@ -71,16 +71,16 @@ cover: /gallery/case-08/case-08-44.jpg
 池のほとりでは、きらめく水面を背に、ふたりの笑い声が続いていきました。
 
 
-![case-08-27](/gallery/case-08/case-08-27.jpg)
+![平和公園の大きな木のそばに立つふたり](/gallery/case-08/case-08-27.jpg)
 
 
-![case-08-36](/gallery/case-08/case-08-36.jpg)
+![木立を背にしたサスペンダー姿の新郎](/gallery/case-08/case-08-36.jpg)
 
 
-![case-08-37](/gallery/case-08/case-08-37.jpg)
+![編み込んだ髪とレースの背中](/gallery/case-08/case-08-37.jpg)
 
 
-![case-08-39](/gallery/case-08/case-08-39.jpg)
+![池のほとりで笑い合うふたり](/gallery/case-08/case-08-39.jpg)
 
 
 in the momentでは、名古屋をはじめ愛知県内・県外への出張撮影も承っています。
