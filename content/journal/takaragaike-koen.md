@@ -89,6 +89,9 @@ faq:
 ![雪の道を歩くふたり](/gallery/case-05/DSCF5507.jpg)
 
 
+![雪の広場でバルーンを掲げるふたり](/gallery/case-05/DSCF5536.jpg)
+
+
 ## 冬の光と、足元のこと
 
 
@@ -108,6 +111,9 @@ faq:
 
 
 ![雪の広場に立つふたり](/gallery/case-05/DSCF5526.jpg)
+
+
+![雪あかりのなかのふたりの表情](/gallery/case-05/DSCF5514.jpg)
 
 
 ## 撮る前に、ひとつだけ
