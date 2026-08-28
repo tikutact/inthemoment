@@ -4,6 +4,7 @@ slug: ikobe-kaigan-maedori
 category: location
 order: 17
 date: 2026-08-07
+dateModified: 2026-08-29
 cover: /gallery/case-01/DSCF2772.jpg
 movie: https://www.youtube.com/watch?v=q1lzqqLZfPc
 faq:
@@ -15,6 +16,8 @@ faq:
     a: "回れます。伊古部海岸から葦毛湿原までは車で20分ほどで、in the moment でも同じ日にふたつを巡って撮影しています。"
   - q: "伊古部海岸で撮影するときに気をつけることはありますか？"
     a: "海風が常にあるので、ヘアやヴェールの留め方を先に決めておくと安心です。砂浜はやわらかくヒールが沈むため、履き替え用の靴もあると動きやすくなります。"
+  - q: "伊古部海岸で撮る前撮り写真はどんな雰囲気になりますか？"
+    a: "建物や看板が入らない、水平線だけの写真になります。曇りの日はやわらかい光がまわり、夕方は西日が砂に長い影をつくって空が茜色に染まります。このページの写真はすべて2025年10月に実際に撮影した一日のものです。"
 ---
 
 
@@ -172,7 +175,7 @@ faq:
 料金は写真のみのPHOTOプランが¥100,000〜、写真と映像を同じ日に残すPHOTO + MOVIEプランが¥150,000〜（いずれも税込）。交通費は大須観音駅を起算に別途申し受けます。
 
 
-このページの写真も、PHOTO + MOVIEプランで撮影した一日のものです。
+このページの写真も、PHOTO + MOVIEプランで撮影した一日のものです。この日の写真は[ギャラリー](https://www.inthemoment.jp/gallery/case-01)でもご覧いただけます。
 
 
 ほかの場所とあわせて検討したい方は「[名古屋・愛知の前撮りロケ地8選](https://www.inthemoment.jp/journal/maedori-location-aichi-nagoya)」を、プランの詳細は[プラン一覧](https://www.inthemoment.jp/plan)をご覧ください。
