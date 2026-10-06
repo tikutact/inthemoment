@@ -37,7 +37,7 @@ cover: /gallery/case-02/20251124-rie-tomo6021.jpg
 ![平和公園での前撮り](/gallery/case-08/case-08-27.jpg)
 
 
-ふたつの場所を一日で巡った撮影の様子は「[名古屋陶磁器会館 / 平和公園](https://www.inthemoment.jp/journal/toujiki-kaikan-heiwa)」に。
+ふたつの場所を一日で巡った撮影の様子は「[名古屋陶磁器会館の前撮り](https://www.inthemoment.jp/journal/toujiki-kaikan-heiwa)」と「[平和公園の前撮り](https://www.inthemoment.jp/journal/heiwa-koen)」に。
 
 
 ## 愛知県内の前撮りロケ地 — 公園・美術館・街

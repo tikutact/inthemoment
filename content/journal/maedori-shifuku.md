@@ -85,7 +85,7 @@ faq:
 一日の撮影のなかで、ドレスと私服を両方着ることもできます。
 
 
-[名古屋陶磁器会館での撮影](https://www.inthemoment.jp/journal/toujiki-kaikan-heiwa)は、午前は洋館でベールとブーケを、午後の平和公園ではラフな装いで、というふたつの時間を残しました。
+[名古屋陶磁器会館での撮影](https://www.inthemoment.jp/journal/toujiki-kaikan-heiwa)は、午前は洋館でベールとブーケを、午後の[平和公園](https://www.inthemoment.jp/journal/heiwa-koen)ではラフな装いで、というふたつの時間を残しました。
 
 
 ![洋館でブーケを手にしたふたり（名古屋陶磁器会館）](/gallery/case-08/case-08-05.jpg)
