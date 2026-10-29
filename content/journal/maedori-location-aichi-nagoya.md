@@ -143,7 +143,7 @@ cover: /gallery/case-02/20251124-rie-tomo6021.jpg
 ![雪の宝が池公園](/gallery/case-05/DSCF5492.jpg)
 
 
-京都の一日の様子は「[GOSPEL（京都市左京区）](https://www.inthemoment.jp/journal/37800e997dfa815aba54d4440ae8307d)」に。
+京都の一日の様子は「[GOSPELの前撮り](https://www.inthemoment.jp/journal/37800e997dfa815aba54d4440ae8307d)」に。
 
 
 ## ロケ地の、選び方
