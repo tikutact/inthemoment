@@ -4,7 +4,7 @@ slug: 39600e997dfa81c3bb1fef5b4bc2d83a
 category: prep
 order: 13
 date: 2026-07-23
-dateModified: 2026-07-31
+dateModified: 2026-10-29
 cover: /gallery/case-06/DSCF4630.jpg
 faq:
   - q: "前撮り当日は何時間くらいかかりますか？"
@@ -72,7 +72,7 @@ faq:
 
 この日の午後は東岡崎へ。
 
-このおふたりの一日は、[豊田市美術館 / 東岡崎](https://www.inthemoment.jp/journal/38f00e997dfa81379752dd7b58e15ae5)の記事にもまとめています。
+このおふたりの一日は、「[豊田市美術館の前撮り](https://www.inthemoment.jp/journal/38f00e997dfa81379752dd7b58e15ae5)」と「[東岡崎の前撮り](https://www.inthemoment.jp/journal/higashiokazaki)」にもまとめています。
 
 ![](/gallery/case-06/DSCF4544.jpg)
 

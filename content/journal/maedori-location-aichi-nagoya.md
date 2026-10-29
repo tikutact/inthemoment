@@ -4,6 +4,7 @@ slug: maedori-location-aichi-nagoya
 category: knowledge
 order: 10
 date: 2026-07-31
+dateModified: 2026-10-29
 cover: /gallery/case-02/20251124-rie-tomo6021.jpg
 ---
 
@@ -55,7 +56,7 @@ cover: /gallery/case-02/20251124-rie-tomo6021.jpg
 **豊田市美術館（豊田市）**
 
 
-白い壁とガラスの現代建築。画面から余計なものが消えて、静かで凛とした写真になります。
+白い壁とガラスの現代建築。画面から余計なものが消えて、静かで凛とした写真になります。庭で撮るための申請の流れは「[豊田市美術館の前撮り](https://www.inthemoment.jp/journal/38f00e997dfa81379752dd7b58e15ae5)」に。
 
 
 ![豊田市美術館での前撮り](/gallery/case-06/20250310%20yu-ka%20souichi2743.jpg)
@@ -64,7 +65,7 @@ cover: /gallery/case-02/20251124-rie-tomo6021.jpg
 **東岡崎の街（岡崎市）**
 
 
-夕方の商店街や路地を、ふたりで歩きながら。[暮らしの延長にあるような撮影](https://www.inthemoment.jp/journal/38f00e997dfa81379752dd7b58e15ae5)ができます。
+夕方の乙川の河川敷から、康生通りの街なかへ。歩きながら背景が変わっていく撮影ができます。行き方や河川敷の申請は「[東岡崎の前撮り](https://www.inthemoment.jp/journal/higashiokazaki)」に。
 
 
 ![東岡崎での前撮り](/gallery/case-06/DSCF4656.jpg)
@@ -76,7 +77,7 @@ cover: /gallery/case-02/20251124-rie-tomo6021.jpg
 **篠島（知多郡南知多町）**
 
 
-船で渡る、三河湾の離島。[漁師町の路地と夕暮れの海](https://www.inthemoment.jp/journal/37800e997dfa814e99c5de99a2e2f75c)が待っています。
+船で渡る、三河湾の離島。漁師町の路地と、西の海に沈む夕日。船の乗り方や島での一日は「[篠島の前撮り](https://www.inthemoment.jp/journal/37800e997dfa814e99c5de99a2e2f75c)」に。
 
 
 ![篠島での前撮り](/gallery/case-03/DSCF4512.jpg)
@@ -109,7 +110,7 @@ cover: /gallery/case-02/20251124-rie-tomo6021.jpg
 **吉田邸（滋賀・近江八幡）**
 
 
-明治期に建てられた洋館。窓からのやわらかい光と白い室内が、ふたりの表情を明るく見せてくれます。
+1913年（大正2年）に建てられた、ヴォーリズ設計の洋館。窓からのやわらかい光と白い室内が、ふたりの表情を明るく見せてくれます。借り方や部屋の様子は「[吉田邸の前撮り](https://www.inthemoment.jp/journal/yoshidatei-omihachiman)」に。
 
 
 ![吉田邸の窓辺](/gallery/case-02/20251124-rie-tomo6049.jpg)
@@ -118,13 +119,10 @@ cover: /gallery/case-02/20251124-rie-tomo6021.jpg
 **龍王ヶ渕（奈良・宇陀）**
 
 
-水鏡で知られる、山あいの静かな池。晩秋はススキの野原が夕日に色づきます。
+水鏡で知られる、山あいの静かな池。晩秋はススキの野原が夕日に色づきます。駐車場や道のことは「[龍王ヶ渕の前撮り](https://www.inthemoment.jp/journal/37600e997dfa81db9e51c06cf2bfb352)」に。
 
 
 ![龍王ヶ渕のススキ野原](/gallery/case-02/20251124-rie-tomo6524.jpg)
-
-
-滋賀・奈良を一日で巡った様子は「[吉田邸 / 龍王ヶ渕](https://www.inthemoment.jp/journal/37600e997dfa81db9e51c06cf2bfb352)」に。
 
 
 **GOSPEL（京都・左京区）**
