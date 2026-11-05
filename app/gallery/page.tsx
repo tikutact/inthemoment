@@ -5,6 +5,7 @@ import ShowcaseStrip from "@/components/ShowcaseStrip";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/structured-data";
 import { cases } from "./data";
+import { galleryImage } from "./images";
 
 export const metadata: Metadata = {
   title: "GALLERY - 名古屋・愛知の前撮りギャラリー",
@@ -43,7 +44,7 @@ export default function ShowcasePage() {
           </p>
         ) : (
           <div className="space-y-0">
-            {[...cases].reverse().map((c) => (
+            {[...cases].reverse().map((c, i) => (
               <div key={c.id}>
                 <Link href={`/gallery/${c.id}`} className="group block py-6 border-t border-[#1e1c1a]/8">
                   <div
@@ -59,7 +60,7 @@ export default function ShowcasePage() {
                       </p>
                     )}
                   </div>
-                  <ShowcaseStrip photos={c.photos} label={c.label} />
+                  <ShowcaseStrip photos={c.photos.map(galleryImage)} label={c.label} eager={i === 0 ? 6 : 0} />
                 </Link>
               </div>
             ))}

@@ -32,6 +32,13 @@ description: inthemomentのギャラリーに新ケース（case-XX）を追加�
    ```bash
    find "public/gallery/case-XX" -name "*.jpg" | while read f; do sips -Z 1200 "$f" --out "$f" > /dev/null; done
    ```
+3.5 **一覧用サムネと寸法表を作る**（2026-11追加）:
+   ```bash
+   npm run gallery:thumbs
+   ```
+   - `public/gallery/case-XX/thumb/*.webp`（高さ480px）と `app/gallery/photo-sizes.json`（元写真の幅・高さ）ができる。**両方コミットする**
+   - `/gallery` 一覧の帯はこのサムネを遅延読み込みで出し、詳細ページは寸法を `<img width height>` に使う（読み込み前から枠が決まり、ずれない）
+   - 作り忘れても `npm run build` の前（prebuild）に同じスクリプトが走るので表示は壊れない。寸法表に無い写真は元写真をそのまま出す（`app/gallery/images.ts`）
 3. **`app/gallery/data.ts` にケースを追加**（id / label / location。既存ケースの形式に合わせる）
    - 既存写真を差し替える場合は**上書きせず新しいファイル名**で追加してsrcを更新（Next.jsキャッシュ対策）
 4. **ローカルで見た目を確認してユーザーのOKを取る**（見た目変更はいきなりpushしない）
@@ -44,5 +51,5 @@ description: inthemomentのギャラリーに新ケース（case-XX）を追加�
 
 ## 注意
 
-- `/gallery` は全ケースの画像を一括ロードする既知の重さ問題がある。ケースが増えるほど悪化するので、ストリップに出す枚数は必要最小限を意識する
+- `/gallery` 一覧は2026-11からサムネ（高さ480px・WebP）を遅延読み込みしている（以前は全ケースの元写真を一括ロードしていた）。手順3.5を省くと、そのケースだけ元写真の一括ロードに戻る
 - ジャーナル記事でこのケースを使う予定がある場合、**記事を書く前にケースを先にデプロイ**しておくとNotion下書きでも画像が表示される
