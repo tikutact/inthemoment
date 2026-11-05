@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/gallery-thumbs.mjs",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "gallery:thumbs": "node scripts/gallery-thumbs.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.4.3",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { Suspense } from "react";
 import Navigation from "@/components/Navigation";
 import JsonLd from "@/components/JsonLd";
@@ -9,12 +10,12 @@ import Link from "next/link";
 
 export const revalidate = 60;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "JOURNAL - 前撮りのロケーション紹介・お役立ちコラム",
   description:
     "名古屋・愛知の前撮りに役立つ情報をお届けするジャーナル。おすすめのロケーション紹介、費用や準備のこと、撮影の記録などを綴っています。",
-  alternates: { canonical: "/journal" },
-};
+  path: "/journal",
+});
 
 export default async function JournalPage() {
   const articles = await getArticles();
@@ -30,12 +31,12 @@ export default async function JournalPage() {
       <Navigation />
       <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-4 md:px-6 overflow-x-hidden">
         <div className="max-w-5xl mx-auto">
-          <p
+          <h1
             className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-10 md:mb-16"
             style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards" }}
           >
             JOURNAL
-          </p>
+          </h1>
 
           {articles.length === 0 ? (
             <p className="text-sm text-[#9a9088] tracking-wide">記事はまだありません。</p>

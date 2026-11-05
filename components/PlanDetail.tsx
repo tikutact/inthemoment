@@ -20,7 +20,7 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center" style={{ paddingTop: "64px" }}>
               <div className="flex items-center gap-6 md:gap-10 mb-3">
                 <div className="hidden md:block w-24 h-[1px] bg-white/50" />
-                <p className="text-xl md:text-3xl font-light tracking-[0.3em]">{plan.name}</p>
+                <h1 className="text-xl md:text-3xl font-light tracking-[0.3em]">{plan.name}</h1>
                 <div className="hidden md:block w-24 h-[1px] bg-white/50" />
               </div>
             </div>
@@ -35,9 +35,9 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
         <section className="pt-44 pb-24 px-6 text-center">
           <FadeIn>
             <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-4">PLAN</p>
-            <p className="text-4xl md:text-5xl font-light tracking-[0.15em] text-[#1e1c1a] mb-3">
+            <h1 className="text-4xl md:text-5xl font-light tracking-[0.15em] text-[#1e1c1a] mb-3">
               {plan.name}
-            </p>
+            </h1>
             <p className="text-sm text-[#6b6560] leading-[2.4] tracking-wide whitespace-pre-line max-w-md mx-auto mt-6">
               {plan.description}
             </p>

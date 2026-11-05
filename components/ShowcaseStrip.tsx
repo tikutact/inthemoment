@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import type { GalleryImage } from "@/app/gallery/images";
 
-export default function ShowcaseStrip({ photos, label }: { photos: string[]; label: string }) {
+// photos: 一覧用サムネ（thumb）と元写真の寸法つき。eager: 先頭から何枚を遅延読み込みにしないか
+export default function ShowcaseStrip({ photos, label, eager = 0 }: { photos: GalleryImage[]; label: string; eager?: number }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const posRef = useRef(0);
   const rafRef = useRef<number>(0);
@@ -83,33 +85,42 @@ export default function ShowcaseStrip({ photos, label }: { photos: string[]; lab
       rafRef.current = requestAnimationFrame(tick);
     };
 
-    const imgs = track.querySelectorAll("img");
+    // 自動スクロールは「帯の中で最初に見えている写真」が読めてから始める（従来の見え方を保つ）。
+    // 画面外の写真は loading="lazy" なので、全部の load を待つと始まらない。
+    // 枠の大きさは width/height（元写真の比率）で読み込み前から決まっているので、scrollWidth はこの時点で正しい
+    const viewW = track.parentElement?.clientWidth ?? window.innerWidth;
+    const left0 = track.getBoundingClientRect().left;
+    const imgs = [...track.querySelectorAll("img")].filter((img) => img.getBoundingClientRect().left - left0 < viewW);
     const total = imgs.length;
-    if (total === 0) { start(); return; }
+    if (total === 0) { start(); return cleanup; }
 
     let loaded = 0;
+    let started = false;
     const onLoad = () => {
       loaded++;
-      if (loaded === total) start();
+      if (loaded === total && !started) { started = true; start(); }
     };
     imgs.forEach((img) => {
-      if ((img as HTMLImageElement).complete) {
+      if (img.complete) {
         loaded++;
       } else {
         img.addEventListener("load", onLoad);
         img.addEventListener("error", onLoad);
       }
     });
-    if (loaded === total) start();
+    if (loaded === total && !started) { started = true; start(); }
 
-    return () => {
+    return cleanup;
+
+    function cleanup() {
       cancelAnimationFrame(rafRef.current);
-      track.removeEventListener("pointerdown", onDown);
-      track.removeEventListener("pointermove", onMove);
-      track.removeEventListener("pointerup", onUp);
-      track.removeEventListener("pointercancel", onUp);
-      track.removeEventListener("click", onClickCapture, true);
-    };
+      imgs.forEach((img) => { img.removeEventListener("load", onLoad); img.removeEventListener("error", onLoad); });
+      track!.removeEventListener("pointerdown", onDown);
+      track!.removeEventListener("pointermove", onMove);
+      track!.removeEventListener("pointerup", onUp);
+      track!.removeEventListener("pointercancel", onUp);
+      track!.removeEventListener("click", onClickCapture, true);
+    }
   }, []);
 
   const doubled = [...photos, ...photos];
@@ -121,13 +132,19 @@ export default function ShowcaseStrip({ photos, label }: { photos: string[]; lab
         className="flex gap-[3px]"
         style={{ width: "max-content", touchAction: "pan-y", cursor: "grab", willChange: "transform" }}
       >
-        {doubled.map((src, j) => (
+        {doubled.map((p, j) => (
           <div key={j} className="relative shrink-0 h-40 md:h-44 overflow-hidden group/photo">
             <img
-              src={src}
+              src={p.thumb}
               alt={`${label} ${j + 1}`}
+              width={p.width}
+              height={p.height}
+              loading={j < eager ? undefined : "lazy"}
+              decoding="async"
               draggable={false}
               className="h-full w-auto object-cover select-none transition-transform duration-700 group-hover/photo:scale-105"
+              // 枠の比率は元写真に固定（サムネの丸め誤差で帯の長さ＝ループ位置がずれないように）
+              style={p.width && p.height ? { aspectRatio: `${p.width} / ${p.height}` } : undefined}
             />
             <div className="absolute inset-0 bg-black/0 group-hover/photo:bg-black/25 transition-colors duration-300" />
           </div>

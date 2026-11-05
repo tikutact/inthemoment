@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import FadeIn from "@/components/FadeIn";
@@ -7,12 +8,12 @@ import { SiLine } from "react-icons/si";
 import { breadcrumb } from "@/lib/structured-data";
 import { plans } from "./data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "PLAN - 前撮り・フォトウェディングの料金プラン一覧",
   description:
     "in the momentの前撮り・フォトウェディング料金プラン一覧。PHOTO（¥100,000〜）・PHOTO + MOVIE（¥150,000〜）・MOVIE（¥100,000〜）の3プラン。撮影4時間・カラーグレーディング込み、表示価格はすべて税込です。",
-  alternates: { canonical: "/plan" },
-};
+  path: "/plan",
+});
 
 const planList = [plans.photo, plans["photo-movie"], plans.movie];
 
@@ -38,9 +39,9 @@ export default function PlanIndexPage() {
       <section className="pt-28 md:pt-44 pb-20 md:pb-24 px-6">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-6 text-center">
+            <h1 className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-6 text-center">
               PLAN
-            </p>
+            </h1>
             <p className="text-xs text-[#6b6560] leading-[2.4] tracking-wide text-center mb-24">
               写真のみ・写真＋映像・映像のみ。
               <br className="md:hidden" />

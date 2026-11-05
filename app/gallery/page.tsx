@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import ShowcaseStrip from "@/components/ShowcaseStrip";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/structured-data";
 import { cases } from "./data";
+import { galleryImage } from "./images";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "GALLERY - 名古屋・愛知の前撮りギャラリー",
   description:
     "in the momentの前撮り・フォトウェディング撮影事例。愛知・名古屋を中心に、海辺や湿原、街中など、ふたりらしいロケーションで撮影した実際の写真をご覧いただけます。",
-  alternates: { canonical: "/gallery" },
-};
+  path: "/gallery",
+});
 
 export default function ShowcasePage() {
 
@@ -26,7 +28,7 @@ export default function ShowcasePage() {
       <Navigation />
 
       <section className="pt-24 md:pt-44 pb-16 md:pb-32">
-        <p
+        <h1
           className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-12 md:mb-24 text-center"
           style={{
             opacity: 0,
@@ -35,7 +37,7 @@ export default function ShowcasePage() {
           }}
         >
           GALLERY
-        </p>
+        </h1>
 
         {cases.length === 0 ? (
           <p className="text-center text-[11px] tracking-wide text-[#9a9088]">
@@ -43,7 +45,7 @@ export default function ShowcasePage() {
           </p>
         ) : (
           <div className="space-y-0">
-            {[...cases].reverse().map((c) => (
+            {[...cases].reverse().map((c, i) => (
               <div key={c.id}>
                 <Link href={`/gallery/${c.id}`} className="group block py-6 border-t border-[#1e1c1a]/8">
                   <div
@@ -59,7 +61,7 @@ export default function ShowcasePage() {
                       </p>
                     )}
                   </div>
-                  <ShowcaseStrip photos={c.photos} label={c.label} />
+                  <ShowcaseStrip photos={c.photos.map(galleryImage)} label={c.label} eager={i === 0 ? 6 : 0} />
                 </Link>
               </div>
             ))}

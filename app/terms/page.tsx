@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Navigation from "@/components/Navigation";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/structured-data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "利用規約",
   description:
     "in the momentが提供する前撮り・フォトウェディング撮影サービスの利用規約。お申し込み・キャンセルポリシー・著作権・データ納品等の条件を掲載しています。",
-  alternates: { canonical: "/terms" },
-};
+  path: "/terms",
+});
 
 const h2Class =
   "text-sm md:text-base font-light text-[#1e1c1a] tracking-wide pt-8 md:pt-10 mt-8 md:mt-10 border-t border-[#1e1c1a]/10 first:pt-0 first:mt-0 first:border-t-0";

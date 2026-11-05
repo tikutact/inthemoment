@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 
 export type Tier = {
   name: string;
@@ -23,11 +24,11 @@ export type PlanData = {
 };
 
 export function planMetadata(plan: PlanData): Metadata {
-  return {
+  return pageMetadata({
     title: `${plan.name} プラン（${plan.subtitle}）- 名古屋・愛知の前撮り料金`,
     description: `${plan.description.replace(/\n/g, "")}料金は${plan.tiers[0].price}〜（税込）。プラン内容と当日の流れをご案内します。`,
-    alternates: { canonical: `/plan/${plan.slug}` },
-  };
+    path: `/plan/${plan.slug}`,
+  });
 }
 
 export const plans: Record<string, PlanData> = {

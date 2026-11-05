@@ -145,6 +145,8 @@ export default function Navigation() {
             onClick={() => setMenuOpen(!menuOpen)}
             className="w-8 h-8 flex flex-col items-center justify-center gap-[5px]"
             aria-label="メニュー"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
           >
             <span className="block w-5 h-px transition-all duration-300"
               style={{ backgroundColor: mobileHero ? "white" : "#1e1c1a", transform: menuOpen ? "translateY(6px) rotate(45deg)" : "none" }} />
@@ -158,8 +160,11 @@ export default function Navigation() {
 
       {/* モバイルメニューオーバーレイ */}
       <div
+        id="mobile-menu"
         className="fixed inset-0 z-40 bg-[#faf7f2] flex flex-col items-center justify-center transition-all duration-300 md:hidden"
         style={{ opacity: menuOpen ? 1 : 0, pointerEvents: menuOpen ? "auto" : "none" }}
+        // 閉じている間は Tab のフォーカス・読み上げの対象から外す（見た目のフェードは opacity のまま）
+        inert={!menuOpen}
       >
         <nav className="flex flex-col items-center gap-10">
           <Link href="/about" onClick={() => setMenuOpen(false)}
