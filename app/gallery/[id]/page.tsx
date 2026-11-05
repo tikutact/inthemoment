@@ -5,6 +5,10 @@ import FadeIn from "@/components/FadeIn";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/structured-data";
 import { cases } from "../data";
+import { galleryImage } from "../images";
+
+// 最初の表示で即読み込む枚数（2カラム/4カラムの先頭付近）。それ以降は遅延読み込み
+const EAGER_COUNT = 4;
 
 export function generateStaticParams() {
   return cases.map((c) => ({ id: c.id }));
@@ -57,10 +61,17 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
         </FadeIn>
 
         <div className="[columns:2] md:[columns:4] px-3 md:px-6" style={{ columnGap: "10px" }}>
-          {c.photos.map((src, j) => (
+          {c.photos.map(galleryImage).map((p, j) => (
             <div key={j} className="mb-[10px] break-inside-avoid overflow-hidden">
               <img
-                src={src}
+                src={p.src}
+                // サムネ（高さ480px）で足りる表示幅ならそれを、足りなければ元写真（長辺1200px）を選ばせる
+                srcSet={p.thumbWidth && p.width ? `${p.thumb} ${p.thumbWidth}w, ${p.src} ${p.width}w` : undefined}
+                sizes={p.thumbWidth ? "(min-width: 768px) 25vw, 50vw" : undefined}
+                width={p.width}
+                height={p.height}
+                loading={j < EAGER_COUNT ? undefined : "lazy"}
+                decoding="async"
                 alt={`${c.label} ${j + 1}`}
                 className="w-full h-auto block"
               />
