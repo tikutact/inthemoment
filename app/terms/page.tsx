@@ -4,7 +4,7 @@ import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "利用規約 - in the moment",
+  title: "利用規約",
   description:
     "in the momentが提供する前撮り・フォトウェディング撮影サービスの利用規約。お申し込み・キャンセルポリシー・著作権・データ納品等の条件を掲載しています。",
   alternates: { canonical: "/terms" },

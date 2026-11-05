@@ -4,7 +4,7 @@ import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "特定商取引法に基づく表記 - in the moment",
+  title: "特定商取引法に基づく表記",
   description:
     "in the moment（前撮り・フォトウェディング撮影サービス）の特定商取引法に基づく表記です。",
   alternates: { canonical: "/tokushoho" },
