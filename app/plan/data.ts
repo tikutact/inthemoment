@@ -36,7 +36,7 @@ export const plans: Record<string, PlanData> = {
     name: "PHOTO",
     subtitle: "写真のみ",
     duration: "4 h",
-    cuts: "80 cuts",
+    cuts: "100 cuts",
     image: "/plan1-1200.jpg",
     heroImage: "/plan/photo-hero.jpg",
     tierImage: "/gallery/case-01/DSCF2631.jpg",
@@ -49,7 +49,7 @@ export const plans: Record<string, PlanData> = {
         price: "¥100,000",
         included: [
           "撮影時間 4時間",
-          "お写真 80カット",
+          "お写真 100カット",
           "撮影後のカラーグレーディング",
         ],
       },
@@ -58,7 +58,7 @@ export const plans: Record<string, PlanData> = {
         price: "¥155,000",
         included: [
           "撮影時間 4時間",
-          "お写真 80カット",
+          "お写真 100カット",
           "撮影後のカラーグレーディング",
           "ヘアメイク（当日アテンド付き）",
         ],
@@ -79,7 +79,7 @@ export const plans: Record<string, PlanData> = {
     name: "PHOTO + MOVIE",
     subtitle: "写真＋映像",
     duration: "4 h",
-    cuts: "80 cuts",
+    cuts: "100 cuts",
     image: "/plan2-1200.jpg",
     heroImage: "/plan/photo-movie-hero.jpg",
     tierImage: "/gallery/case-02/DSCF3957.jpg",
@@ -93,7 +93,7 @@ export const plans: Record<string, PlanData> = {
         price: "¥150,000",
         included: [
           "撮影時間 4時間",
-          "お写真 80カット",
+          "お写真 100カット",
           "オープニングムービー 約2分",
           "撮影後のカラーグレーディング・動画編集",
         ],
@@ -103,7 +103,7 @@ export const plans: Record<string, PlanData> = {
         price: "¥205,000",
         included: [
           "撮影時間 4時間",
-          "お写真 80カット",
+          "お写真 100カット",
           "オープニングムービー 約2分",
           "撮影後のカラーグレーディング・動画編集",
           "ヘアメイク（当日アテンド付き）",
