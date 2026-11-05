@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Navigation from "@/components/Navigation";
 import JsonLd from "@/components/JsonLd";
 import { articleLd, breadcrumb, faqLd } from "@/lib/structured-data";
@@ -40,20 +41,15 @@ export async function generateMetadata({
 
   const { article, markdown } = data;
   const description = extractDescription(markdown);
-  return {
+  // シェア用の見出しは従来どおり記事タイトルのみ（「| in the moment」を付けない）。twitter:* も同じ内容で出す
+  return pageMetadata({
     title: article.title,
     description,
-    alternates: { canonical: `/journal/${slug}` },
-    openGraph: {
-      title: article.title,
-      description,
-      url: `/journal/${slug}`,
-      siteName: "in the moment",
-      locale: "ja_JP",
-      type: "article",
-      ...(article.cover ? { images: [{ url: article.cover }] } : {}),
-    },
-  };
+    path: `/journal/${slug}`,
+    socialTitle: article.title,
+    image: article.cover || undefined,
+    type: "article",
+  });
 }
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {

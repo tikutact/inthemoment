@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Navigation from "@/components/Navigation";
 import FadeIn from "@/components/FadeIn";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/structured-data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "ABOUT - 名古屋・愛知の前撮りフォトグラファー",
   description:
     "in the momentについて。ポーズよりも余白を大切に、ふたりの「いま」をそのまま残す。愛知を拠点に前撮り・フォトウェディングを撮影するフォトグラファーの想いを紹介します。",
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import FadeIn from "@/components/FadeIn";
@@ -7,12 +8,12 @@ import { SiLine } from "react-icons/si";
 import { breadcrumb } from "@/lib/structured-data";
 import { plans } from "./data";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "PLAN - 前撮り・フォトウェディングの料金プラン一覧",
   description:
     "in the momentの前撮り・フォトウェディング料金プラン一覧。PHOTO（¥100,000〜）・PHOTO + MOVIE（¥150,000〜）・MOVIE（¥100,000〜）の3プラン。撮影4時間・カラーグレーディング込み、表示価格はすべて税込です。",
-  alternates: { canonical: "/plan" },
-};
+  path: "/plan",
+});
 
 const planList = [plans.photo, plans["photo-movie"], plans.movie];
 

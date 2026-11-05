@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import FadeIn from "@/components/FadeIn";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/structured-data";
+import { pageMetadata } from "@/lib/metadata";
 import { cases } from "../data";
 import { galleryImage } from "../images";
 
@@ -23,11 +24,11 @@ export async function generateMetadata({
   const c = cases.find((c) => c.id === id);
   if (!c) return {};
   const where = c.location ? `${c.location}での` : "";
-  return {
+  return pageMetadata({
     title: `${c.label} - ${c.location ?? ""} 前撮りギャラリー`,
     description: `${where}前撮り・フォトウェディング撮影事例「${c.label}」。in the momentが撮影した実際の写真をご覧いただけます。`,
-    alternates: { canonical: `/gallery/${c.id}` },
-  };
+    path: `/gallery/${c.id}`,
+  });
 }
 
 export default async function CasePage({ params }: { params: Promise<{ id: string }> }) {
