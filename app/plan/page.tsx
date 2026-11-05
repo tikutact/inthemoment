@@ -39,9 +39,9 @@ export default function PlanIndexPage() {
       <section className="pt-28 md:pt-44 pb-20 md:pb-24 px-6">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-6 text-center">
+            <h1 className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-6 text-center">
               PLAN
-            </p>
+            </h1>
             <p className="text-xs text-[#6b6560] leading-[2.4] tracking-wide text-center mb-24">
               写真のみ・写真＋映像・映像のみ。
               <br className="md:hidden" />

@@ -50,9 +50,9 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
       <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-3 md:px-6">
         <FadeIn>
           <div className="flex items-baseline gap-4 mb-8 md:mb-16 max-w-5xl mx-auto">
-            <p className="text-sm font-light tracking-[0.2em] text-[#1e1c1a]">
+            <h1 className="text-sm font-light tracking-[0.2em] text-[#1e1c1a]">
               {c.label}
-            </p>
+            </h1>
             {c.location && (
               <p className="text-[10px] tracking-[0.3em] text-[#9a9088]">
                 {c.location}

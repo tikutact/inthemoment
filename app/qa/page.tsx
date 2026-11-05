@@ -28,9 +28,9 @@ export default function QaPage() {
 
       <section className="pt-24 md:pt-44 pb-16 md:pb-24 px-4 md:px-6">
         <FadeIn>
-          <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-20 text-center">
+          <h1 className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-20 text-center">
             Q &amp; A
-          </p>
+          </h1>
           <QaAccordion />
         </FadeIn>
       </section>

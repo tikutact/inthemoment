@@ -28,7 +28,7 @@ export default function ShowcasePage() {
       <Navigation />
 
       <section className="pt-24 md:pt-44 pb-16 md:pb-32">
-        <p
+        <h1
           className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-12 md:mb-24 text-center"
           style={{
             opacity: 0,
@@ -37,7 +37,7 @@ export default function ShowcasePage() {
           }}
         >
           GALLERY
-        </p>
+        </h1>
 
         {cases.length === 0 ? (
           <p className="text-center text-[11px] tracking-wide text-[#9a9088]">

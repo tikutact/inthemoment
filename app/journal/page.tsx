@@ -31,12 +31,12 @@ export default async function JournalPage() {
       <Navigation />
       <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-4 md:px-6 overflow-x-hidden">
         <div className="max-w-5xl mx-auto">
-          <p
+          <h1
             className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-10 md:mb-16"
             style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards" }}
           >
             JOURNAL
-          </p>
+          </h1>
 
           {articles.length === 0 ? (
             <p className="text-sm text-[#9a9088] tracking-wide">記事はまだありません。</p>

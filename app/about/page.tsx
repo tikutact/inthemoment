@@ -36,7 +36,7 @@ export default function AboutPage() {
 
             {/* テキスト */}
             <div className="pt-2">
-              <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-6 md:mb-10">ABOUT</p>
+              <h1 className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-6 md:mb-10">ABOUT</h1>
 
               <p
                 className="text-sm md:text-lg font-light text-[#1e1c1a] leading-relaxed mb-6 md:mb-12"
