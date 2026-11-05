@@ -22,8 +22,8 @@ const planRows = [
   { plan: "PHOTO Hairmake", content: "撮影時間4時間・お写真100カット・カラーグレーディング・ヘアメイク（当日アテンド付き）", price: "¥155,000", delivery: "撮影後約1ヶ月" },
   { plan: "PHOTO+MOVIE Standard", content: "撮影時間4時間・お写真100カット・オープニングムービー約2分・カラーグレーディング・動画編集", price: "¥150,000", delivery: "撮影後約1.5ヶ月" },
   { plan: "PHOTO+MOVIE Hairmake", content: "撮影時間4時間・お写真100カット・オープニングムービー約2分・カラーグレーディング・動画編集・ヘアメイク（当日アテンド付き）", price: "¥205,000", delivery: "撮影後約1.5ヶ月" },
-  { plan: "MOVIE Standard", content: "撮影時間4時間・オープニングムービー約2分・動画編集・カラーグレーディング", price: "¥100,000", delivery: "撮影後約1ヶ月" },
-  { plan: "MOVIE Hairmake", content: "撮影時間4時間・オープニングムービー約2分・動画編集・カラーグレーディング・ヘアメイク（当日アテンド付き）", price: "¥155,000", delivery: "撮影後約1ヶ月" },
+  { plan: "MOVIE Standard", content: "撮影時間4時間・オープニングムービー約2分・動画編集・カラーグレーディング", price: "¥100,000", delivery: "撮影後約1.5ヶ月" },
+  { plan: "MOVIE Hairmake", content: "撮影時間4時間・オープニングムービー約2分・動画編集・カラーグレーディング・ヘアメイク（当日アテンド付き）", price: "¥155,000", delivery: "撮影後約1.5ヶ月" },
 ];
 
 const cancelRows = [
@@ -55,7 +55,7 @@ export default function TermsPage() {
               >
                 利用規約
               </h1>
-              <p className="text-[10px] text-[#9a9088] tracking-[0.15em] font-light mt-4">制定日：2026年6月</p>
+              <p className="text-[10px] text-[#9a9088] tracking-[0.15em] font-light mt-4">制定日：2026年6月／改定日：2026年11月</p>
             </div>
 
             <p className={pClass}>
