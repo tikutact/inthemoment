@@ -102,7 +102,9 @@ export default function TermsPage() {
               </table>
             </div>
             <p className={noteClass}>上記料金はすべて税込価格です。</p>
-            <p className={noteClass}>ロケーション移動費・衣装費・ヘアメイク会場費等の実費が別途発生する場合があります。</p>
+            <p className={noteClass}>土日祝日の撮影は +¥10,000、交通費は大須観音駅からの実費をいただきます。</p>
+            <p className={noteClass}>宿泊を伴う出張は出張費 +¥18,000、宿泊費は別途実費をいただきます。</p>
+            <p className={noteClass}>衣装費・ヘアメイク会場費・撮影地の利用料など、実費が別途発生する場合があります。</p>
 
             <h2 className={h2Class}>第2条　お申し込みと予約確定</h2>
             <p className={pClass}>ご予約は、当方所定の申込フォームまたはLINEにてお申し込みいただき、以下の条件を満たした時点で確定とします。</p>
