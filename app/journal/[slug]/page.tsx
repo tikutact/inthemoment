@@ -126,6 +126,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-6 text-center">MOVIE</p>
               <div className="aspect-video">
                 <iframe
+                  loading="lazy"
                   src={`https://www.youtube.com/embed/${article.movie.match(/(?:v=|youtu\.be\/|embed\/)([\w-]{11})/)?.[1] ?? ""}`}
                   title={`${article.title} のムービー`}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

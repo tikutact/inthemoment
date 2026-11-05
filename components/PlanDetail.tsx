@@ -52,6 +52,7 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
             <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-10">SAMPLE MOVIE</p>
             <div className="max-w-2xl mx-auto aspect-video">
               <iframe
+                loading="lazy"
                 src={`https://www.youtube.com/embed/${plan.youtubeUrl.split("/").pop()}`}
                 title="Sample Movie"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
