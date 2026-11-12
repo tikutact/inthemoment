@@ -61,6 +61,36 @@ export default function ShowcasePage() {
                       </p>
                     )}
                   </div>
+                  {/* モバイルだけ：先頭写真を画面幅いっぱいに大きく見せ、その下に細い帯を流す（PCは帯だけ） */}
+                  {(() => {
+                    // cover が photos に無い（打ち間違い等）なら先頭に戻す。写真0枚のケースは表紙を出さない
+                    const coverSrc = c.cover && c.photos.includes(c.cover) ? c.cover : c.photos[0];
+                    if (!coverSrc) return null;
+                    const cover = galleryImage(coverSrc);
+                    return (
+                      <div
+                        className="md:hidden mb-[3px] overflow-hidden"
+                        style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards", animationDelay: "250ms" }}
+                      >
+                        {/* PCでは表紙を隠すだけでなく読み込ませない（1×1の透明画像に差し替え） */}
+                        <picture>
+                        <source media="(min-width: 768px)" srcSet="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+                        <img
+                          src={cover.src}
+                          alt={`${c.label} 表紙`}
+                          width={cover.width}
+                          height={cover.height}
+                          loading={i === 0 ? undefined : "lazy"}
+                          fetchPriority={i === 0 ? "high" : undefined}
+                          decoding="async"
+                          draggable={false}
+                          className="block w-full h-auto select-none"
+                          style={cover.width && cover.height ? { aspectRatio: `${cover.width} / ${cover.height}` } : undefined}
+                        />
+                        </picture>
+                      </div>
+                    );
+                  })()}
                   <ShowcaseStrip photos={c.photos.map(galleryImage)} label={c.label} eager={i === 0 ? 6 : 0} />
                 </Link>
               </div>

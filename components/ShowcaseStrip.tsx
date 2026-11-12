@@ -133,7 +133,7 @@ export default function ShowcaseStrip({ photos, label, eager = 0 }: { photos: Ga
         style={{ width: "max-content", touchAction: "pan-y", cursor: "grab", willChange: "transform" }}
       >
         {doubled.map((p, j) => (
-          <div key={j} className="relative shrink-0 h-40 md:h-44 overflow-hidden group/photo">
+          <div key={j} className="relative shrink-0 h-28 md:h-44 overflow-hidden group/photo">
             <img
               src={p.thumb}
               alt={`${label} ${j + 1}`}
