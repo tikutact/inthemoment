@@ -46,6 +46,10 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
         ])}
       />
       <Navigation />
+      {/* JSが動かない閲覧でも写真が見えるように（FadeInは最初透明） */}
+      <noscript>
+        <style>{"[data-fadein]{opacity:1!important;transform:none!important}"}</style>
+      </noscript>
 
       <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-3 md:px-6">
         <FadeIn>
@@ -63,7 +67,8 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
 
         <div className="[columns:2] md:[columns:4] px-3 md:px-6" style={{ columnGap: "10px" }}>
           {c.photos.map(galleryImage).map((p, j) => (
-            <div key={j} className="mb-[10px] break-inside-avoid overflow-hidden">
+            // 写真は1枚ずつ、画面に入った時にふわっと出す（見出しの少しあと）
+            <FadeIn key={j} className="mb-[10px] break-inside-avoid overflow-hidden" delay={150} rootMargin="0px" waitForImages>
               <img
                 src={p.src}
                 // サムネ（高さ480px）で足りる表示幅ならそれを、足りなければ元写真（長辺1200px）を選ばせる
@@ -76,7 +81,7 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
                 alt={`${c.label} ${j + 1}`}
                 className="w-full h-auto block"
               />
-            </div>
+            </FadeIn>
           ))}
         </div>
       </section>

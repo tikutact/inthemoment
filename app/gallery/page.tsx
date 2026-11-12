@@ -3,6 +3,7 @@ import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import ShowcaseStrip from "@/components/ShowcaseStrip";
+import FadeIn from "@/components/FadeIn";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/structured-data";
 import { cases } from "./data";
@@ -26,6 +27,10 @@ export default function ShowcasePage() {
         ])}
       />
       <Navigation />
+      {/* JSが動かない閲覧でも写真が見えるように（FadeInは最初透明） */}
+      <noscript>
+        <style>{"[data-fadein]{opacity:1!important;transform:none!important}"}</style>
+      </noscript>
 
       <section className="pt-24 md:pt-44 pb-16 md:pb-32">
         <h1
@@ -47,11 +52,9 @@ export default function ShowcasePage() {
           <div className="space-y-0">
             {[...cases].reverse().map((c, i) => (
               <div key={c.id}>
-                <Link href={`/gallery/${c.id}`} className="group block py-6 border-t border-[#1e1c1a]/8">
-                  <div
-                    className="px-6 flex items-baseline gap-4 mb-6"
-                    style={{ opacity: 0, animation: "caseFadeIn 0.6s ease forwards", animationDelay: "200ms" }}
-                  >
+                <Link href={`/gallery/${c.id}`} className="group block py-5 md:py-6 border-t border-[#1e1c1a]/8">
+                  {/* 各ケースは画面に入った時にふわっと出す（見出し→表紙→帯の順に150msずつずらす。FadeInはサイト共通） */}
+                  <FadeIn className="px-6 flex items-baseline gap-4 mb-4 md:mb-6" rootMargin="0px">
                     <p className="text-[11px] tracking-[0.2em] text-[#1e1c1a] font-light">
                       {c.label}
                     </p>
@@ -60,7 +63,7 @@ export default function ShowcasePage() {
                         {c.location}
                       </p>
                     )}
-                  </div>
+                  </FadeIn>
                   {/* モバイルだけ：先頭写真を画面幅いっぱいに大きく見せ、その下に細い帯を流す（PCは帯だけ） */}
                   {(() => {
                     // cover が photos に無い（打ち間違い等）なら先頭に戻す。写真0枚のケースは表紙を出さない
@@ -68,10 +71,7 @@ export default function ShowcasePage() {
                     if (!coverSrc) return null;
                     const cover = galleryImage(coverSrc);
                     return (
-                      <div
-                        className="md:hidden mb-[3px] overflow-hidden"
-                        style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards", animationDelay: "250ms" }}
-                      >
+                      <FadeIn className="md:hidden mb-4 overflow-hidden" delay={150} rootMargin="0px" waitForImages>
                         {/* PCでは表紙を隠すだけでなく読み込ませない（1×1の透明画像に差し替え） */}
                         <picture>
                         <source media="(min-width: 768px)" srcSet="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
@@ -84,14 +84,24 @@ export default function ShowcasePage() {
                           fetchPriority={i === 0 ? "high" : undefined}
                           decoding="async"
                           draggable={false}
-                          className="block w-full h-auto select-none"
-                          style={cover.width && cover.height ? { aspectRatio: `${cover.width} / ${cover.height}` } : undefined}
+                          className="block mx-auto max-w-full w-auto select-none"
+                          // 区切り線〜帯〜次の区切り線が1画面に収まるよう、写真を切らずに縮める（ナビ64px＋見出し・帯・余白・区切り線2本の計187pxを引く）。
+                          // 高さ＝「横幅いっぱいにした時の高さ」と「画面に収まる上限」の小さいほう。縮んだ分は左右が余白になる。
+                          // svh＝ブラウザのバーが出ている時の小さい画面基準。下限200pxは横向き等の低い画面で表紙が消えないため
+                          style={{
+                            ...(cover.width && cover.height ? { aspectRatio: `${cover.width} / ${cover.height}` } : {}),
+                            height: cover.width && cover.height
+                              ? `min(calc(100vw * ${cover.height} / ${cover.width}), max(calc(100svh - 64px - 187px), 200px))`
+                              : "auto",
+                          }}
                         />
                         </picture>
-                      </div>
+                      </FadeIn>
                     );
                   })()}
-                  <ShowcaseStrip photos={c.photos.map(galleryImage)} label={c.label} eager={i === 0 ? 6 : 0} />
+                  <FadeIn delay={300} rootMargin="0px" waitForImages>
+                    <ShowcaseStrip photos={c.photos.map(galleryImage)} label={c.label} eager={i === 0 ? 6 : 0} />
+                  </FadeIn>
                 </Link>
               </div>
             ))}
