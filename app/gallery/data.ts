@@ -51,6 +51,7 @@ export const cases: ShowcaseCase[] = [
       "/gallery/case-01/DSCF2853.jpg",
       "/gallery/case-01/DSCF2860.jpg",
     ],
+    cover: "/gallery/case-01/DSCF2631.jpg",
   },
   {
     id: "case-02",
@@ -117,6 +118,7 @@ export const cases: ShowcaseCase[] = [
       "/gallery/case-02/DSCF3987.jpg",
       "/gallery/case-02/DSCF4001.jpg",
     ],
+    cover: "/gallery/case-02/20251124-rie-tomo6524.jpg",
   },
   {
     id: "case-03",
@@ -173,6 +175,7 @@ export const cases: ShowcaseCase[] = [
       "/gallery/case-03/DSCF4569.jpg",
       "/gallery/case-03/DSCF4575.jpg",
     ],
+    cover: "/gallery/case-03/DSCF4512.jpg",
   },
   {
     id: "case-04",
@@ -200,6 +203,7 @@ export const cases: ShowcaseCase[] = [
       "/gallery/case-04/DSCF3192.jpg",
       "/gallery/case-04/DSCF3214.jpg",
     ],
+    cover: "/gallery/case-04/DSCF3036.jpg",
   },
   {
     id: "case-05",
@@ -238,6 +242,7 @@ export const cases: ShowcaseCase[] = [
       "/gallery/case-05/DSCF5554.jpg",
       "/gallery/case-05/DSCF5586.jpg",
     ],
+    cover: "/gallery/case-05/20260210 rina syuuhei6598.jpg",
   },
   {
     id: "case-06",
