@@ -1,10 +1,10 @@
 ---
-title: "名古屋・愛知の前撮りロケ地8選"
+title: "名古屋・愛知の前撮りロケ地10選"
 slug: maedori-location-aichi-nagoya
 category: knowledge
 order: 10
 date: 2026-07-31
-dateModified: 2026-10-29
+dateModified: 2026-11-12
 cover: /gallery/case-02/20251124-rie-tomo6021.jpg
 ---
 
@@ -69,6 +69,24 @@ cover: /gallery/case-02/20251124-rie-tomo6021.jpg
 
 
 ![東岡崎での前撮り](/gallery/case-06/DSCF4656.jpg)
+
+
+**フレベールラデュ（知多郡美浜町）**
+
+
+木立と庭に囲まれた、白い洋館のカフェ。格子窓の部屋と庭を行き来しながら撮れます。愛犬と過ごした午前の様子は「[フレベールラデュの前撮り](https://www.inthemoment.jp/journal/mihama-fureberu)」に。
+
+
+![フレベールラデュでの前撮り](/gallery/case-09/case-09-06.jpg)
+
+
+**小脇公園（常滑市）**
+
+
+伊勢湾を見わたす高台の公園。8,250平方メートルの芝生広場を、そのまま背景にできます。撮影の前に確認しておきたいことは「[小脇公園の前撮り](https://www.inthemoment.jp/journal/kowaki-koen)」に。
+
+
+![小脇公園での前撮り](/gallery/case-09/case-09-41.jpg)
 
 
 ## 海と島のロケ地 — 南知多・豊橋
