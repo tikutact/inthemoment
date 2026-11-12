@@ -274,6 +274,7 @@ export const cases: ShowcaseCase[] = [
       "/gallery/case-06/DSCF4656.jpg",
       "/gallery/case-06/DSCF4630.jpg",
     ],
+    cover: "/gallery/case-06/DSCF4648.jpg",
   },
   {
     id: "case-08",
@@ -324,6 +325,7 @@ export const cases: ShowcaseCase[] = [
       "/gallery/case-08/case-08-47.jpg",
       "/gallery/case-08/case-08-48.jpg",
     ],
+    cover: "/gallery/case-08/case-08-45.jpg",
   },
   {
     id: "case-07",
