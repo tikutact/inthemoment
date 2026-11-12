@@ -3,6 +3,8 @@ export type ShowcaseCase = {
   label: string;
   location?: string;
   photos: string[];
+  /** モバイル一覧で大きく出す表紙。省略時は photos の先頭。photos の中の1枚を指定する */
+  cover?: string;
 };
 
 export const cases: ShowcaseCase[] = [
