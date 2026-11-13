@@ -106,7 +106,8 @@ export function serviceLd(plan: PlanData): Record<string, unknown> {
     "@type": "Service",
     serviceType: `ウェディング前撮り撮影（${plan.subtitle}）`,
     name: `${plan.name} プラン`,
-    description: plan.description.replace(/\n/g, ""),
+    // 世界観の文（plan.description）は検索・AIには伝わりにくいので、事実の文を先に置く
+    description: `名古屋・愛知を拠点にしたロケーション前撮り・フォトウェディングの${plan.subtitle}プラン。${plan.description.replace(/\n/g, "")}`,
     url,
     provider: { ...organization, "@id": `${SITE_URL}/#localbusiness` },
     areaServed: [
@@ -117,6 +118,7 @@ export function serviceLd(plan: PlanData): Record<string, unknown> {
     offers: plan.tiers.map((tier) => ({
       "@type": "Offer",
       name: `${plan.name} ${tier.name}`,
+      description: tier.included.join("・") + (plan.cuts === "—" ? "" : "（カット数は最低保証枚数）"),
       price: Number(tier.price.replace(/[^\d]/g, "")),
       priceCurrency: "JPY",
       url,
