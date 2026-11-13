@@ -1,10 +1,10 @@
 ---
-title: "私服での前撮りという選択"
+title: "私服の前撮り・フォトウェディング"
 slug: maedori-shifuku
 category: knowledge
 order: 16
 date: 2026-07-14
-dateModified: 2026-07-31
+dateModified: 2026-11-13
 cover: /gallery/case-08/case-08-39.jpg
 faq:
   - q: "前撮りは私服でもできますか？"
