@@ -4,7 +4,7 @@ slug: 37900e997dfa81319560c0ee78781743
 category: knowledge
 order: 5
 date: 2026-06-08
-dateModified: 2026-07-31
+dateModified: 2026-11-13
 cover: /gallery/case-01/DSCF2669.jpg
 faq:
   - q: "前撮りとフォトウェディングの違いは何ですか？"
@@ -67,6 +67,9 @@ faq:
 
 
 ふたりの「いま」を残すこと。それだけを、大切にしています。
+
+
+私服で撮った実例と着こなしのコツは「[私服の前撮り・フォトウェディング](https://www.inthemoment.jp/journal/maedori-shifuku)」にまとめています。
 
 
 in the moment では、名古屋をはじめ愛知県内・県外への出張撮影も承っています。

@@ -55,7 +55,7 @@ faq:
 
 お気に入りの私服や、ふたりらしいラフなスタイルで臨んでいただくこともできます。
 
-私服で撮った実例と着こなしのコツは「[私服での前撮りという選択](https://www.inthemoment.jp/journal/maedori-shifuku)」にまとめています。
+私服で撮った実例と着こなしのコツは「[私服の前撮り・フォトウェディング](https://www.inthemoment.jp/journal/maedori-shifuku)」にまとめています。
 
 ブーケを一束添えるだけで、どんな服装も不思議とシックに見えます。
 
