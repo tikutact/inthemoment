@@ -4,7 +4,7 @@ import Link from "next/link";
 import Navigation from "./Navigation";
 import FadeIn from "./FadeIn";
 import { SiLine } from "react-icons/si";
-import type { PlanData } from "@/app/plan/data";
+import { notesFor, type PlanData } from "@/app/plan/data";
 
 export default function PlanDetail({ plan }: { plan: PlanData }) {
   return (
@@ -112,6 +112,13 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
                 ))}
               </div>
             )}
+            <div className="mt-16 pt-8 border-t border-[#1e1c1a]/8 space-y-2 max-w-lg md:max-w-none">
+              {notesFor(plan).map((note) => (
+                <p key={note} className="text-xs text-[#6b6560] tracking-wide leading-7">
+                  ※ {note}
+                </p>
+              ))}
+            </div>
           </div>
         </FadeIn>
       </section>

@@ -6,7 +6,7 @@ import FadeIn from "@/components/FadeIn";
 import JsonLd from "@/components/JsonLd";
 import { SiLine } from "react-icons/si";
 import { breadcrumb } from "@/lib/structured-data";
-import { plans } from "./data";
+import { planList, planNotes as notes } from "./data";
 
 export const metadata: Metadata = pageMetadata({
   title: "PLAN - 前撮り・フォトウェディングの料金プラン一覧",
@@ -15,15 +15,6 @@ export const metadata: Metadata = pageMetadata({
   path: "/plan",
 });
 
-const planList = [plans.photo, plans["photo-movie"], plans.movie];
-
-const notes = [
-  "土日祝日は +¥10,000",
-  "交通費別途（大須観音駅起算）",
-  "宿泊を伴う出張は +¥18,000（宿泊費は別途実費）",
-  "カット数は最低保証枚数",
-  "表示価格はすべて税込",
-];
 
 export default function PlanIndexPage() {
   return (

@@ -8,6 +8,7 @@ import { SiLine, SiInstagram } from "react-icons/si";
 import { getArticles } from "@/lib/notion";
 import JsonLd from "@/components/JsonLd";
 import { localBusinessLd } from "@/lib/structured-data";
+import { planNotes } from "@/app/plan/data";
 
 export const revalidate = 60;
 
@@ -179,13 +180,7 @@ export default async function Home() {
 
             <FadeIn delay={400}>
             <div className="mt-20 pt-10 border-t border-[#1e1c1a]/8 space-y-3">
-              {[
-                "土日祝日は +¥10,000",
-                "交通費別途（大須観音駅起算）",
-                "宿泊を伴う出張は +¥18,000（宿泊費は別途実費）",
-                "カット数は最低保証枚数",
-                "表示価格はすべて税込",
-              ].map((note) => (
+              {planNotes.map((note) => (
                 <p key={note} className="text-xs text-[#6b6560] tracking-wide leading-7">
                   ※ {note}
                 </p>
