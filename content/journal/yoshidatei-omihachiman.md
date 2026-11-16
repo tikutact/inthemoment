@@ -4,7 +4,7 @@ slug: yoshidatei-omihachiman
 category: location
 order: 25
 date: 2026-10-29
-dateModified: 2026-10-29
+dateModified: 2026-11-16
 cover: /gallery/case-02/20251124-rie-tomo5955.jpg
 faq:
   - q: "吉田邸で前撮りの撮影はできますか？"
@@ -19,6 +19,8 @@ faq:
     a: "組み合わせられます。in the moment では、午前に吉田邸で撮影し、午後は車で2時間ほどの奈良県宇陀市の龍王ヶ渕へ移って、山の池と野原で撮りました。午前は部屋のなか、午後は外の光と、撮る場所の性格が分かれる一日です。"
   - q: "私服でも撮れますか？"
     a: "撮れます。窓辺の光と古い家具のある部屋は、普段の服で過ごす時間もそのまま景色になる場所です。私服で撮るときの考え方は「私服の前撮り・フォトウェディング」にまとめています。"
+  - q: "吉田邸で前撮りを頼むと、費用はいくらですか？"
+    a: "in the moment では、写真のみのPHOTOプランが¥100,000〜、写真と映像を同じ日に残すPHOTO + MOVIEプランが¥150,000〜です（いずれも税込・撮影4時間）。土日祝は+¥10,000、交通費は大須観音駅を起算に別途かかります。吉田邸の利用料も別にかかります。"
 ---
 
 
@@ -133,7 +135,7 @@ faq:
 料金は写真のみのPHOTOプランが¥100,000〜、写真と映像を同じ日に残すPHOTO + MOVIEプランが¥150,000〜（いずれも税込）。交通費は大須観音駅を起算に別途申し受けます。吉田邸の利用料は、別にかかります。
 
 
-ほかの場所とあわせて検討したい方は「[名古屋・愛知の前撮りロケ地8選](https://www.inthemoment.jp/journal/maedori-location-aichi-nagoya)」を、プランの詳細は[プラン一覧](https://www.inthemoment.jp/plan)をご覧ください。
+ほかの場所とあわせて検討したい方は「[名古屋・愛知の前撮りロケ地10選](https://www.inthemoment.jp/journal/maedori-location-aichi-nagoya)」を、プランの詳細は[プラン一覧](https://www.inthemoment.jp/plan)をご覧ください。
 
 
 in the momentでは、名古屋をはじめ愛知県内・県外への出張撮影も承っています。

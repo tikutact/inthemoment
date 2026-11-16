@@ -4,7 +4,7 @@ slug: heiwa-koen
 category: location
 order: 23
 date: 2026-10-06
-dateModified: 2026-10-27
+dateModified: 2026-11-16
 cover: /gallery/case-08/case-08-29.jpg
 faq:
   - q: "平和公園で前撮りの撮影はできますか？"
@@ -19,6 +19,8 @@ faq:
     a: "組み合わせられます。in the moment では、午前に東区の名古屋陶磁器会館で撮影し、午後に車で平和公園へ移動しました。屋内と屋外を一日で撮れる組み合わせです。"
   - q: "私服でも撮れますか？"
     a: "撮れます。木陰と日なたの分かれた芝生は、ラフな装いの前撮りに向いている場所です。私服で撮るときの考え方は「私服の前撮り・フォトウェディング」にまとめています。"
+  - q: "平和公園で前撮りを頼むと、費用はいくらですか？"
+    a: "in the moment では、写真のみのPHOTOプランが¥100,000〜、写真と映像を同じ日に残すPHOTO + MOVIEプランが¥150,000〜です（いずれも税込・撮影4時間）。土日祝は+¥10,000、交通費は大須観音駅を起算に別途かかります。"
 ---
 
 
@@ -155,7 +157,7 @@ faq:
 平和公園での前撮りは、PHOTOプランが¥100,000〜、写真と映像を同じ日に残すPHOTO + MOVIEプランが¥150,000〜（いずれも税込）。交通費は大須観音駅を起算に別途申し受けます。
 
 
-ほかの場所とあわせて検討したい方は「[名古屋・愛知の前撮りロケ地8選](https://www.inthemoment.jp/journal/maedori-location-aichi-nagoya)」を、プランの詳細は[プラン一覧](https://www.inthemoment.jp/plan)をご覧ください。
+ほかの場所とあわせて検討したい方は「[名古屋・愛知の前撮りロケ地10選](https://www.inthemoment.jp/journal/maedori-location-aichi-nagoya)」を、プランの詳細は[プラン一覧](https://www.inthemoment.jp/plan)をご覧ください。
 
 
 in the momentでは、名古屋をはじめ愛知県内・県外への出張撮影も承っています。

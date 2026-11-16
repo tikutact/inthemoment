@@ -4,7 +4,7 @@ slug: toujiki-kaikan-heiwa
 category: location
 order: 9
 date: 2026-07-10
-dateModified: 2026-10-27
+dateModified: 2026-11-16
 cover: /gallery/case-08/case-08-44.jpg
 faq:
   - q: "名古屋陶磁器会館で前撮りの撮影はできますか？"
@@ -19,6 +19,8 @@ faq:
     a: "組み合わせられます。in the moment では午前に陶磁器会館、午後に千種区の平和公園へ移動して、屋内と屋外を一日で撮りました。"
   - q: "私服でも撮れますか？"
     a: "撮れます。白い壁と焦げ茶の腰板の大ホールは、ドレスだけでなく、白いシャツやワンピースのような飾らない服にもなじみます。私服で撮るときの考え方は「私服の前撮り・フォトウェディング」にまとめています。"
+  - q: "名古屋陶磁器会館で前撮りを頼むと、費用はいくらですか？"
+    a: "in the moment では、写真のみのPHOTOプランが¥100,000〜、写真と映像を同じ日に残すPHOTO + MOVIEプランが¥150,000〜です（いずれも税込・撮影4時間）。土日祝は+¥10,000、交通費は大須観音駅を起算に別途かかります。会館の貸室料・撮影料・駐車料金も別にかかります。"
 ---
 
 
@@ -180,7 +182,7 @@ faq:
 名古屋陶磁器会館での前撮りは、PHOTOプランが¥100,000〜、写真と映像を同じ日に残すPHOTO + MOVIEプランが¥150,000〜（いずれも税込）。会館の貸室料・撮影料・駐車料金は別途かかります。交通費は大須観音駅を起算に別途申し受けます。
 
 
-ほかの場所とあわせて検討したい方は「[名古屋・愛知の前撮りロケ地8選](https://www.inthemoment.jp/journal/maedori-location-aichi-nagoya)」を、プランの詳細は[プラン一覧](https://www.inthemoment.jp/plan)をご覧ください。
+ほかの場所とあわせて検討したい方は「[名古屋・愛知の前撮りロケ地10選](https://www.inthemoment.jp/journal/maedori-location-aichi-nagoya)」を、プランの詳細は[プラン一覧](https://www.inthemoment.jp/plan)をご覧ください。
 
 
 in the momentでは、名古屋をはじめ愛知県内・県外への出張撮影も承っています。
