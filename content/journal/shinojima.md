@@ -4,7 +4,7 @@ slug: 37800e997dfa814e99c5de99a2e2f75c
 category: location
 order: 2
 date: 2026-06-07
-dateModified: 2026-10-29
+dateModified: 2026-11-16
 cover: /gallery/case-03/DSCF4461.jpg
 faq:
   - q: "篠島で前撮りの撮影はできますか？"
@@ -17,6 +17,8 @@ faq:
     a: "歩いて回ります。港から路地、海辺の道、島の西側の小道まで、撮影に使う場所は歩ける範囲にまとまっています。道は細く、坂や段差もあるので、ドレスなら裾の短いものか、歩きやすい靴を用意しておくと安心です。"
   - q: "私服でも撮れますか？"
     a: "撮れます。in the moment の篠島での撮影は、ふたりとも黒の私服でした。漁師町の路地や海辺の道は、普段の服のほうがなじむ景色でもあります。私服で撮るときの考え方は「私服の前撮り・フォトウェディング」にまとめています。"
+  - q: "篠島で前撮りを頼むと、費用はいくらですか？"
+    a: "in the moment では、写真のみのPHOTOプランが¥100,000〜、写真と映像を同じ日に残すPHOTO + MOVIEプランが¥150,000〜です（いずれも税込・撮影4時間）。土日祝は+¥10,000、交通費は大須観音駅を起算に別途かかります。"
 ---
 
 
@@ -139,7 +141,7 @@ faq:
 料金は写真のみのPHOTOプランが¥100,000〜、写真と映像を同じ日に残すPHOTO + MOVIEプランが¥150,000〜（いずれも税込）。交通費は大須観音駅を起算に別途申し受けます。
 
 
-ふたりとも黒の私服で撮ったこの日の装いについては、「[私服の前撮り・フォトウェディング](https://www.inthemoment.jp/journal/maedori-shifuku)」にも書いています。ほかの場所とあわせて検討したい方は「[名古屋・愛知の前撮りロケ地8選](https://www.inthemoment.jp/journal/maedori-location-aichi-nagoya)」を、プランの詳細は[プラン一覧](https://www.inthemoment.jp/plan)をご覧ください。
+ふたりとも黒の私服で撮ったこの日の装いについては、「[私服の前撮り・フォトウェディング](https://www.inthemoment.jp/journal/maedori-shifuku)」にも書いています。ほかの場所とあわせて検討したい方は「[名古屋・愛知の前撮りロケ地10選](https://www.inthemoment.jp/journal/maedori-location-aichi-nagoya)」を、プランの詳細は[プラン一覧](https://www.inthemoment.jp/plan)をご覧ください。
 
 
 ![夕日に透ける白いガーベラのブーケ](/gallery/case-03/DSCF4567.jpg)

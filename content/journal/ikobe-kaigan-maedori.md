@@ -4,7 +4,7 @@ slug: ikobe-kaigan-maedori
 category: location
 order: 17
 date: 2026-08-07
-dateModified: 2026-10-27
+dateModified: 2026-11-16
 cover: /gallery/case-01/DSCF2772.jpg
 movie: https://www.youtube.com/watch?v=q1lzqqLZfPc
 faq:
@@ -20,6 +20,8 @@ faq:
     a: "建物や看板が入らない、水平線だけの写真になります。曇りの日はやわらかい光がまわり、夕方は西日が砂に長い影をつくって空が茜色に染まります。このページの写真はすべて2025年10月に実際に撮影した一日のものです。"
   - q: "私服でも撮れますか？"
     a: "撮れます。砂と波だけの浜では、着慣れた服のほうが歩く姿も自然に残ります。砂の上を歩くので、裾の長さと靴は打ち合わせで一緒に決めています。私服で撮るときの考え方は「私服の前撮り・フォトウェディング」にまとめています。"
+  - q: "伊古部海岸で前撮りを頼むと、費用はいくらですか？"
+    a: "in the moment では、写真のみのPHOTOプランが¥100,000〜、写真と映像を同じ日に残すPHOTO + MOVIEプランが¥150,000〜です（いずれも税込・撮影4時間）。土日祝は+¥10,000、交通費は大須観音駅を起算に別途かかります。"
 ---
 
 
@@ -190,7 +192,7 @@ faq:
 このページの写真も、PHOTO + MOVIEプランで撮影した一日のものです。この日の写真は[ギャラリー](https://www.inthemoment.jp/gallery/case-01)でもご覧いただけます。
 
 
-ほかの場所とあわせて検討したい方は「[名古屋・愛知の前撮りロケ地8選](https://www.inthemoment.jp/journal/maedori-location-aichi-nagoya)」を、プランの詳細は[プラン一覧](https://www.inthemoment.jp/plan)をご覧ください。
+ほかの場所とあわせて検討したい方は「[名古屋・愛知の前撮りロケ地10選](https://www.inthemoment.jp/journal/maedori-location-aichi-nagoya)」を、プランの詳細は[プラン一覧](https://www.inthemoment.jp/plan)をご覧ください。
 
 
 in the moment では、名古屋をはじめ愛知県内・県外への出張撮影も承っています。

@@ -4,7 +4,7 @@ slug: kasamatsu-minato-park
 category: location
 order: 20
 date: 2026-08-19
-dateModified: 2026-10-27
+dateModified: 2026-11-16
 cover: /gallery/case-07/case-07-01.jpg
 faq:
   - q: "笠松みなと公園に駐車場はありますか？"
@@ -17,6 +17,8 @@ faq:
     a: "回れます。笠松町と一宮市は木曽川をはさんで向かい合っていて、車での移動はおよそ30分です。in the moment でも同じ日に笠松みなと公園と一宮市のRe-TAiLを巡って撮影しました。昼は空と草だけの河川敷、午後は昭和8年築の建物の窓辺と、一日で写真の表情が大きく変わります。"
   - q: "私服でも撮れますか？"
     a: "撮れます。川沿いに続く芝生と赤い鉄橋は、ドレスにも、普段の服にも合う景色です。私服で撮るときの考え方は「私服の前撮り・フォトウェディング」にまとめています。"
+  - q: "笠松みなと公園で前撮りを頼むと、費用はいくらですか？"
+    a: "in the moment では、写真のみのPHOTOプランが¥100,000〜、写真と映像を同じ日に残すPHOTO + MOVIEプランが¥150,000〜です（いずれも税込・撮影4時間）。土日祝は+¥10,000、交通費は大須観音駅を起算に別途かかります。"
 ---
 
 岐阜県羽島郡笠松町、木曽川ぞいの土手をのぼると、視界がひらけて空だけになります。
@@ -234,7 +236,7 @@ Re-TAiLについては「[Re-TAiLの前撮り](https://www.inthemoment.jp/journa
 料金は写真のみのPHOTOプランが¥100,000〜、写真と映像を同じ日に残すPHOTO + MOVIEプランが¥150,000〜（いずれも税込）。交通費は大須観音駅を起算に別途申し受けます。
 
 
-ほかの場所とあわせて検討したい方は「[名古屋・愛知の前撮りロケ地8選](https://www.inthemoment.jp/journal/maedori-location-aichi-nagoya)」を、プランの詳細は[プラン一覧](https://www.inthemoment.jp/plan)をご覧ください。
+ほかの場所とあわせて検討したい方は「[名古屋・愛知の前撮りロケ地10選](https://www.inthemoment.jp/journal/maedori-location-aichi-nagoya)」を、プランの詳細は[プラン一覧](https://www.inthemoment.jp/plan)をご覧ください。
 
 
 in the momentでは、名古屋をはじめ愛知県内・県外への出張撮影も承っています。

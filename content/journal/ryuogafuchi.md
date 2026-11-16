@@ -4,7 +4,7 @@ slug: 37600e997dfa81db9e51c06cf2bfb352
 category: location
 order: 1
 date: 2026-06-05
-dateModified: 2026-10-29
+dateModified: 2026-11-16
 cover: /gallery/case-02/20251124-rie-tomo6400.jpg
 faq:
   - q: "龍王ヶ渕で前撮りの撮影はできますか？"
@@ -19,6 +19,8 @@ faq:
     a: "撮れます。名古屋からは高速で2時間ほどです。in the moment では、午前に滋賀県近江八幡市の吉田邸で撮り、午後に龍王ヶ渕へ移って、一日で2か所を撮影しました。"
   - q: "私服でも撮れますか？"
     a: "撮れます。野原と杉林に囲まれた池は、ゆったりした普段の服にもよく合う景色です。私服で撮るときの考え方は「私服の前撮り・フォトウェディング」にまとめています。"
+  - q: "龍王ヶ渕で前撮りを頼むと、費用はいくらですか？"
+    a: "in the moment では、写真のみのPHOTOプランが¥100,000〜、写真と映像を同じ日に残すPHOTO + MOVIEプランが¥150,000〜です（いずれも税込・撮影4時間）。土日祝は+¥10,000、交通費は大須観音駅を起算に別途かかります。"
 ---
 
 
@@ -150,7 +152,7 @@ faq:
 料金は写真のみのPHOTOプランが¥100,000〜、写真と映像を同じ日に残すPHOTO + MOVIEプランが¥150,000〜（いずれも税込）。交通費は大須観音駅を起算に別途申し受けます。
 
 
-費用の目安は「[前撮りの費用と相場](https://www.inthemoment.jp/journal/38b00e997dfa81d89ecac94e73775fdb)」に、ほかの場所とあわせて検討したい方は「[名古屋・愛知の前撮りロケ地8選](https://www.inthemoment.jp/journal/maedori-location-aichi-nagoya)」を、プランの詳細は[プラン一覧](https://www.inthemoment.jp/plan)をご覧ください。
+費用の目安は「[前撮りの費用と相場](https://www.inthemoment.jp/journal/38b00e997dfa81d89ecac94e73775fdb)」に、ほかの場所とあわせて検討したい方は「[名古屋・愛知の前撮りロケ地10選](https://www.inthemoment.jp/journal/maedori-location-aichi-nagoya)」を、プランの詳細は[プラン一覧](https://www.inthemoment.jp/plan)をご覧ください。
 
 
 in the momentでは、名古屋をはじめ愛知県内・県外への出張撮影も承っています。
