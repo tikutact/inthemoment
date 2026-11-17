@@ -111,9 +111,9 @@ export default function TermsPage() {
             <p className={pClass}>ご予約は、当方所定の申込フォームまたはLINEにてお申し込みいただき、以下の条件を満たした時点で確定とします。</p>
             <ul className={ulClass}>
               <li className={liClass}>撮影契約書へのご署名</li>
-              <li className={liClass}>お申し込み金（総額の50%）のお支払い</li>
+              <li className={liClass}>お申し込み金（ご契約金額の50%）のお支払い</li>
             </ul>
-            <p className={pClass}>残金は撮影日の1週間前までにお支払いください。</p>
+            <p className={pClass}>ご契約金額は、プラン料金とオプション（土日祝日の撮影・宿泊を伴う出張など）の合計です。交通費・宿泊費・衣装費・撮影地の利用料などの実費は含まず、別途お支払いいただきます。残金は撮影日の1週間前までにお支払いください。</p>
 
             <h2 className={h2Class}>第3条　キャンセルポリシー</h2>
             <p className={pClass}>お客様都合によるキャンセルの場合、以下のキャンセル料が発生します。</p>
@@ -137,7 +137,7 @@ export default function TermsPage() {
             </div>
             <p className={noteClass}>撮影日の31日前までのキャンセルは、お支払い済みの料金（お申し込み金など）を全額返金いたします（振込手数料は当方負担）。</p>
             <p className={noteClass}>天候・自然災害・その他不可抗力によるキャンセルの場合は、別途協議のうえ対応いたします。</p>
-            <p className={noteClass}>当方都合によるキャンセルの場合は、いただいた料金を全額返金いたします。</p>
+            <p className={noteClass}>当方都合によるキャンセルの場合は、いただいた料金を全額返金いたします（振込手数料は当方負担）。</p>
 
             <h2 className={h2Class}>第4条　著作権・肖像権</h2>
             <p className={pClass}>撮影により生成されたすべての写真・映像データの著作権は当方に帰属します。お客様には、個人的な使用に限り、データを利用する権利を許諾します。</p>
@@ -161,6 +161,7 @@ export default function TermsPage() {
               <li className={liClass}>1回目のリスケジュールは無料です。撮影日の3日前までにご連絡ください。</li>
               <li className={liClass}>2回目以降のリスケジュールは別途協議とします。</li>
               <li className={liClass}>撮影日の2日前以降のご連絡によるリスケジュールは、キャンセルポリシーが適用される場合があります。</li>
+              <li className={liClass}>お客様都合で日程を変更された後にキャンセルされる場合のキャンセル料は、最初にご予約いただいた撮影日を基準に計算します。</li>
               <li className={liClass}>天候・体調等のやむを得ない事情の場合は、柔軟に対応いたします。まずはご連絡ください。</li>
             </ul>
 

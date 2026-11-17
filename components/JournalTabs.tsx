@@ -42,13 +42,20 @@ export default function JournalTabs() {
           type="button"
           onClick={() => select(c.key)}
           aria-pressed={active === c.key}
-          className={`text-[11px] md:text-xs tracking-[0.2em] font-light pb-1 border-b transition-colors ${
+          // 押せる範囲はpx/pyで広げ、同じ量のマイナス余白で並びと見た目を元のまま保つ（下線は内側のspan）
+          className={`-mx-2 -my-3 px-2 py-3 text-[11px] md:text-xs tracking-[0.2em] font-light transition-colors ${
             active === c.key
-              ? "text-[#1e1c1a] border-[#1e1c1a]/40"
-              : "text-[#9a9088] border-transparent hover:text-[#6b6560]"
+              ? "text-[#1e1c1a]"
+              : "text-[#9a9088] hover:text-[#6b6560]"
           }`}
         >
-          {c.label}
+          <span
+            className={`block pb-1 border-b transition-colors ${
+              active === c.key ? "border-[#1e1c1a]/40" : "border-transparent"
+            }`}
+          >
+            {c.label}
+          </span>
         </button>
       ))}
     </div>
