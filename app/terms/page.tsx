@@ -135,6 +135,7 @@ export default function TermsPage() {
                 </tbody>
               </table>
             </div>
+            <p className={noteClass}>撮影日の31日前までのキャンセルは、お支払い済みの料金（お申し込み金など）を全額返金いたします（振込手数料は当方負担）。</p>
             <p className={noteClass}>天候・自然災害・その他不可抗力によるキャンセルの場合は、別途協議のうえ対応いたします。</p>
             <p className={noteClass}>当方都合によるキャンセルの場合は、いただいた料金を全額返金いたします。</p>
 
