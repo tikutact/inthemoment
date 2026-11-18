@@ -156,18 +156,18 @@ export default function TermsPage() {
             </ul>
 
             <h2 className={h2Class}>第6条　日程変更（リスケジュール）</h2>
-            <p className={pClass}>お客様都合による撮影日の変更は、以下の条件にて対応いたします。</p>
+            <p className={pClass}>撮影日の変更は、以下の条件にて対応いたします。</p>
             <ul className={ulClass}>
-              <li className={liClass}>1回目のリスケジュールは無料です。撮影日の3日前までにご連絡ください。</li>
-              <li className={liClass}>2回目以降のリスケジュールは別途協議とします。</li>
-              <li className={liClass}>撮影日の2日前以降のご連絡によるリスケジュールは、キャンセルポリシーが適用される場合があります。</li>
-              <li className={liClass}>お客様都合で日程を変更された後にキャンセルされる場合のキャンセル料は、最初にご予約いただいた撮影日を基準に計算します。</li>
-              <li className={liClass}>天候・体調等のやむを得ない事情の場合は、柔軟に対応いたします。まずはご連絡ください。</li>
+              <li className={liClass}>無料で日程を変更できるのは、天候による延期とお客様都合による変更を合わせて1回までです。2回目以降は別途協議とします。</li>
+              <li className={liClass}>お客様都合による変更は、撮影日の3日前までにご連絡ください。撮影日の2日前以降のご連絡による変更は、キャンセルポリシーが適用される場合があります。</li>
+              <li className={liClass}>天候による延期は、前日・当日の判断でも上記の1回に含めて無料で承ります（この1回の延期にはキャンセルポリシーを適用しません）。</li>
+              <li className={liClass}>お客様都合で日程を変更された後のキャンセル料は、最初にご予約いただいた撮影日を基準に計算します。最初の撮影日を過ぎた後のキャンセルは、ご契約金額の100%となります。天候による延期の後のキャンセル料は、延期後の撮影日を基準に計算します。</li>
+              <li className={liClass}>体調等のやむを得ない事情の場合は、柔軟に対応いたします。まずはご連絡ください。</li>
             </ul>
 
             <h2 className={h2Class}>第7条　撮影に関する注意事項</h2>
             <ul className={ulClass}>
-              <li className={liClass}><span className="text-[#1e1c1a]">天候判断：</span>悪天候が予想される場合、撮影前日に当方よりご連絡のうえ、双方で実施可否を判断します。中止の場合はリスケジュールにて対応します。</li>
+              <li className={liClass}><span className="text-[#1e1c1a]">天候判断：</span>悪天候が予想される場合、撮影前日（状況により当日の朝）に当方よりご連絡のうえ、双方で実施可否を判断します。中止の場合は延期（第6条）にて対応します。</li>
               <li className={liClass}><span className="text-[#1e1c1a]">遅刻・時間超過：</span>お客様のご都合による遅刻が生じた場合、撮影終了時間は変更せず、撮影時間が短縮されます。</li>
               <li className={liClass}><span className="text-[#1e1c1a]">撮影指示書：</span>撮影指示書（Pinterest・Instagram等の参考画像リストを含む）のご提出はお受けしておりません。ご希望のイメージは撮影前のヒアリングにてお伝えください。実際の撮影進行はフォトグラファーの判断・裁量に基づいて行います。</li>
               <li className={liClass}><span className="text-[#1e1c1a]">納品後の修正：</span>撮影・編集は当方のスタイル・世界観に基づいて行います。納品後の再編集・カット差し替え・修正対応は承っておりません。</li>
