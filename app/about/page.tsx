@@ -36,7 +36,7 @@ export default function AboutPage() {
 
             {/* テキスト */}
             <div className="pt-2">
-              <h1 className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-6 md:mb-10">ABOUT</h1>
+              <h1 className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-6 md:mb-10">ABOUT</h1>
 
               <p
                 className="text-sm md:text-lg font-light text-[#1e1c1a] leading-relaxed mb-6 md:mb-12"
@@ -53,7 +53,7 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-8 md:mt-14 pt-6 md:pt-10 border-t border-[#1e1c1a]/10">
-                <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-4 md:mb-6">CONTACT</p>
+                <p className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-4 md:mb-6">CONTACT</p>
                 <a
                   href="https://lin.ee/OYalLp6"
                   target="_blank"
@@ -74,13 +74,13 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs tracking-[0.25em] font-light">in the moment</p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            <a href="/terms" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/terms" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               利用規約
             </a>
-            <a href="/tokushoho" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/tokushoho" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               特定商取引法に基づく表記
             </a>
-            <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
+            <p className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light">
               © 2026 in the moment. All rights reserved.
             </p>
           </div>

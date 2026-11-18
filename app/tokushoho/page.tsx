@@ -81,7 +81,7 @@ export default function TokushohoPage() {
         <div style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards" }}>
           <div className="max-w-2xl mx-auto">
             <div className="mb-10 md:mb-16 text-center">
-              <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-6">LEGAL</p>
+              <p className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-6">LEGAL</p>
               <h1
                 className="text-lg md:text-2xl font-light text-[#1e1c1a] tracking-wide"
                 style={{ fontFamily: "var(--font-serif)" }}
@@ -96,14 +96,14 @@ export default function TokushohoPage() {
                   key={row.label}
                   className={`grid grid-cols-1 md:grid-cols-[9rem_1fr] gap-1 md:gap-6 py-5 ${i === 0 ? "" : "border-t border-[#1e1c1a]/10"}`}
                 >
-                  <dt className="text-[11px] md:text-xs tracking-[0.1em] text-[#9a9088] font-light">{row.label}</dt>
+                  <dt className="text-[11px] md:text-xs tracking-[0.1em] text-[#7b7068] font-light">{row.label}</dt>
                   <dd className="text-xs md:text-sm leading-[1.9] md:leading-[2.1] tracking-wide text-[#6b6560] font-light">{row.value}</dd>
                 </div>
               ))}
             </dl>
 
             <div className="mt-16 pt-8 border-t border-[#1e1c1a]/10 text-center">
-              <p className="text-[10px] text-[#9a9088] tracking-[0.15em] font-light">in the moment　|　www.inthemoment.jp</p>
+              <p className="text-[10px] text-[#7b7068] tracking-[0.15em] font-light">in the moment　|　www.inthemoment.jp</p>
             </div>
           </div>
         </div>
@@ -113,13 +113,13 @@ export default function TokushohoPage() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs tracking-[0.25em] font-light">in the moment</p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            <a href="/terms" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/terms" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               利用規約
             </a>
-            <a href="/tokushoho" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/tokushoho" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               特定商取引法に基づく表記
             </a>
-            <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
+            <p className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light">
               © 2026 in the moment. All rights reserved.
             </p>
           </div>

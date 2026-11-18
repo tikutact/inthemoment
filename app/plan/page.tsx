@@ -30,7 +30,7 @@ export default function PlanIndexPage() {
       <section className="pt-28 md:pt-44 pb-20 md:pb-24 px-6">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <h1 className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-6 text-center">
+            <h1 className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-6 text-center">
               PLAN
             </h1>
             <p className="text-xs text-[#6b6560] leading-[2.4] tracking-wide text-center mb-24">
@@ -63,13 +63,13 @@ export default function PlanIndexPage() {
                   <p className="text-[8px] md:text-[9px] tracking-[0.2em] md:tracking-[0.5em] text-[#1e1c1a] mb-1 md:mb-2">
                     {plan.name}
                   </p>
-                  <p className="text-[9px] md:text-[10px] text-[#9a9088] tracking-wide mb-5 md:mb-8">
+                  <p className="text-[9px] md:text-[10px] text-[#7b7068] tracking-wide mb-5 md:mb-8">
                     {plan.subtitle}
                   </p>
                   {plan.tiers.map((tier) => (
                     <div key={tier.name} className="py-4 md:py-5 border-b border-[#1e1c1a]/8">
                       <div className="flex flex-col md:flex-row md:justify-between md:items-baseline gap-0.5">
-                        <span className="text-[8px] md:text-[10px] text-[#9a9088] tracking-wide">
+                        <span className="text-[8px] md:text-[10px] text-[#7b7068] tracking-wide">
                           {tier.name}
                         </span>
                         <span className="text-xs md:text-lg font-light tracking-wider">
@@ -78,7 +78,7 @@ export default function PlanIndexPage() {
                       </div>
                     </div>
                   ))}
-                  <div className="flex justify-between text-[8px] md:text-[10px] text-[#9a9088] tracking-wide mt-4 md:mt-5">
+                  <div className="flex justify-between text-[8px] md:text-[10px] text-[#7b7068] tracking-wide mt-4 md:mt-5">
                     <span>{plan.duration}</span>
                     <span>{plan.cuts !== "—" ? plan.cuts : ""}</span>
                   </div>
@@ -87,7 +87,7 @@ export default function PlanIndexPage() {
                       ※ オープニングムービー含む（約2分）
                     </p>
                   )}
-                  <p className="mt-5 md:mt-8 text-[8px] md:text-[9px] tracking-[0.2em] md:tracking-[0.3em] text-[#9a9088] group-hover:text-[#1e1c1a] transition-colors">
+                  <p className="mt-5 md:mt-8 text-[8px] md:text-[9px] tracking-[0.2em] md:tracking-[0.3em] text-[#7b7068] group-hover:text-[#1e1c1a] transition-colors">
                     詳細を見る →
                   </p>
                 </Link>
@@ -110,7 +110,7 @@ export default function PlanIndexPage() {
       {/* CTA */}
       <section className="py-24 px-6 text-center">
         <FadeIn>
-          <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-8">RESERVATION</p>
+          <p className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-8">RESERVATION</p>
           <p className="text-sm text-[#6b6560] font-light tracking-wide mb-12">
             ご予約・お問い合わせはLINEから
           </p>
@@ -131,13 +131,13 @@ export default function PlanIndexPage() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs tracking-[0.25em] font-light">in the moment</p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            <a href="/terms" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/terms" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               利用規約
             </a>
-            <a href="/tokushoho" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/tokushoho" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               特定商取引法に基づく表記
             </a>
-            <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
+            <p className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light">
               © 2026 in the moment. All rights reserved.
             </p>
           </div>

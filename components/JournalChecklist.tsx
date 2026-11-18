@@ -75,14 +75,14 @@ export default function JournalChecklist({ slug }: Props) {
       className="mt-4 flex items-center justify-center gap-5"
       style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards" }}
     >
-      <p className="text-[10px] tracking-[0.2em] text-[#9a9088] font-light">
+      <p className="text-[10px] tracking-[0.2em] text-[#7b7068] font-light">
         {done} / {total} チェック済み
       </p>
       {done > 0 && (
         <button
           type="button"
           onClick={reset}
-          className="text-[10px] tracking-[0.2em] text-[#9a9088] font-light underline underline-offset-4 hover:text-[#6b6560] transition-colors duration-300"
+          className="text-[10px] tracking-[0.2em] text-[#7b7068] font-light underline underline-offset-4 hover:text-[#6b6560] transition-colors duration-300"
         >
           リセット
         </button>

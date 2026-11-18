@@ -15,8 +15,8 @@ const h2Class =
   "text-sm md:text-base font-light text-[#1e1c1a] tracking-wide pt-8 md:pt-10 mt-8 md:mt-10 border-t border-[#1e1c1a]/10 first:pt-0 first:mt-0 first:border-t-0";
 const pClass = "text-xs md:text-sm leading-[2.1] md:leading-[2.4] tracking-wide text-[#6b6560] font-light mt-4";
 const ulClass = "mt-4 space-y-2";
-const liClass = "text-xs md:text-sm leading-[2] md:leading-[2.2] tracking-wide text-[#6b6560] font-light pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-[#9a9088]";
-const noteClass = "text-[11px] md:text-xs leading-[1.9] tracking-wide text-[#9a9088] font-light mt-2 pl-4 relative before:content-['※'] before:absolute before:left-0";
+const liClass = "text-xs md:text-sm leading-[2] md:leading-[2.2] tracking-wide text-[#6b6560] font-light pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-[#7b7068]";
+const noteClass = "text-[11px] md:text-xs leading-[1.9] tracking-wide text-[#7b7068] font-light mt-2 pl-4 relative before:content-['※'] before:absolute before:left-0";
 
 const planRows = [
   { plan: "PHOTO Standard", content: "撮影時間4時間・お写真100カット・カラーグレーディング", price: "¥100,000", delivery: "撮影後約1ヶ月" },
@@ -49,14 +49,14 @@ export default function TermsPage() {
         <div style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards" }}>
           <div className="max-w-2xl mx-auto">
             <div className="mb-10 md:mb-16 text-center">
-              <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-6">TERMS</p>
+              <p className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-6">TERMS</p>
               <h1
                 className="text-xl md:text-2xl font-light text-[#1e1c1a] tracking-wide"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 利用規約
               </h1>
-              <p className="text-[10px] text-[#9a9088] tracking-[0.15em] font-light mt-4">制定日：2026年6月／改定日：2026年11月</p>
+              <p className="text-[10px] text-[#7b7068] tracking-[0.15em] font-light mt-4">制定日：2026年6月／改定日：2026年11月</p>
             </div>
 
             <p className={pClass}>
@@ -84,10 +84,10 @@ export default function TermsPage() {
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr>
-                    <th className="text-[10px] font-light tracking-[0.15em] text-[#9a9088] pb-2">プラン</th>
-                    <th className="text-[10px] font-light tracking-[0.15em] text-[#9a9088] pb-2">内容</th>
-                    <th className="text-[10px] font-light tracking-[0.15em] text-[#9a9088] pb-2">料金</th>
-                    <th className="text-[10px] font-light tracking-[0.15em] text-[#9a9088] pb-2">納品目安</th>
+                    <th className="text-[10px] font-light tracking-[0.15em] text-[#7b7068] pb-2">プラン</th>
+                    <th className="text-[10px] font-light tracking-[0.15em] text-[#7b7068] pb-2">内容</th>
+                    <th className="text-[10px] font-light tracking-[0.15em] text-[#7b7068] pb-2">料金</th>
+                    <th className="text-[10px] font-light tracking-[0.15em] text-[#7b7068] pb-2">納品目安</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -121,8 +121,8 @@ export default function TermsPage() {
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr>
-                    <th className="text-[10px] font-light tracking-[0.15em] text-[#9a9088] pb-2">キャンセル時期</th>
-                    <th className="text-[10px] font-light tracking-[0.15em] text-[#9a9088] pb-2">キャンセル料</th>
+                    <th className="text-[10px] font-light tracking-[0.15em] text-[#7b7068] pb-2">キャンセル時期</th>
+                    <th className="text-[10px] font-light tracking-[0.15em] text-[#7b7068] pb-2">キャンセル料</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -203,7 +203,7 @@ export default function TermsPage() {
             <p className={pClass}>本規約は日本法に準拠し、紛争が生じた場合は名古屋地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
 
             <div className="mt-16 pt-8 border-t border-[#1e1c1a]/10 text-center">
-              <p className="text-[10px] text-[#9a9088] tracking-[0.15em] font-light">in the moment　|　www.inthemoment.jp</p>
+              <p className="text-[10px] text-[#7b7068] tracking-[0.15em] font-light">in the moment　|　www.inthemoment.jp</p>
             </div>
           </div>
         </div>
@@ -213,13 +213,13 @@ export default function TermsPage() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs tracking-[0.25em] font-light">in the moment</p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            <a href="/terms" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/terms" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               利用規約
             </a>
-            <a href="/tokushoho" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/tokushoho" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               特定商取引法に基づく表記
             </a>
-            <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
+            <p className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light">
               © 2026 in the moment. All rights reserved.
             </p>
           </div>

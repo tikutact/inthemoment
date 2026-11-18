@@ -9,7 +9,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-warm: #f3f0eb;
-  --color-taupe: #9a9088;
+  --color-taupe: #7b7068;
   --color-muted: #6b6560;
   --font-sans: var(--font-dm);
   --font-body: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
@@ -109,7 +109,7 @@ body {
 }
 .prose-journal ul li::before {
   content: "— ";
-  color: #9a9088;
+  color: #7b7068;
 }
 /* チェックリスト（markdown の `- [ ] 項目`）— 中央寄せの本文のなかで、項目だけ左揃えに */
 .prose-journal ul.checklist {
@@ -158,7 +158,7 @@ body {
   font-size: 0.625rem;
   font-weight: 300;
   letter-spacing: 0.25em;
-  color: #9a9088;
+  color: #7b7068;
   text-align: left;
   padding-bottom: 0.7em;
 }
@@ -173,7 +173,7 @@ body {
   white-space: nowrap;
   padding-right: 1.6em;
   padding-top: 1.35em;
-  color: #9a9088;
+  color: #7b7068;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
 }
@@ -210,7 +210,7 @@ body {
 .journal-toc li:last-child { margin-bottom: 0; }
 .journal-toc li::before {
   content: "— ";
-  color: #9a9088;
+  color: #7b7068;
 }
 .journal-toc a {
   color: #6b6560;

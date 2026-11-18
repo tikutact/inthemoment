@@ -10,7 +10,7 @@ export default function QaAccordion() {
     <div className="max-w-2xl mx-auto space-y-12 md:space-y-16">
       {qaData.map((group) => (
         <div key={group.category}>
-          <p className="text-[9px] tracking-[0.5em] text-[#9a9088] mb-8">
+          <p className="text-[9px] tracking-[0.5em] text-[#7b7068] mb-8">
             {group.category}
           </p>
           <div className="space-y-0">
@@ -24,7 +24,7 @@ export default function QaAccordion() {
                   <span className="text-[13px] font-light tracking-wide text-[#1e1c1a]">
                     {item.q}
                   </span>
-                  <span className="text-[#9a9088] text-xs shrink-0 mt-0.5 transition-transform duration-300"
+                  <span className="text-[#7b7068] text-xs shrink-0 mt-0.5 transition-transform duration-300"
                     style={{ transform: open === item.q ? "rotate(45deg)" : "rotate(0deg)" }}>
                     ＋
                   </span>
