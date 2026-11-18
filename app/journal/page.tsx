@@ -7,6 +7,7 @@ import { breadcrumb } from "@/lib/structured-data";
 import { getArticles } from "@/lib/notion";
 import JournalTabs from "@/components/JournalTabs";
 import Link from "next/link";
+import { phraseHtml } from "@/lib/wrap";
 
 export const revalidate = 60;
 
@@ -74,9 +75,11 @@ export default async function JournalPage() {
                       </div>
                     )}
                     <div>
-                      <h2 className="text-xs md:text-sm font-light text-[#1e1c1a] tracking-wide leading-relaxed group-hover:text-[#6b6560] transition-colors break-words">
-                        {article.title}
-                      </h2>
+                      {/* 折り返しは文節単位（lib/wrap.ts）。記事ページのタイトルと同じ */}
+                      <h2
+                        className="jp-wrap text-xs md:text-sm font-light text-[#1e1c1a] tracking-wide leading-relaxed group-hover:text-[#6b6560] transition-colors"
+                        dangerouslySetInnerHTML={{ __html: phraseHtml(article.title) }}
+                      />
                       <p className="mt-2.5 text-[8px] tracking-[0.3em] text-[#7b7068] group-hover:text-[#6b6560] transition-colors">
                         READ&nbsp;&nbsp;→
                       </p>

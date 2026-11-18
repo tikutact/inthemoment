@@ -9,6 +9,7 @@ import { getArticles } from "@/lib/notion";
 import JsonLd from "@/components/JsonLd";
 import { localBusinessLd } from "@/lib/structured-data";
 import { planNotes } from "@/app/plan/data";
+import { phraseHtml } from "@/lib/wrap";
 
 export const revalidate = 60;
 
@@ -214,9 +215,11 @@ export default async function Home() {
                       {article.date && (
                         <p className="text-[9px] tracking-[0.2em] text-[#7b7068] mb-2">{article.date}</p>
                       )}
-                      <h2 className="text-sm font-light text-[#1e1c1a] tracking-wide leading-relaxed group-hover:text-[#6b6560] transition-colors">
-                        {article.title}
-                      </h2>
+                      {/* 折り返しは文節単位（lib/wrap.ts）。記事ページのタイトルと同じ */}
+                      <h2
+                        className="jp-wrap text-sm font-light text-[#1e1c1a] tracking-wide leading-relaxed group-hover:text-[#6b6560] transition-colors"
+                        dangerouslySetInnerHTML={{ __html: phraseHtml(article.title) }}
+                      />
                     </div>
                   </Link>
                 </FadeIn>

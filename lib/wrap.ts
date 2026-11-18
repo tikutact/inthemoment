@@ -13,11 +13,38 @@ const SKIP_TAGS = new Set(["pre", "code", "script", "style", "textarea"]);
 // HTMLエンティティ（&amp; 等）は分割対象から外す。途中に <wbr> が入ると実体参照が壊れるため
 const ENTITY = /(&[a-zA-Z][a-zA-Z0-9]*;|&#[0-9]+;|&#x[0-9a-fA-F]+;)/;
 
+// かっこ・句読点のまわりの折り位置を約物の決まりに合わせる（2026-11-18）。
+// BudouX は「（」の直後で区切ることがあり、「〜の前撮り（」と開きかっこが行末に残っていた。
+// 開きかっこの直後・閉じかっこや句読点の直前では折らず、開きかっこの直前を折れる位置にする。
+const OPEN = "（「『【〔［｛〈《"; // 全角のみ。半角の ( [ は英数字（f(x)・URL）の中に折り位置を作るので対象外
+const CLOSE = "）」』】〕］｝〉》)\\]、。，．・：；！？";
+const NO_BREAK_AFTER_OPEN = new RegExp(`([${OPEN}])<wbr>`, "g");
+const NO_BREAK_BEFORE_CLOSE = new RegExp(`<wbr>([${CLOSE}])`, "g");
+const BREAK_BEFORE_OPEN = new RegExp(`([^>${OPEN}])([${OPEN}])`, "g");
+
+// WebKit（iPhoneのSafariを含む）は word-break: keep-all のとき「（」の直後で折ってしまう（<wbr>の有無に関係なく）。
+// 開きかっこと次の1文字だけを nowrap で包み、かっこを後ろにくっつける。
+// 文節ごと包むと「（0569-67-3700・9時〜16時・月曜休み）では、」のような長い文節がスマホ幅からはみ出したため、1文字に限る
+const GLUE_OPEN = new RegExp(`([${OPEN}]+[^<${OPEN}]?)`, "g");
+// 閉じかっこも同じ理由で行頭に出ることがある（「ご契約金額の50% ／ ）」）。直前の1文字とくっつける。
+// GLUE_OPEN の後に掛ける。直前がタグ（>）のときは掛けない＝「（市）」のように中身が1文字だと閉じかっこは包まれない（実データでは起きない）
+const CLOSE_BRACKETS = "）」』】〕］｝〉》";
+const GLUE_CLOSE = new RegExp(`([^<>${OPEN}${CLOSE_BRACKETS}][${CLOSE_BRACKETS}]+)`, "g");
+
+function fixPunctuation(s: string): string {
+  return s
+    .replace(NO_BREAK_AFTER_OPEN, "$1")
+    .replace(NO_BREAK_BEFORE_CLOSE, "$1")
+    .replace(BREAK_BEFORE_OPEN, "$1<wbr>$2")
+    .replace(GLUE_OPEN, '<span class="nobr">$1</span>')
+    .replace(GLUE_CLOSE, '<span class="nobr">$1</span>');
+}
+
 function breakText(text: string): string {
   if (!text.trim()) return text;
   return text
     .split(ENTITY)
-    .map((part, i) => (i % 2 === 1 ? part : parser.parse(part).join("<wbr>")))
+    .map((part, i) => (i % 2 === 1 ? part : fixPunctuation(parser.parse(part).join("<wbr>"))))
     .join("");
 }
 
