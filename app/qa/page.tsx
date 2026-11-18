@@ -28,7 +28,7 @@ export default function QaPage() {
 
       <section className="pt-24 md:pt-44 pb-16 md:pb-24 px-4 md:px-6">
         <FadeIn>
-          <h1 className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-20 text-center">
+          <h1 className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-20 text-center">
             Q &amp; A
           </h1>
           <QaAccordion />
@@ -40,13 +40,13 @@ export default function QaPage() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs tracking-[0.25em] font-light">in the moment</p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            <a href="/terms" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/terms" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               利用規約
             </a>
-            <a href="/tokushoho" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/tokushoho" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               特定商取引法に基づく表記
             </a>
-            <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
+            <p className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light">
               © 2026 in the moment. All rights reserved.
             </p>
           </div>

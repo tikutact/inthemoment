@@ -102,7 +102,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               className="journal-toc"
               style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards", animationDelay: "300ms" }}
             >
-              <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-5">CONTENTS</p>
+              <p className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-5">CONTENTS</p>
               <ul>
                 {toc.map((item) => (
                   <li key={item.id}>
@@ -119,7 +119,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               className="mt-12 md:mt-16"
               style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards", animationDelay: "375ms" }}
             >
-              <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-6 text-center">MOVIE</p>
+              <p className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-6 text-center">MOVIE</p>
               <div className="aspect-video">
                 <iframe
                   loading="lazy"
@@ -149,7 +149,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               className="mt-16 md:mt-24"
               style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards", animationDelay: "600ms" }}
             >
-              <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-8">Q &amp; A</p>
+              <p className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-8">Q &amp; A</p>
               <div>
                 {article.faq.map((item) => (
                   <div key={item.q} className="border-t border-[#1e1c1a]/8 py-6">
@@ -170,7 +170,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
           {/* in the moment について */}
           <div className="mt-16 md:mt-24 pt-10 border-t border-[#1e1c1a]/10">
-            <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-5">PHOTOGRAPHER</p>
+            <p className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-5">PHOTOGRAPHER</p>
             <p
               className="text-base md:text-lg font-light text-[#1e1c1a] tracking-wide mb-4"
               style={{ fontFamily: "var(--font-serif)" }}
@@ -210,13 +210,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs tracking-[0.25em] font-light">in the moment</p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            <a href="/terms" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/terms" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               利用規約
             </a>
-            <a href="/tokushoho" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/tokushoho" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               特定商取引法に基づく表記
             </a>
-            <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
+            <p className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light">
               © 2026 in the moment. All rights reserved.
             </p>
           </div>

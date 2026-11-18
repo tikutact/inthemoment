@@ -32,14 +32,14 @@ export default async function JournalPage() {
       <section className="pt-24 md:pt-44 pb-16 md:pb-32 px-4 md:px-6 overflow-x-hidden">
         <div className="max-w-5xl mx-auto">
           <h1
-            className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-10 md:mb-16"
+            className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-10 md:mb-16"
             style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards" }}
           >
             JOURNAL
           </h1>
 
           {articles.length === 0 ? (
-            <p className="text-sm text-[#9a9088] tracking-wide">記事はまだありません。</p>
+            <p className="text-sm text-[#7b7068] tracking-wide">記事はまだありません。</p>
           ) : (
             <>
               <div style={{ opacity: 0, animation: "caseFadeIn 0.8s ease forwards", animationDelay: "100ms" }}>
@@ -77,7 +77,7 @@ export default async function JournalPage() {
                       <h2 className="text-xs md:text-sm font-light text-[#1e1c1a] tracking-wide leading-relaxed group-hover:text-[#6b6560] transition-colors break-words">
                         {article.title}
                       </h2>
-                      <p className="mt-2.5 text-[8px] tracking-[0.3em] text-[#9a9088] group-hover:text-[#6b6560] transition-colors">
+                      <p className="mt-2.5 text-[8px] tracking-[0.3em] text-[#7b7068] group-hover:text-[#6b6560] transition-colors">
                         READ&nbsp;&nbsp;→
                       </p>
                     </div>
@@ -93,13 +93,13 @@ export default async function JournalPage() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs tracking-[0.25em] font-light">in the moment</p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            <a href="/terms" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/terms" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               利用規約
             </a>
-            <a href="/tokushoho" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/tokushoho" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               特定商取引法に基づく表記
             </a>
-            <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
+            <p className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light">
               © 2026 in the moment. All rights reserved.
             </p>
           </div>

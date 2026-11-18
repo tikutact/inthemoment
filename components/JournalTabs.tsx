@@ -46,7 +46,7 @@ export default function JournalTabs() {
           className={`-mx-2 -my-3 px-2 py-3 text-[11px] md:text-xs tracking-[0.2em] font-light transition-colors ${
             active === c.key
               ? "text-[#1e1c1a]"
-              : "text-[#9a9088] hover:text-[#6b6560]"
+              : "text-[#7b7068] hover:text-[#6b6560]"
           }`}
         >
           <span

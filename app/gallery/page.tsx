@@ -34,7 +34,7 @@ export default function ShowcasePage() {
 
       <section className="pt-24 md:pt-44 pb-16 md:pb-32">
         <h1
-          className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-12 md:mb-24 text-center"
+          className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-12 md:mb-24 text-center"
           style={{
             opacity: 0,
             animation: "navFadeIn 0.8s ease forwards",
@@ -45,7 +45,7 @@ export default function ShowcasePage() {
         </h1>
 
         {cases.length === 0 ? (
-          <p className="text-center text-[11px] tracking-wide text-[#9a9088]">
+          <p className="text-center text-[11px] tracking-wide text-[#7b7068]">
             coming soon
           </p>
         ) : (
@@ -59,7 +59,7 @@ export default function ShowcasePage() {
                       {c.label}
                     </p>
                     {c.location && (
-                      <p className="text-[9px] tracking-[0.3em] text-[#9a9088]">
+                      <p className="text-[9px] tracking-[0.3em] text-[#7b7068]">
                         {c.location}
                       </p>
                     )}
@@ -114,13 +114,13 @@ export default function ShowcasePage() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs tracking-[0.25em] font-light">in the moment</p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            <a href="/terms" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/terms" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               利用規約
             </a>
-            <a href="/tokushoho" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/tokushoho" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               特定商取引法に基づく表記
             </a>
-            <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
+            <p className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light">
               © 2026 in the moment. All rights reserved.
             </p>
           </div>

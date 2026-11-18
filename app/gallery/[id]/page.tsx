@@ -58,7 +58,7 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
               {c.label}
             </h1>
             {c.location && (
-              <p className="text-[10px] tracking-[0.3em] text-[#9a9088]">
+              <p className="text-[10px] tracking-[0.3em] text-[#7b7068]">
                 {c.location}
               </p>
             )}
@@ -89,7 +89,7 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
       <div className="pb-16 text-center">
         <Link
           href="/gallery"
-          className="text-[9px] tracking-[0.4em] text-[#9a9088] hover:text-[#1e1c1a] transition-colors"
+          className="text-[9px] tracking-[0.4em] text-[#7b7068] hover:text-[#1e1c1a] transition-colors"
         >
           ← BACK TO GALLERY
         </Link>
@@ -99,13 +99,13 @@ export default async function CasePage({ params }: { params: Promise<{ id: strin
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs tracking-[0.25em] font-light">in the moment</p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            <a href="/terms" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/terms" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               利用規約
             </a>
-            <a href="/tokushoho" className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
+            <a href="/tokushoho" className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light hover:text-[#6b6560] transition-colors">
               特定商取引法に基づく表記
             </a>
-            <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
+            <p className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light">
               © 2026 in the moment. All rights reserved.
             </p>
           </div>

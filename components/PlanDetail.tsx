@@ -34,7 +34,7 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
       ) : (
         <section className="pt-44 pb-24 px-6 text-center">
           <FadeIn>
-            <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-4">PLAN</p>
+            <p className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-4">PLAN</p>
             <h1 className="text-4xl md:text-5xl font-light tracking-[0.15em] text-[#1e1c1a] mb-3">
               {plan.name}
             </h1>
@@ -49,7 +49,7 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
       {plan.youtubeUrl && (
         <section className="py-14 md:py-20 px-4 md:px-6 text-center">
           <FadeIn>
-            <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-10">SAMPLE MOVIE</p>
+            <p className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-10">SAMPLE MOVIE</p>
             <div className="max-w-2xl mx-auto aspect-video">
               <iframe
                 loading="lazy"
@@ -81,7 +81,7 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
                         <ul className="space-y-3">
                           {tier.included.map((item) => (
                             <li key={item} className="flex items-start gap-3 text-sm text-[#6b6560] font-light tracking-wide">
-                              <span className="text-[#9a9088] shrink-0 mt-0.5">◆</span>
+                              <span className="text-[#7b7068] shrink-0 mt-0.5">◆</span>
                               {item}
                             </li>
                           ))}
@@ -102,7 +102,7 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
                       <ul className="space-y-3">
                         {tier.included.map((item) => (
                           <li key={item} className="flex items-start gap-3 text-sm text-[#6b6560] font-light tracking-wide">
-                            <span className="text-[#9a9088] shrink-0 mt-0.5">◆</span>
+                            <span className="text-[#7b7068] shrink-0 mt-0.5">◆</span>
                             {item}
                           </li>
                         ))}
@@ -131,7 +131,7 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
               <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
                 <img src={plan.midImage} alt="" className="w-full aspect-[3/4] object-cover" />
                 <div>
-                  <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-12">当日の流れ</p>
+                  <p className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-12">当日の流れ</p>
                   <ol className="space-y-0">
                     {plan.flow.map((step, i) => (
                       <li key={i} className="flex gap-8 pb-8 relative">
@@ -143,7 +143,7 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
                           )}
                         </div>
                         <div className="pb-2">
-                          <p className="text-[10px] tracking-[0.3em] text-[#9a9088] mb-1">{step.time}</p>
+                          <p className="text-[10px] tracking-[0.3em] text-[#7b7068] mb-1">{step.time}</p>
                           <p className="text-sm text-[#1e1c1a] font-light tracking-wide">{step.label}</p>
                         </div>
                       </li>
@@ -153,7 +153,7 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
               </div>
             ) : (
               <div className="max-w-lg mx-auto">
-                <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-12 text-center">当日の流れ</p>
+                <p className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-12 text-center">当日の流れ</p>
                 <ol className="space-y-0">
                   {plan.flow.map((step, i) => (
                     <li key={i} className="flex gap-8 pb-8 relative">
@@ -165,7 +165,7 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
                         )}
                       </div>
                       <div className="pb-2">
-                        <p className="text-[10px] tracking-[0.3em] text-[#9a9088] mb-1">{step.time}</p>
+                        <p className="text-[10px] tracking-[0.3em] text-[#7b7068] mb-1">{step.time}</p>
                         <p className="text-sm text-[#1e1c1a] font-light tracking-wide">{step.label}</p>
                       </div>
                     </li>
@@ -180,7 +180,7 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
       {/* CTA */}
       <section className="py-24 px-6 text-center">
         <FadeIn>
-          <p className="text-[9px] tracking-[0.6em] text-[#9a9088] mb-8">RESERVATION</p>
+          <p className="text-[9px] tracking-[0.6em] text-[#7b7068] mb-8">RESERVATION</p>
           <p className="text-sm text-[#6b6560] font-light tracking-wide mb-12">
             ご予約・お問い合わせはLINEから
           </p>
@@ -200,7 +200,7 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
       <div className="pb-16 text-center">
         <Link
           href="/plan"
-          className="text-[9px] tracking-[0.4em] text-[#9a9088] hover:text-[#1e1c1a] transition-colors"
+          className="text-[9px] tracking-[0.4em] text-[#7b7068] hover:text-[#1e1c1a] transition-colors"
         >
           ← BACK TO PLAN
         </Link>
@@ -210,7 +210,7 @@ export default function PlanDetail({ plan }: { plan: PlanData }) {
       <footer className="py-8 px-6 border-t border-[#1e1c1a]/8">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs tracking-[0.25em] font-light">in the moment</p>
-          <p className="text-[10px] text-[#9a9088] tracking-[0.2em] font-light">
+          <p className="text-[10px] text-[#7b7068] tracking-[0.2em] font-light">
             © 2026 in the moment. All rights reserved.
           </p>
         </div>
