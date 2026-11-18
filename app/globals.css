@@ -60,6 +60,8 @@ body {
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
+/* 開きかっこ＋続く1文節（lib/wrap.ts が付ける）。WebKit がかっこの直後で折るのを防ぐ */
+.nobr { white-space: nowrap; }
 
 /* Journal article body */
 .prose-journal {
